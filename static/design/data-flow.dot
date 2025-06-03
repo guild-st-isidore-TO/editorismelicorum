@@ -1,0 +1,32 @@
+digraph {
+    label = "\ngabc-ly-tools\nData Flow";
+    node [shape = box;];
+    
+    subgraph cluster_0 {
+        label = "gabc";
+        gabcSource -> gabcParser;
+    }
+    
+    gabcParser -> lyTranslation;
+    
+    subgraph cluster_1 {
+        label = "ly";
+        lyTranslation -> lyParser;
+        lyParser -> lyFormatter;
+    }
+    
+    lyFormatter -> outputHtml [color = blue;];
+    lyFormatter -> outputMarkdown [color = blue;];
+    lyFormatter -> outputPdf [color = blue;];
+    
+    gabcSource [label = "GABC source";shape = cylinder;color = blue;];
+    gabcParser [label = "GABC Parser";color = red;];
+    lyTranslation [label = "LY Translation";shape = cylinder;color = darkgreen;];
+    
+    lyParser [label = "LY Parser";color = mediumpurple;];
+    lyFormatter [label = "LY Formatter";color = blue;];
+    
+    outputHtml [shape = folder;label = "output/html/";color = blue;];
+    outputMarkdown [shape = folder;label = "output/md/";color = blue;];
+    outputPdf [shape = folder;label = "output/pdf/";color = blue;];
+}
