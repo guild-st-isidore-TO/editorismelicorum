@@ -4,29 +4,34 @@ digraph {
     
     subgraph cluster_0 {
         label = "gabc";
-        gabcSource -> gabcParser;
+        gabcSource -> gabcParser [color = blue;];
     }
     
-    gabcParser -> lyTranslation;
+    gabcParser -> lyTranslation [color = red;];
     
     subgraph cluster_1 {
         label = "ly";
-        lyTranslation -> lyParser;
-        lyParser -> lyFormatter;
+        lyTranslation -> lyProcessor [color = darkgreen;];
+        lyProcessor -> lyFormatter [color = orange;];
     }
     
     lyFormatter -> outputHtml [color = blue;];
     lyFormatter -> outputMarkdown [color = blue;];
     lyFormatter -> outputPdf [color = blue;];
+    lyFormatter -> outputSvg [color = blue;];
+    lyFormatter -> outputPng [color = blue;];
     
-    gabcSource [label = "GABC source";shape = cylinder;color = blue;];
-    gabcParser [label = "GABC Parser";color = red;];
+    gabcSource [label = "GABC source\n(GregoBase, etc)";shape = cylinder;color = blue;];
+    gabcParser [label = "GABC converter";color = red;];
     lyTranslation [label = "LY Translation";shape = cylinder;color = darkgreen;];
     
-    lyParser [label = "LY Parser";color = mediumpurple;];
-    lyFormatter [label = "LY Formatter";color = blue;];
+    lyProcessor [label = "LY Processor";color = orange;];
+    lyFormatter [label = "LY Interpreter";color = blue;];
     
     outputHtml [shape = folder;label = "output/html/";color = blue;];
     outputMarkdown [shape = folder;label = "output/md/";color = blue;];
     outputPdf [shape = folder;label = "output/pdf/";color = blue;];
+    outputSvg[shape = folder;label = "output/svg/";color = blue;];
+    outputPng[shape = folder;label = "output/png/";color = blue;];
 }
+
