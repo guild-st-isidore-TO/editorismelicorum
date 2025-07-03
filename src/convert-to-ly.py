@@ -4,15 +4,25 @@
 import sys
 import subprocess
 import json
+import os
 
 # ---------------
 # CONFIGURATION
 
-dataDirectory = "data/"
-gabctkDirectory = ""
+fileDir = os.path.realpath(__file__)
+
+dataDirectory = os.path.join(fileDir, "../data")
+gabctkDirectory = os.path.join(fileDir, "../../gabctk")
+gabctkScript = "gabctk.py"
 outputDirectoryLy = ""
 outputDirectoryMidi = ""
 outputDirectoryXml = ""
+
+print(f"------ CONVERTING GABC TO LY -------")
+print(f"fileDir: {fileDir}")
+print(f"dataDirectory: {dataDirectory}")
+print(f"gabctkDirectory: {gabctkDirectory}")
+print(f"------------------------------------\n")
 
 with open("./config.json", "r") as file:
     cfgData = json.load(file)
@@ -36,6 +46,12 @@ gabcDataFiles = [
 inFilePath = gabcDataFiles[0]
 outFilePath = f"{outputDirectoryLy}/test.ly"
 cmdString = f"gabctk.py -i {inFilePath} -l {outFilePath} -v"
+
+print(f"------ USING GABCTK -------")
+print(f"inFilePath: {inFilePath}")
+print(f"outFilePath: {outFilePath}")
+print(f"cmdString: {cmdString}")
+print(f"---------------------------\n")
 
 try:
     retcode = subprocess.call(cmdString, shell=True)
