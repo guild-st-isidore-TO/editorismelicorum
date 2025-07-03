@@ -1,6 +1,6 @@
 {
-    "gabctkDirectory": "",
-    "outputDirectoryLy": "",
-    "outputDirectoryMidi": "",
-    "outputDirectoryXml": ""
+    "gabctkDirectory": "../../gabctk",
+    "outputDirectoryLy": "../build/ly",
+    "outputDirectoryMidi": "../build/midi",
+    "outputDirectoryXml": "../build/xml"
 }
