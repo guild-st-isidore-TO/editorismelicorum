@@ -21,7 +21,7 @@ outputDirectoryLy = ""
 outputDirectoryMidi = ""
 outputDirectoryXml = ""
 
-print(f"------ CONVERTING GABC TO LY -------")
+print(f"\n------ CONVERTING GABC TO LY -------")
 print(f"fileDir: {fileDir}")
 print(f"dataDirectory: {dataDirectory}")
 print(f"gabctkDirectory: {gabctkDirectory}")
@@ -57,21 +57,25 @@ gabcDataFiles = [
 # --------------
 # USING GABCTK
 
-inFilePath = gabcDataFiles[0]
-outFilePath = f"{outputDirectoryLy}/test.ly"
-cmdString = f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
+for gabcDataFile in gabcDataFiles:
 
-print(f"------ USING GABCTK -------")
-print(f"inFilePath: {inFilePath}")
-print(f"outFilePath: {outFilePath}")
-print(f"cmdString: {cmdString}")
-print(f"---------------------------\n")
+    inFilePath = gabcDataFile
+    inFileName = os.path.basename(inFilePath)
+    outFileName = inFileName.replace('.gabc', '')
+    outFilePath = f"{outputDirectoryLy}/{outFileName}.ly"
+    cmdString = f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
 
-try:
-    retcode = subprocess.call(cmdString, shell=True)
-    if retcode < 0:
-        print("Child was terminated by signal", -retcode, file=sys.stderr)
-    else:
-        print("Child returned", retcode, file=sys.stderr)
-except OSError as e:
-    print("Execution failed:", e, file=sys.stderr)
+    print(f"------ USING GABCTK -------")
+    print(f"inFilePath: {inFilePath}")
+    print(f"outFilePath: {outFilePath}")
+    print(f"cmdString: {cmdString}")
+    print(f"---------------------------\n")
+
+    try:
+        retcode = subprocess.call(cmdString, shell=True)
+        if retcode < 0:
+            print("Child was terminated by signal", -retcode, file=sys.stderr)
+        else:
+            print("Child returned", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
