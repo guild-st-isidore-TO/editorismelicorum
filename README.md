@@ -1,7 +1,7 @@
 # gabc-ly-tools
 
 This project aims to create a digital music typesetting toolkit for use by music ministries in Catholic parishes.
-More specifically, the tools allow for building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
+Its main objectives are building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
 and laying them out into documents for use of the community.
 
 ## SETUP
@@ -53,6 +53,6 @@ Uses `gabctk` and `pandoc`
 
 ## DESIGN
 
-General idea of how `gabctk` and `LilyPond` fit together
+Initial sketch of how `gabctk` and `LilyPond` fit together
 
 ![System  Design - gabc-ly-tools](./static/design/graphviz.svg "System  Design - gabc-ly-tools")
