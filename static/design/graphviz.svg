@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="481pt" height="536pt" viewBox="0.00 0.00 480.89 536.40">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 532.4)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-532.4 476.89,-532.4 476.89,4 -4,4"/>
+<text text-anchor="middle" x="236.45" y="-25" font-family="Times,serif" font-size="14.00">gabc-ly-tools</text>
+<text text-anchor="middle" x="236.45" y="-8.2" font-family="Times,serif" font-size="14.00">Data Flow</text>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="none" stroke="black" points="173.61,-350.4 173.61,-520.4 301.61,-520.4 301.61,-350.4 173.61,-350.4"/>
+<text text-anchor="middle" x="237.61" y="-503.8" font-family="Times,serif" font-size="14.00">gabc</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<polygon fill="none" stroke="black" points="178.61,-121.6 178.61,-342.4 296.61,-342.4 296.61,-121.6 178.61,-121.6"/>
+<text text-anchor="middle" x="237.61" y="-325.8" font-family="Times,serif" font-size="14.00">ly</text>
+</g>
+<!-- gabcSource -->
+<g id="node1" class="node">
+<title>gabcSource</title>
+<path fill="none" stroke="blue" d="M293.03,-482.4C293.03,-485.27 268.19,-487.6 237.61,-487.6 207.03,-487.6 182.19,-485.27 182.19,-482.4 182.19,-482.4 182.19,-435.6 182.19,-435.6 182.19,-432.73 207.03,-430.4 237.61,-430.4 268.19,-430.4 293.03,-432.73 293.03,-435.6 293.03,-435.6 293.03,-482.4 293.03,-482.4"/>
+<path fill="none" stroke="blue" d="M293.03,-482.4C293.03,-479.53 268.19,-477.2 237.61,-477.2 207.03,-477.2 182.19,-479.53 182.19,-482.4"/>
+<text text-anchor="middle" x="237.61" y="-463.2" font-family="Times,serif" font-size="14.00">GABC source</text>
+<text text-anchor="middle" x="237.61" y="-446.4" font-family="Times,serif" font-size="14.00">(GregoBase, etc)</text>
+</g>
+<!-- gabcParser -->
+<g id="node2" class="node">
+<title>gabcParser</title>
+<polygon fill="none" stroke="red" points="293.24,-394.4 181.99,-394.4 181.99,-358.4 293.24,-358.4 293.24,-394.4"/>
+<text text-anchor="middle" x="237.61" y="-372.2" font-family="Times,serif" font-size="14.00">GABC converter</text>
+</g>
+<!-- gabcSource&#45;&gt;gabcParser -->
+<g id="edge1" class="edge">
+<title>gabcSource-&gt;gabcParser</title>
+<path fill="none" stroke="blue" d="M237.61,-430.26C237.61,-422.4 237.61,-413.83 237.61,-405.92"/>
+<polygon fill="blue" stroke="blue" points="241.11,-406.12 237.61,-396.12 234.11,-406.12 241.11,-406.12"/>
+</g>
+<!-- lyTranslation -->
+<g id="node3" class="node">
+<title>lyTranslation</title>
+<path fill="none" stroke="darkgreen" d="M288.57,-306.33C288.57,-308.13 265.73,-309.6 237.61,-309.6 209.49,-309.6 186.65,-308.13 186.65,-306.33 186.65,-306.33 186.65,-276.87 186.65,-276.87 186.65,-275.07 209.49,-273.6 237.61,-273.6 265.73,-273.6 288.57,-275.07 288.57,-276.87 288.57,-276.87 288.57,-306.33 288.57,-306.33"/>
+<path fill="none" stroke="darkgreen" d="M288.57,-306.33C288.57,-304.52 265.73,-303.05 237.61,-303.05 209.49,-303.05 186.65,-304.52 186.65,-306.33"/>
+<text text-anchor="middle" x="237.61" y="-287.4" font-family="Times,serif" font-size="14.00">LY Translation</text>
+</g>
+<!-- gabcParser&#45;&gt;lyTranslation -->
+<g id="edge2" class="edge">
+<title>gabcParser-&gt;lyTranslation</title>
+<path fill="none" stroke="red" d="M237.61,-358.24C237.61,-347.55 237.61,-333.52 237.61,-321.17"/>
+<polygon fill="red" stroke="red" points="241.11,-321.53 237.61,-311.53 234.11,-321.53 241.11,-321.53"/>
+</g>
+<!-- lyProcessor -->
+<g id="node4" class="node">
+<title>lyProcessor</title>
+<polygon fill="none" stroke="orange" points="283.91,-237.6 191.32,-237.6 191.32,-201.6 283.91,-201.6 283.91,-237.6"/>
+<text text-anchor="middle" x="237.61" y="-215.4" font-family="Times,serif" font-size="14.00">LY Processor</text>
+</g>
+<!-- lyTranslation&#45;&gt;lyProcessor -->
+<g id="edge3" class="edge">
+<title>lyTranslation-&gt;lyProcessor</title>
+<path fill="none" stroke="darkgreen" d="M237.61,-273.3C237.61,-266.01 237.61,-257.33 237.61,-249.14"/>
+<polygon fill="darkgreen" stroke="darkgreen" points="241.11,-249.22 237.61,-239.22 234.11,-249.22 241.11,-249.22"/>
+</g>
+<!-- lyFormatter -->
+<g id="node5" class="node">
+<title>lyFormatter</title>
+<polygon fill="none" stroke="blue" points="286.23,-165.6 189,-165.6 189,-129.6 286.23,-129.6 286.23,-165.6"/>
+<text text-anchor="middle" x="237.61" y="-143.4" font-family="Times,serif" font-size="14.00">LY Interpreter</text>
+</g>
+<!-- lyProcessor&#45;&gt;lyFormatter -->
+<g id="edge4" class="edge">
+<title>lyProcessor-&gt;lyFormatter</title>
+<path fill="none" stroke="orange" d="M237.61,-201.3C237.61,-194.01 237.61,-185.33 237.61,-177.14"/>
+<polygon fill="orange" stroke="orange" points="241.11,-177.22 237.61,-167.22 234.11,-177.22 241.11,-177.22"/>
+</g>
+<!-- outputHtml -->
+<g id="node6" class="node">
+<title>outputHtml</title>
+<polygon fill="none" stroke="blue" points="85.23,-93.6 82.23,-97.6 61.23,-97.6 58.23,-93.6 0,-93.6 0,-57.6 85.23,-57.6 85.23,-93.6"/>
+<text text-anchor="middle" x="42.61" y="-71.4" font-family="Times,serif" font-size="14.00">output/html/</text>
+</g>
+<!-- lyFormatter&#45;&gt;outputHtml -->
+<g id="edge5" class="edge">
+<title>lyFormatter-&gt;outputHtml</title>
+<path fill="none" stroke="blue" d="M188.91,-129.12C160.8,-119.03 125.4,-106.32 96.47,-95.93"/>
+<polygon fill="blue" stroke="blue" points="97.74,-92.67 87.15,-92.59 95.38,-99.26 97.74,-92.67"/>
+</g>
+<!-- outputMarkdown -->
+<g id="node7" class="node">
+<title>outputMarkdown</title>
+<polygon fill="none" stroke="blue" points="180.34,-93.6 177.34,-97.6 156.34,-97.6 153.34,-93.6 102.89,-93.6 102.89,-57.6 180.34,-57.6 180.34,-93.6"/>
+<text text-anchor="middle" x="141.61" y="-71.4" font-family="Times,serif" font-size="14.00">output/md/</text>
+</g>
+<!-- lyFormatter&#45;&gt;outputMarkdown -->
+<g id="edge6" class="edge">
+<title>lyFormatter-&gt;outputMarkdown</title>
+<path fill="none" stroke="blue" d="M213.88,-129.3C202,-120.63 187.42,-110 174.48,-100.56"/>
+<polygon fill="blue" stroke="blue" points="176.77,-97.9 166.63,-94.84 172.64,-103.56 176.77,-97.9"/>
+</g>
+<!-- outputPdf -->
+<g id="node8" class="node">
+<title>outputPdf</title>
+<polygon fill="none" stroke="blue" points="276.72,-93.6 273.72,-97.6 252.72,-97.6 249.72,-93.6 198.5,-93.6 198.5,-57.6 276.72,-57.6 276.72,-93.6"/>
+<text text-anchor="middle" x="237.61" y="-71.4" font-family="Times,serif" font-size="14.00">output/pdf/</text>
+</g>
+<!-- lyFormatter&#45;&gt;outputPdf -->
+<g id="edge7" class="edge">
+<title>lyFormatter-&gt;outputPdf</title>
+<path fill="none" stroke="blue" d="M237.61,-129.3C237.61,-122.01 237.61,-113.33 237.61,-105.14"/>
+<polygon fill="blue" stroke="blue" points="241.11,-105.22 237.61,-95.22 234.11,-105.22 241.11,-105.22"/>
+</g>
+<!-- outputSvg -->
+<g id="node9" class="node">
+<title>outputSvg</title>
+<polygon fill="none" stroke="blue" points="374.12,-93.6 371.12,-97.6 350.12,-97.6 347.12,-93.6 295.11,-93.6 295.11,-57.6 374.12,-57.6 374.12,-93.6"/>
+<text text-anchor="middle" x="334.61" y="-71.4" font-family="Times,serif" font-size="14.00">output/svg/</text>
+</g>
+<!-- lyFormatter&#45;&gt;outputSvg -->
+<g id="edge8" class="edge">
+<title>lyFormatter-&gt;outputSvg</title>
+<path fill="none" stroke="blue" d="M261.59,-129.3C273.6,-120.63 288.33,-110 301.41,-100.56"/>
+<polygon fill="blue" stroke="blue" points="303.29,-103.52 309.35,-94.83 299.19,-97.85 303.29,-103.52"/>
+</g>
+<!-- outputPng -->
+<g id="node10" class="node">
+<title>outputPng</title>
+<polygon fill="none" stroke="blue" points="472.89,-93.6 469.89,-97.6 448.89,-97.6 445.89,-93.6 392.33,-93.6 392.33,-57.6 472.89,-57.6 472.89,-93.6"/>
+<text text-anchor="middle" x="432.61" y="-71.4" font-family="Times,serif" font-size="14.00">output/png/</text>
+</g>
+<!-- lyFormatter&#45;&gt;outputPng -->
+<g id="edge9" class="edge">
+<title>lyFormatter-&gt;outputPng</title>
+<path fill="none" stroke="blue" d="M286.32,-129.12C315.35,-118.69 352.17,-105.48 381.6,-94.91"/>
+<polygon fill="blue" stroke="blue" points="382.43,-98.33 390.66,-91.66 380.07,-91.74 382.43,-98.33"/>
+</g>
+</g>
+</svg>

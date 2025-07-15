@@ -49,9 +49,9 @@ Path(outputDirectoryXml).mkdir(parents=True, exist_ok=True)
 # DATA FILES
 
 gabcDataFiles = [
-    "data/an--regina_caeli--simplex.gabc",
-    "data/hy--tantum_ergo--vatican.gabc",
-    "data/of--ave_maria--simplex.gabc",
+    "data/01_an--regina_caeli--simplex.gabc",
+    "data/02_hy--tantum_ergo--vatican.gabc",
+    "data/03_of--ave_maria--simplex.gabc",
 ]
 
 # --------------
@@ -61,7 +61,7 @@ for gabcDataFile in gabcDataFiles:
 
     inFilePath = gabcDataFile
     inFileName = os.path.basename(inFilePath)
-    outFileName = inFileName.replace('.gabc', '')
+    outFileName = inFileName.replace(".gabc", "")
     outFilePath = f"{outputDirectoryLy}/{outFileName}.ly"
     cmdString = f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
 
