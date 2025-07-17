@@ -2,5 +2,6 @@
     "gabctkDirectory": "../../gabctk",
     "outputDirectoryLy": "../build/ly",
     "outputDirectoryMidi": "../build/midi",
+    "outputDirectoryPdf": "../build/pdf",
     "outputDirectoryXml": "../build/xml"
 }

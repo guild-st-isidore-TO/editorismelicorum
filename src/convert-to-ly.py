@@ -21,7 +21,7 @@ outputDirectoryLy = ""
 outputDirectoryMidi = ""
 outputDirectoryXml = ""
 
-print(f"\n------ CONVERTING GABC TO LY -------")
+print(f"\n\n====== CONVERTING GABC TO LY ======")
 print(f"fileDir: {fileDir}")
 print(f"dataDirectory: {dataDirectory}")
 print(f"gabctkDirectory: {gabctkDirectory}")
