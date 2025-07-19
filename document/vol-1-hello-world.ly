@@ -52,17 +52,17 @@
 
   \bookpart {
     \header { subtitle = "01" }
-    \include "../build/ly/01_an--regina_caeli--simplex.ly"
+    \include "../build/ly-data/01_an--regina_caeli--simplex.ly"
   }
 
   \bookpart {
     \header { subtitle = "02" }
-    \include "../build/ly/02_hy--tantum_ergo--vatican.ly"
+    \include "../build/ly-data/02_hy--tantum_ergo--vatican.ly"
   }
 
   \bookpart {
     \header { subtitle = "03" }
-    \include "../build/ly/03_of--ave_maria--simplex.ly"
+    \include "../build/ly-data/03_of--ave_maria--simplex.ly"
   }
 
 }
