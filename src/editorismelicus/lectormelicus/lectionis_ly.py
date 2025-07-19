@@ -17,9 +17,9 @@ cfgDirectory = fileDir
 gabctkScript = "gabctk.py"
 
 gabctkDirectory = ""
-outputDirectoryLy = ""
-outputDirectoryMidi = ""
-outputDirectoryXml = ""
+outputDirectoryLyData = ""
+# outputDirectoryMidi = ""
+# outputDirectoryXml = ""
 
 print(f"\n\n====== CONVERTING GABC TO LY ======")
 print(f"fileDir: {fileDir}")
@@ -30,20 +30,20 @@ print(f"------------------------------------\n")
 with open(f"{cfgDirectory}/config.json", "r") as file:
     cfgData = json.load(file)
     gabctkDirectory = os.path.join(fileDir, cfgData["gabctkDirectory"])
-    outputDirectoryLy = os.path.join(fileDir, cfgData["outputDirectoryLy"])
-    outputDirectoryMidi = os.path.join(fileDir, cfgData["outputDirectoryMidi"])
-    outputDirectoryXml = os.path.join(fileDir, cfgData["outputDirectoryXml"])
+    outputDirectoryLyData = os.path.join(fileDir, cfgData["outputDirectoryLyData"])
+    # # outputDirectoryMidi = os.path.join(fileDir, cfgData["outputDirectoryMidi"])
+    # # outputDirectoryXml = os.path.join(fileDir, cfgData["outputDirectoryXml"])
 
 print(f"------ CONFIGURATION -------")
 print(f"gabctkDirectory: {gabctkDirectory}")
-print(f"outputDirectoryLy: {outputDirectoryLy}")
-print(f"outputDirectoryMidi: {outputDirectoryMidi}")
-print(f"outputDirectoryXml: {outputDirectoryXml}")
+print(f"outputDirectoryLyData: {outputDirectoryLyData}")
+# # print(f"outputDirectoryMidi: {outputDirectoryMidi}")
+# # print(f"outputDirectoryXml: {outputDirectoryXml}")
 print(f"----------------------------\n")
 
-Path(outputDirectoryLy).mkdir(parents=True, exist_ok=True)
-Path(outputDirectoryMidi).mkdir(parents=True, exist_ok=True)
-Path(outputDirectoryXml).mkdir(parents=True, exist_ok=True)
+Path(outputDirectoryLyData).mkdir(parents=True, exist_ok=True)
+# Path(outputDirectoryMidi).mkdir(parents=True, exist_ok=True)
+# Path(outputDirectoryXml).mkdir(parents=True, exist_ok=True)
 
 # ------------
 # DATA FILES
@@ -62,7 +62,7 @@ for gabcDataFile in gabcDataFiles:
     inFilePath = gabcDataFile
     inFileName = os.path.basename(inFilePath)
     outFileName = inFileName.replace(".gabc", "")
-    outFilePath = f"{outputDirectoryLy}/{outFileName}.ly"
+    outFilePath = f"{outputDirectoryLyData}/{outFileName}.ly"
     cmdString = f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
 
     print(f"------ USING GABCTK -------")
