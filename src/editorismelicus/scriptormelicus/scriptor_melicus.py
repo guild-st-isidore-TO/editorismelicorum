@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# The Scholar of Music knows all logical things.
+# The Writer of Music gets all the packaged info ready for publishing.
 
 import sys
 import subprocess

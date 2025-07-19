@@ -1,4 +1,4 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# The Chief Editor of Music gets it done.
+# The Scholar of Music knows all logical things.
