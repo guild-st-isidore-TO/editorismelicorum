@@ -61,10 +61,14 @@ Uses `gabctk` and `pandoc`
 
 The module can be thought of as a publishing house (**Editoris Melicus**) run by several people:
 
-1. **Editoris**, the Editor (in Chief) -- Sets up jobs, sends deliverables
-1. **Lector**, the Reader -- Reads source documents, prepares them for further arrangement
-1. **Scriptor**, the Engraver -- Combines source documents and prepared arrangements, and engraves copies
-1. **Scholasticus**, the Scholar -- Knowledge resource for the rest of the team
+1. **Editoris**, _the Editor (in Chief)_  
+Sets up jobs, sends deliverables
+1. **Lector**, _the Reader_  
+Reads source documents, prepares them for further arrangement
+1. **Scriptor**, _the Engraver_  
+Combines source documents and prepared arrangements, and engraves copies
+1. **Scholasticus**, _the Scholar_  
+Knowledge resource for the rest of the team
 
 The module has been structured to reflect these personas and their division of responsibilities.
 
