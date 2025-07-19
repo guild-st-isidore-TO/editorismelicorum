@@ -12,7 +12,7 @@ from pathlib import Path
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
-docDirectory = os.path.join(fileDir, "../document")
+docDirectory = os.path.join(fileDir, "../../document")
 cfgDirectory = fileDir
 
 outputDirectoryLy = ""
@@ -39,8 +39,7 @@ Path(outputDirectoryPdf).mkdir(parents=True, exist_ok=True)
 # --------------
 # USING LILYPOND
 
-inFilePath = "document/vol-1-hello-world.ly"
-inFileName = os.path.basename(inFilePath)
+inFilePath = f"{docDirectory}/vol-1-hello-world.ly"
 outFilePath = f"{outputDirectoryPdf}"
 cmdString = f"lilypond -o {outFilePath} {inFilePath}"
 

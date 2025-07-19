@@ -13,7 +13,7 @@ from pathlib import Path
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
 dataDirectory = os.path.join(fileDir, "../data")
-cfgDirectory = fileDir
+cfgDirectory = os.path.join(fileDir, "..")
 gabctkScript = "gabctk.py"
 
 gabctkDirectory = ""
@@ -29,8 +29,8 @@ print(f"------------------------------------\n")
 
 with open(f"{cfgDirectory}/config.json", "r") as file:
     cfgData = json.load(file)
-    gabctkDirectory = os.path.join(fileDir, cfgData["gabctkDirectory"])
-    outputDirectoryLyData = os.path.join(fileDir, cfgData["outputDirectoryLyData"])
+    gabctkDirectory = os.path.join(fileDir, f"../{cfgData["gabctkDirectory"]}")
+    outputDirectoryLyData = os.path.join(fileDir, f"../{cfgData["outputDirectoryLyData"]}")
     # # outputDirectoryMidi = os.path.join(fileDir, cfgData["outputDirectoryMidi"])
     # # outputDirectoryXml = os.path.join(fileDir, cfgData["outputDirectoryXml"])
 
