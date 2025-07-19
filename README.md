@@ -1,4 +1,4 @@
-# gabc-ly-tools
+# Editoris Melicus
 
 This project aims to create a digital music typesetting toolkit for use by music ministries in Catholic parishes.
 Its main objectives are building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
@@ -25,7 +25,9 @@ https://github.com/frescobaldi/frescobaldi/wiki
 ## USAGE
 
 1. Be in the root directory of this repo
-1. Run `python3 src/convert-to-ly.py`
+1. Run either:
+    - Preview -- `python3 src/editorismelicus/praedica_min.py`
+    - Build -- `python3 src/editorismelicus/praedica_maj.py`
 
 ## WORKFLOWS
 
@@ -51,7 +53,22 @@ Uses `gabctk` and `pandoc`
     - congregation hymnal -- The hymns, with only the melody line (Gregorian notation)
     - choir hymnal -- The hymns, with melody line, guitar line, and general accompaniment line (all in Standard notation)
 
+## CONTRIBUTING
+
+...
+
 ## DESIGN
+
+The module can be thought of as a publishing house (**Editoris Melicus**) run by several people:
+
+1. **Editoris**, the Editor (in Chief) -- Sets up jobs, sends deliverables
+1. **Lector**, the Reader -- Reads source documents, prepares them for further arrangement
+1. **Scriptor**, the Engraver -- Combines source documents and prepared arrangements, and engraves copies
+1. **Scholasticus**, the Scholar -- Knowledge resource for the rest of the team
+
+The module has been structured to reflect these personas and their division of responsibilities.
+
+### General data flow
 
 Initial sketch of how `gabctk` and `LilyPond` fit together
 
