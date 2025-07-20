@@ -7,53 +7,45 @@ import json
 import os
 from pathlib import Path
 
+from ed_melicus_utils import get_repo_dir, print_frame
+
 # ---------------
 # CONFIGURATION
 
-fileDir = os.path.dirname(os.path.realpath(__file__))
+repo_dir = get_repo_dir()
 
-docDirectory = os.path.join(fileDir, "../../document")
-cfgDirectory = fileDir
+cfg_data = {
+    "doc_dir": os.path.join(repo_dir, "document"),
+    "data_dir": os.path.join(repo_dir, "data"),
+}
 
-outputDirectoryLy = ""
-outputDirectoryPdf = ""
+with open(f"{cfg_data['data_dir']}/configs.json", "r") as file:
+    cfg_json = json.load(file)
+    cfg_data["output_dir_ly"] = os.path.join(
+        repo_dir, cfg_json["paths"]["outputDirectoryLy"]
+    )
+    cfg_data["output_dir_pdf"] = os.path.join(
+        repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
+    )
 
-print(f"\n\n====== BUILDING DOCUMENT (PREVIEW) ======")
-print(f"fileDir: {fileDir}")
-print(f"docDirectory: {docDirectory}")
-print(f"------------------------------------\n")
-
-with open(f"{cfgDirectory}/config.json", "r") as file:
-    cfgData = json.load(file)
-    outputDirectoryLy = os.path.join(fileDir, cfgData["outputDirectoryLy"])
-    outputDirectoryPdf = os.path.join(fileDir, cfgData["outputDirectoryPdf"])
-
-print(f"------ CONFIGURATION -------")
-print(f"outputDirectoryLy: {outputDirectoryLy}")
-print(f"outputDirectoryPdf: {outputDirectoryPdf}")
-print(f"----------------------------\n")
-
-Path(outputDirectoryLy).mkdir(parents=True, exist_ok=True)
-Path(outputDirectoryPdf).mkdir(parents=True, exist_ok=True)
+Path(cfg_data["output_dir_ly"]).mkdir(parents=True, exist_ok=True)
+Path(cfg_data["output_dir_pdf"]).mkdir(parents=True, exist_ok=True)
 
 # --------------
 # USING LILYPOND
 
-inFilePath = f"{docDirectory}/vol-1-hello-world.ly"
-outFilePath = f"{outputDirectoryPdf}"
-cmdString = f"lilypond -l VERBOSE -o {outFilePath} {inFilePath}"
+cfg_data["in_file_path"] = f"{cfg_data['doc_dir']}/vol-1-hello-world.ly"
+cfg_data["out_file_path"] = f"{cfg_data['output_dir_pdf']}"
+cfg_data["cmd_string"] = (
+    f"lilypond -l VERBOSE -o {cfg_data['out_file_path']} {cfg_data['in_file_path']}"
+)
 
 
 def praedica_min():
-
-    print(f"------ USING LILYPOND -------")
-    print(f"inFilePath: {inFilePath}")
-    print(f"outFilePath: {outFilePath}")
-    print(f"cmdString: {cmdString}")
-    print(f"---------------------------\n")
+    print_frame("USING LILYPOND", cfg_data)
 
     try:
-        retcode = subprocess.call(cmdString, shell=True)
+        retcode = subprocess.call(cfg_data["cmd_string"], shell=True)
         if retcode < 0:
             print("Child was terminated by signal", -retcode, file=sys.stderr)
         else:

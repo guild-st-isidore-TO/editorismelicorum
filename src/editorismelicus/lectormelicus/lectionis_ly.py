@@ -7,45 +7,32 @@ import json
 import os
 from pathlib import Path
 
+from ed_melicus_utils import get_repo_dir, print_frame
 
 # ---------------
 # CONFIGURATION
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
-dataDirectory = os.path.join(fileDir, "../../../data")
 gabctkScript = "gabctk.py"
 
-gabctkDirectory = ""
-outputDirectoryLyData = ""
-# outputDirectoryMidi = ""
-# outputDirectoryXml = ""
+repo_dir = get_repo_dir()
 
-print(f"\n\n====== CONVERTING GABC TO LY ======")
-print(f"fileDir: {fileDir}")
-print(f"dataDirectory: {dataDirectory}")
-print(f"gabctkDirectory: {gabctkDirectory}")
-print(f"------------------------------------\n")
+cfg_data = {
+    "doc_dir": os.path.join(repo_dir, "document"),
+    "data_dir": os.path.join(repo_dir, "data"),
+}
 
-with open(f"{dataDirectory}/configs.json", "r") as file:
-    cfgData = json.load(file)
-    gabctkDirectory = os.path.join(fileDir, f"../{cfgData["paths"]["gabctkDirectory"]}")
-    outputDirectoryLyData = os.path.join(
-        fileDir, f"../{cfgData["paths"]["outputDirectoryLyData"]}"
+with open(f"{cfg_data['data_dir']}/configs.json", "r") as file:
+    cfg_json = json.load(file)
+    cfg_data["gabctk_dir"] = os.path.join(
+        repo_dir, cfg_json["paths"]["gabctkDirectory"]
     )
-    # # outputDirectoryMidi = os.path.join(fileDir, cfgData["outputDirectoryMidi"])
-    # # outputDirectoryXml = os.path.join(fileDir, cfgData["outputDirectoryXml"])
+    cfg_data["output_dir_ly_data"] = os.path.join(
+        repo_dir, cfg_json["paths"]["outputDirectoryLyData"]
+    )
 
-print(f"------ CONFIGURATION -------")
-print(f"gabctkDirectory: {gabctkDirectory}")
-print(f"outputDirectoryLyData: {outputDirectoryLyData}")
-# # print(f"outputDirectoryMidi: {outputDirectoryMidi}")
-# # print(f"outputDirectoryXml: {outputDirectoryXml}")
-print(f"----------------------------\n")
-
-Path(outputDirectoryLyData).mkdir(parents=True, exist_ok=True)
-# Path(outputDirectoryMidi).mkdir(parents=True, exist_ok=True)
-# Path(outputDirectoryXml).mkdir(parents=True, exist_ok=True)
+Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
 # ------------
 # DATA FILES
@@ -67,10 +54,8 @@ def lege_tabula_gabc():
         inFilePath = gabcDataFile
         inFileName = os.path.basename(inFilePath)
         outFileName = inFileName.replace(".gabc", "")
-        outFilePath = f"{outputDirectoryLyData}/{outFileName}.ly"
-        cmdString = (
-            f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
-        )
+        outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
+        cmdString = f"{cfg_data["gabctk_dir"]}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
 
         print(f"------ USING GABCTK -------")
         print(f"inFilePath: {inFilePath}")

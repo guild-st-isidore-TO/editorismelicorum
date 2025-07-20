@@ -1,3 +1,13 @@
+import os
+
+file_dir = os.path.dirname(os.path.realpath(__file__))
+repo_dir = os.path.join(file_dir, "../../")
+
+
+def get_repo_dir():
+    return repo_dir
+
+
 def print_char_line(char, num_chars):
     out = ""
     for x in range(num_chars):

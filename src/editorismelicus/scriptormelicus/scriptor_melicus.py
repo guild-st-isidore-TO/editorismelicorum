@@ -17,7 +17,6 @@ from .. import ed_melicus_utils
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
 dataDirectory = os.path.join(fileDir, "../data")
-cfgDirectory = fileDir
 gabctkScript = "gabctk.py"
 
 gabctkDirectory = ""
@@ -29,7 +28,7 @@ cfg_data = {
 }
 ed_melicus_utils.print_frame("PROCESSING CONVERTED LILYPOND FILE", cfg_data)
 
-with open(f"{cfgDirectory}/config.json", "r") as file:
+with open(f"{dataDirectory}/configs.json", "r") as file:
     cfgData = json.load(file)
     gabctkDirectory = os.path.join(fileDir, cfgData["gabctkDirectory"])
     outputDirectoryLy = os.path.join(fileDir, cfgData["outputDirectoryLy"])

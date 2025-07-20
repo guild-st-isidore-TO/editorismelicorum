@@ -29,11 +29,11 @@
         "error": "[Editoris Melicus]:  Huh? We can't help you with that."
     },
     "paths": {
-        "gabctkDirectory": "../../gabctk",
-        "outputDirectoryLyData": "/build/ly-data",
-        "outputDirectoryLy": "/build/ly",
-        "outputDirectoryMidi": "/build/midi",
-        "outputDirectoryPdf": "/build/pdf",
-        "outputDirectoryXml": "/build/xml"
+        "gabctkDirectory": "../gabctk",
+        "outputDirectoryLyData": "build/ly-data",
+        "outputDirectoryLy": "build/ly",
+        "outputDirectoryMidi": "build/midi",
+        "outputDirectoryPdf": "build/pdf",
+        "outputDirectoryXml": "build/xml"
     }
 }
