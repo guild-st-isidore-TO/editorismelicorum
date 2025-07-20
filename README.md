@@ -25,10 +25,7 @@ https://github.com/frescobaldi/frescobaldi/wiki
 ## USAGE
 
 1. Be in the root directory of this repo
-1. Run `python3 src/editorismelicus/lectormelicus/lectionis_ly.py`
-1. Run either:
-    - Preview -- `python3 src/editorismelicus/praedica_min.py`
-    - Build -- `python3 src/editorismelicus/praedica_maj.py`
+1. Run `python3 src/editorismelicus/editoris_melicus.py`
 
 ## WORKFLOWS
 
