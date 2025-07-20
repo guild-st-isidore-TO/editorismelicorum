@@ -7,6 +7,8 @@ import json
 import os
 from pathlib import Path
 
+from .. import ed_melicus_utils
+
 # ---------------
 # CONFIGURATION
 

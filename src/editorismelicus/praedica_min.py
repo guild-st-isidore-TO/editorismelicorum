@@ -41,7 +41,7 @@ Path(outputDirectoryPdf).mkdir(parents=True, exist_ok=True)
 
 inFilePath = f"{docDirectory}/vol-1-hello-world.ly"
 outFilePath = f"{outputDirectoryPdf}"
-cmdString = f"lilypond -o {outFilePath} {inFilePath}"
+cmdString = f"lilypond -l VERBOSE -o {outFilePath} {inFilePath}"
 
 print(f"------ USING LILYPOND -------")
 print(f"inFilePath: {inFilePath}")

@@ -2,3 +2,5 @@
 # -*- coding: utf-8 -*-
 
 # The Scholar of Music knows all logical things.
+
+from .. import ed_melicus_utils

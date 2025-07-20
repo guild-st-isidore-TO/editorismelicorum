@@ -66,8 +66,8 @@ The module can be thought of as a publishing house (**Editoris Melicus**) run by
 Sets up jobs, sends deliverables
 1. **Lector**, _the Reader_  
 Reads source documents, prepares them for further arrangement
-1. **Scriptor**, _the Engraver_  
-Combines source documents and prepared arrangements, and engraves copies
+1. **Scriptor**, _the Writer (Engraver)_  
+Combines source documents and prepared arrangements, and engraves new copies
 1. **Scholasticus**, _the Scholar_  
 Knowledge resource for the rest of the team
 
