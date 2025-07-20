@@ -103,6 +103,8 @@ def read_conv_gabc(conv_ly_filepath):
     ly_script_stack = []
 
     bracket_delim_blocks = [
+        "header_start",
+        "paper_start",
         "score_start",
         "lyrics_start",
         "layout_start",
@@ -115,15 +117,32 @@ def read_conv_gabc(conv_ly_filepath):
     with open(conv_ly_filepath) as f:
         for line in f:
             script_evt_type = analyze_conv_gabc_line(line)
+            print(
+                "EVT: " + script_evt_type
+                if script_evt_type is not None
+                else script_evt_type
+            )
             if script_evt_type is not None:
+                if (
+                    script_evt_type in bracket_delim_blocks
+                    or script_evt_type in dbl_ang_bracket_delim_blocks
+                ):
+                    ly_script_stack.append(script_evt_type)
+                    print("     adding to stack: " + script_evt_type)
                 if (
                     script_evt_type == "end_bracket"
                     and ly_script_stack[-1] in bracket_delim_blocks
                 ):
-                    print("Found end of block")
+                    print(
+                        "     found end of block. Removing from stack: "
+                        + script_evt_type
+                    )
                 elif (
                     script_evt_type == "end_dbl_ang_bracket"
                     and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
                 ):
-                    print("Found end of block")
+                    print(
+                        "     found end of double angle block. Removing from stack: "
+                        + script_evt_type
+                    )
     return 0
