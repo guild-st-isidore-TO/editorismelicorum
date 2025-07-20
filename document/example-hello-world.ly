@@ -52,17 +52,17 @@
 
   \bookpart {
     \header { subtitle = "01" }
-    \include "../build/ly-data/gregobase-01-regina-caeli.ly"
+    \include "../build/ly-data/01-regina-caeli.ly"
   }
 
   \bookpart {
     \header { subtitle = "02" }
-    \include "../build/ly-data/gregobase-02-tantum-ergo.ly"
+    \include "../build/ly-data/02-tantum-ergo.ly"
   }
 
   \bookpart {
     \header { subtitle = "03" }
-    \include "../build/ly-data/gregobase-03-ave-maria.ly"
+    \include "../build/ly-data/03-ave-maria.ly"
   }
 
 }

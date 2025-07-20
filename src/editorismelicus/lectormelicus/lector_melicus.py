@@ -18,14 +18,16 @@ cfg_data = get_cfg_data()
 
 Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
+
 # ------------
 # DATA FILES
 
-gabc_data_files = [
-    "data/gregobase-01-regina-caeli.gabc",
-    "data/gregobase-02-tantum-ergo.gabc",
-    "data/gregobase-03-ave-maria.gabc",
-]
+
+def convert_cfg_path(cfg_path):
+    return os.path.join(cfg_data["data_dir"], cfg_path)
+
+
+gabc_data_files = map(convert_cfg_path, cfg_data["gabc_files"])
 
 
 def lege_tabula_gabc():

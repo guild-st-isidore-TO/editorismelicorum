@@ -20,7 +20,7 @@ Path(cfg_data["output_dir_pdf"]).mkdir(parents=True, exist_ok=True)
 # --------------
 # USING LILYPOND
 
-cfg_data["in_file_path"] = f"{cfg_data['doc_dir']}/vol-1-hello-world.ly"
+cfg_data["in_file_path"] = f"{cfg_data['doc_dir']}/example-hello-world.ly"
 cfg_data["out_file_path"] = f"{cfg_data['output_dir_pdf']}"
 cfg_data["cmd_string"] = (
     f"lilypond -l VERBOSE -o {cfg_data['out_file_path']} {cfg_data['in_file_path']}"

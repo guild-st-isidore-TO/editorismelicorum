@@ -27,6 +27,10 @@ def get_cfg_data():
             repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
         )
 
+    with open(f"{cfg_data['data_dir']}/input-configs.json", "r") as file:
+        input_cfg_json = json.load(file)
+        cfg_data["gabc_files"] = input_cfg_json["gabcFiles"]
+
     return cfg_data
 
 
