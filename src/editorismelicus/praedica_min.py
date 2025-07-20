@@ -3,33 +3,19 @@
 
 import sys
 import subprocess
-import json
-import os
 from pathlib import Path
 
-from ed_melicus_utils import get_repo_dir, print_frame
+from ed_melicus_utils import print_frame, get_cfg_data
+
 
 # ---------------
 # CONFIGURATION
 
-repo_dir = get_repo_dir()
-
-cfg_data = {
-    "doc_dir": os.path.join(repo_dir, "document"),
-    "data_dir": os.path.join(repo_dir, "data"),
-}
-
-with open(f"{cfg_data['data_dir']}/configs.json", "r") as file:
-    cfg_json = json.load(file)
-    cfg_data["output_dir_ly"] = os.path.join(
-        repo_dir, cfg_json["paths"]["outputDirectoryLy"]
-    )
-    cfg_data["output_dir_pdf"] = os.path.join(
-        repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
-    )
+cfg_data = get_cfg_data()
 
 Path(cfg_data["output_dir_ly"]).mkdir(parents=True, exist_ok=True)
 Path(cfg_data["output_dir_pdf"]).mkdir(parents=True, exist_ok=True)
+
 
 # --------------
 # USING LILYPOND

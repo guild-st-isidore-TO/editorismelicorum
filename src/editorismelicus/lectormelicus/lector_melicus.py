@@ -3,13 +3,51 @@
 
 # The Reader of Music is in charge of re-copying music from outside.
 
-# import sys
-# import subprocess
-# import json
-# import os
-# from pathlib import Path
+import sys
+import subprocess
+import os
+from pathlib import Path
 
-from .. import ed_melicus_utils
+from ed_melicus_utils import print_frame, get_cfg_data
+
+# ---------------
+# CONFIGURATION
+
+fileDir = os.path.dirname(os.path.realpath(__file__))
+cfg_data = get_cfg_data()
+
+Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
+
+# ------------
+# DATA FILES
+
+gabc_data_files = [
+    "data/01_an--regina_caeli--simplex.gabc",
+    "data/02_hy--tantum_ergo--vatican.gabc",
+    "data/03_of--ave_maria--simplex.gabc",
+]
+
+
+def lege_tabula_gabc():
+    """Reads a GABC file, and..."""
+    for gabcDataFile in gabc_data_files:
+
+        inFilePath = gabcDataFile
+        inFileName = os.path.basename(inFilePath)
+        outFileName = inFileName.replace(".gabc", "")
+        outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath} -l {outFilePath} -v"
+
+        print_frame("USING GABCTK", cfg_data)
+
+        try:
+            retcode = subprocess.call(cmdString, shell=True)
+            if retcode < 0:
+                print("Child was terminated by signal", -retcode, file=sys.stderr)
+            else:
+                print("Child returned", retcode, file=sys.stderr)
+        except OSError as e:
+            print("Execution failed:", e, file=sys.stderr)
 
 
 def mark_conv_gabc_line(conv_ly_line, action, data):

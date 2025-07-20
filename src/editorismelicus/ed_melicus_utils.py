@@ -1,7 +1,31 @@
 import os
+import json
 
 file_dir = os.path.dirname(os.path.realpath(__file__))
 repo_dir = os.path.join(file_dir, "../../")
+
+
+def get_cfg_data():
+    cfg_data = {
+        "gabctk_script_fname": "gabctk.py",
+        "doc_dir": os.path.join(repo_dir, "document"),
+        "data_dir": os.path.join(repo_dir, "data"),
+    }
+
+    with open(f"{cfg_data['data_dir']}/configs.json", "r") as file:
+        cfg_json = json.load(file)
+        cfg_data["gabctk_dir"] = os.path.join(
+            repo_dir, cfg_json["paths"]["gabctkDirectory"]
+        )
+        cfg_data["output_dir_ly_data"] = os.path.join(
+            repo_dir, cfg_json["paths"]["outputDirectoryLyData"]
+        )
+        cfg_data["output_dir_ly"] = os.path.join(
+            repo_dir, cfg_json["paths"]["outputDirectoryLy"]
+        )
+        cfg_data["output_dir_pdf"] = os.path.join(
+            repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
+        )
 
 
 def get_repo_dir():

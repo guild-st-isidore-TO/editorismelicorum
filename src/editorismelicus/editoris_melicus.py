@@ -6,7 +6,7 @@
 import sys, os, time, json, logging
 
 from praedica_min import praedica_min
-from lectormelicus.lectionis_ly import lege_tabula_gabc
+from lectormelicus.lector_melicus import lege_tabula_gabc
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
