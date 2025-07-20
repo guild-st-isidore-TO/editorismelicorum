@@ -19,18 +19,7 @@ cfg_data = get_cfg_data()
 Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
 
-# ------------
-# DATA FILES
-
-
-def convert_cfg_path(cfg_path):
-    return os.path.join(cfg_data["data_dir"], cfg_path)
-
-
-gabc_data_files = map(convert_cfg_path, cfg_data["gabc_files"])
-
-
-def lege_tabula_gabc():
+def lege_tabulae_gabc(gabc_data_files):
     """Reads a GABC file, and..."""
     for gabcDataFile in gabc_data_files:
 
@@ -40,6 +29,8 @@ def lege_tabula_gabc():
         outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
         cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath} -l {outFilePath} -v"
 
+        print(gabc_data_files)
+        print(cmdString)
         print_frame("USING GABCTK", cfg_data)
 
         try:

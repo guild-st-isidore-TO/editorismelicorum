@@ -29,7 +29,7 @@ def get_cfg_data():
 
     with open(f"{cfg_data['data_dir']}/input-configs.json", "r") as file:
         input_cfg_json = json.load(file)
-        cfg_data["gabc_files"] = input_cfg_json["gabcFiles"]
+        cfg_data["documents"] = input_cfg_json["documents"]
 
     return cfg_data
 
@@ -52,7 +52,7 @@ def print_frame(str, data_dict):
 
     spacing = 2
     dash_margin = 6
-    totwidth = len(str) + spacing + dash_margin
+    totwidth = (spacing + dash_margin) * 2 + len(str)
 
     heading_dash_unit = print_char_line(char_div1, dash_margin)
     footer_line = print_char_line(char_div2, totwidth)

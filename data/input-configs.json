@@ -1,7 +1,15 @@
 {
-    "gabcFiles": [
-        "examples/01-regina-caeli.gabc",
-        "examples/02-tantum-ergo.gabc",
-        "examples/03-ave-maria.gabc"
+    "documents": [
+        {
+            "name": "Editoris Melicus Example",
+            "id": "2813308004",
+            "author": "rjsalvadorr",
+            "mainDocument": "example-hello-world.ly",
+            "gabcFiles": [
+                "examples/01-regina-caeli.gabc",
+                "examples/02-tantum-ergo.gabc",
+                "examples/03-ave-maria.gabc"
+            ]
+        }
     ]
 }

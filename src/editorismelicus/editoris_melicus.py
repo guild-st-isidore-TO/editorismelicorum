@@ -6,7 +6,8 @@
 import sys, os, time, json, logging
 
 from praedica_min import praedica_min
-from lectormelicus.lector_melicus import lege_tabula_gabc
+from lectormelicus.lector_melicus import lege_tabulae_gabc
+from ed_melicus_utils import get_cfg_data
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -123,11 +124,20 @@ time.sleep(0.75)
 print(get_dialog_string("performingAction2", [opmode_name]))
 time.sleep(1.5)
 
+cfg_data = get_cfg_data()
+
+def convert_input_cfg_paths(cfg_path):
+    return os.path.join(cfg_data["data_dir"], cfg_path)
+
+input_documents = cfg_data["documents"]
+
 if input_operation_mode == 1:
     print("NOTE: Arranging not available!")
 elif input_operation_mode == 2:
-    lege_tabula_gabc()
-    praedica_min()
+    for in_doc in input_documents:
+        gabc_docs = map(convert_input_cfg_paths, in_doc["gabcFiles"])
+        lege_tabulae_gabc(gabc_docs)
+        praedica_min(in_doc["mainDocument"])
 elif input_operation_mode == 3:
     print("NOTE: Publishing not available!")
 else:
