@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# The Engraver of Music gets all the packaged info ready for publishing.
+# The Engraver of Music gets all the packaged info written out and ready for publishing.
 
 import sys
 import subprocess
