@@ -27,6 +27,8 @@ def get_cfg_data():
             repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
         )
 
+    return cfg_data
+
 
 def get_repo_dir():
     return repo_dir
