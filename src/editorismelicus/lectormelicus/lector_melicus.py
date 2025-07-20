@@ -22,9 +22,9 @@ Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 # DATA FILES
 
 gabc_data_files = [
-    "data/01_an--regina_caeli--simplex.gabc",
-    "data/02_hy--tantum_ergo--vatican.gabc",
-    "data/03_of--ave_maria--simplex.gabc",
+    "data/gregobase-01-regina-caeli.gabc",
+    "data/gregobase-02-tantum-ergo.gabc",
+    "data/gregobase-03-ave-maria.gabc",
 ]
 
 
