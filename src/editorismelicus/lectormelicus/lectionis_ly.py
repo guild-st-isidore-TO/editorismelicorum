@@ -7,15 +7,13 @@ import json
 import os
 from pathlib import Path
 
-from .. import ed_melicus_utils
 
 # ---------------
 # CONFIGURATION
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
-dataDirectory = os.path.join(fileDir, "../data")
-cfgDirectory = os.path.join(fileDir, "..")
+dataDirectory = os.path.join(fileDir, "../../../data")
 gabctkScript = "gabctk.py"
 
 gabctkDirectory = ""
@@ -29,10 +27,12 @@ print(f"dataDirectory: {dataDirectory}")
 print(f"gabctkDirectory: {gabctkDirectory}")
 print(f"------------------------------------\n")
 
-with open(f"{cfgDirectory}/config.json", "r") as file:
+with open(f"{dataDirectory}/configs.json", "r") as file:
     cfgData = json.load(file)
-    gabctkDirectory = os.path.join(fileDir, f"../{cfgData["gabctkDirectory"]}")
-    outputDirectoryLyData = os.path.join(fileDir, f"../{cfgData["outputDirectoryLyData"]}")
+    gabctkDirectory = os.path.join(fileDir, f"../{cfgData["paths"]["gabctkDirectory"]}")
+    outputDirectoryLyData = os.path.join(
+        fileDir, f"../{cfgData["paths"]["outputDirectoryLyData"]}"
+    )
     # # outputDirectoryMidi = os.path.join(fileDir, cfgData["outputDirectoryMidi"])
     # # outputDirectoryXml = os.path.join(fileDir, cfgData["outputDirectoryXml"])
 
@@ -56,28 +56,33 @@ gabcDataFiles = [
     "data/03_of--ave_maria--simplex.gabc",
 ]
 
-# --------------
-# USING GABCTK
 
-for gabcDataFile in gabcDataFiles:
+def lege_tabula_gabc():
 
-    inFilePath = gabcDataFile
-    inFileName = os.path.basename(inFilePath)
-    outFileName = inFileName.replace(".gabc", "")
-    outFilePath = f"{outputDirectoryLyData}/{outFileName}.ly"
-    cmdString = f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
+    # --------------
+    # USING GABCTK
 
-    print(f"------ USING GABCTK -------")
-    print(f"inFilePath: {inFilePath}")
-    print(f"outFilePath: {outFilePath}")
-    print(f"cmdString: {cmdString}")
-    print(f"---------------------------\n")
+    for gabcDataFile in gabcDataFiles:
 
-    try:
-        retcode = subprocess.call(cmdString, shell=True)
-        if retcode < 0:
-            print("Child was terminated by signal", -retcode, file=sys.stderr)
-        else:
-            print("Child returned", retcode, file=sys.stderr)
-    except OSError as e:
-        print("Execution failed:", e, file=sys.stderr)
+        inFilePath = gabcDataFile
+        inFileName = os.path.basename(inFilePath)
+        outFileName = inFileName.replace(".gabc", "")
+        outFilePath = f"{outputDirectoryLyData}/{outFileName}.ly"
+        cmdString = (
+            f"{gabctkDirectory}/{gabctkScript} -i {inFilePath} -l {outFilePath} -v"
+        )
+
+        print(f"------ USING GABCTK -------")
+        print(f"inFilePath: {inFilePath}")
+        print(f"outFilePath: {outFilePath}")
+        print(f"cmdString: {cmdString}")
+        print(f"---------------------------\n")
+
+        try:
+            retcode = subprocess.call(cmdString, shell=True)
+            if retcode < 0:
+                print("Child was terminated by signal", -retcode, file=sys.stderr)
+            else:
+                print("Child returned", retcode, file=sys.stderr)
+        except OSError as e:
+            print("Execution failed:", e, file=sys.stderr)

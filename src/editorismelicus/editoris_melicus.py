@@ -5,6 +5,9 @@
 
 import sys, os, time, json, logging
 
+from praedica_min import praedica_min
+from lectormelicus.lectionis_ly import lege_tabula_gabc
+
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(current_dir, "../../data", "configs.json")) as f:
@@ -121,14 +124,11 @@ print(get_dialog_string("performingAction2", [opmode_name]))
 time.sleep(1.5)
 
 if input_operation_mode == 1:
-    print("yerrrr 1")
+    print("NOTE: Arranging not available!")
 elif input_operation_mode == 2:
-    print("yerrrr 2")
+    lege_tabula_gabc()
+    praedica_min()
 elif input_operation_mode == 3:
-    print("yerrrr 3")
-elif input_operation_mode == 4:
-    print("yerrrr 4")
-elif input_operation_mode == 5:
-    print("yerrrr 5")
+    print("NOTE: Publishing not available!")
 else:
     print(get_dialog_string("error"))

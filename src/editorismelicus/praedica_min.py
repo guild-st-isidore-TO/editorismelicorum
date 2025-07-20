@@ -43,17 +43,20 @@ inFilePath = f"{docDirectory}/vol-1-hello-world.ly"
 outFilePath = f"{outputDirectoryPdf}"
 cmdString = f"lilypond -l VERBOSE -o {outFilePath} {inFilePath}"
 
-print(f"------ USING LILYPOND -------")
-print(f"inFilePath: {inFilePath}")
-print(f"outFilePath: {outFilePath}")
-print(f"cmdString: {cmdString}")
-print(f"---------------------------\n")
 
-try:
-    retcode = subprocess.call(cmdString, shell=True)
-    if retcode < 0:
-        print("Child was terminated by signal", -retcode, file=sys.stderr)
-    else:
-        print("Child returned", retcode, file=sys.stderr)
-except OSError as e:
-    print("Execution failed:", e, file=sys.stderr)
+def praedica_min():
+
+    print(f"------ USING LILYPOND -------")
+    print(f"inFilePath: {inFilePath}")
+    print(f"outFilePath: {outFilePath}")
+    print(f"cmdString: {cmdString}")
+    print(f"---------------------------\n")
+
+    try:
+        retcode = subprocess.call(cmdString, shell=True)
+        if retcode < 0:
+            print("Child was terminated by signal", -retcode, file=sys.stderr)
+        else:
+            print("Child returned", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
