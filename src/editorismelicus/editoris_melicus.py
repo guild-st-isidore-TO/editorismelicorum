@@ -3,57 +3,75 @@
 
 # The Chief Editor of Music runs the show.
 
-import sys, os, time, json
-from . import ed_melicus_utils
-
+import sys, os, time, json, logging
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(current_dir, "../data/dialog.json")) as f:
-    dialog_data = json.load(f)
-with open(os.path.join(current_dir, "../data/op-modes.json")) as f:
-    opmode_data = json.load(f)
+with open(os.path.join(current_dir, "../../data", "configs.json")) as f:
+    configs_data = json.load(f)
 
 
 def get_opmode_by_id(input_id):
-    for o_mode in opmode_data["opModes"]:
+    for o_mode in configs_data["opModes"]:
         if o_mode["id"] == input_id:
             return o_mode
     return None
 
 
 def get_dialog_string(dialog_key, variables=None):
-    raw_string = dialog_data[dialog_key]
+    raw_string = configs_data["dialog"][dialog_key]
     if (variables is not None) or variables:
         return raw_string.format(variables[0])
     return raw_string
 
 
-def print_text(textinput, large=False, show_top=True, show_bottom=True):
+def print_frame(
+    textinput,
+    large=False,
+    light=False,
+    extra_space=False,
+    show_top=True,
+    show_bottom=True,
+):
+    formatted_input = textinput
+    if extra_space:
+        formatted_input = "///\n" + textinput + "///\n"
+
     if show_top:
         print("///============================================================")
     if large:
         print("///")
-    print(textinput)
+    print(formatted_input)
     if large:
         print("///")
     if show_bottom:
-        print("///------------------------------------------------------------")
+        if light:
+            print("///····························································")
+        else:
+            print("///------------------------------------------------------------")
 
 
 def print_intro():
+    main_frame_txt = "///   E D I T O R I S      M E L I C U S\n"
+    main_frame_txt = (
+        main_frame_txt
+        + f"///\n///------------------------------------------------------------\n"
+    )
+    main_frame_txt = main_frame_txt + "///\n///   FABRICA SALVADORIS -- MMXXV\n"
+    main_frame_txt = main_frame_txt + "///   Salvador Workshop -- 2025\n"
+    main_frame_txt = main_frame_txt + f'///\n///   v{configs_data["version"]}'
     print()
-    print_text(f'///   PicSmith\n///   v{opmode_data["version"]}', large=True)
+    print_frame(main_frame_txt, large=True)
     print()
-    print_text("///   OPERATION MODES")
+    print_frame("///   S E R V I C E S      M E N U", large=True)
     print("///")
-    for o_mode in opmode_data["opModes"]:
-        o_mode_text = f'///   {o_mode["id"]} -- {o_mode["name"]}\n'
+    for o_mode in configs_data["opModes"]:
+        o_mode_text = f'///   < {o_mode["id"]} >  {o_mode["name"]}\n'
         o_mode_text += (
-            f"///-------------------------------------------------------------\n"
+            f"///····························································\n"
         )
-        o_mode_text += f'///   {o_mode["desc"]}\n///'
-        print_text(o_mode_text, show_top=False, show_bottom=False)
+        o_mode_text += f'///   {o_mode["desc"]}\n///\n///'
+        print_frame(o_mode_text, show_top=False, show_bottom=False)
     print()
 
 
@@ -88,7 +106,10 @@ try:
             sys.exit()
 
 except (TypeError, ValueError):
-    # integer casting probably failed
+    logging.exception("TypeError / ValueError -- Integer casting probably failed")
+    input_operation_mode = None
+except BaseException:
+    logging.exception("An exception was thrown!")
     input_operation_mode = None
 
 # TODO -- set up "requirements.txt"

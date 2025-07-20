@@ -1,0 +1,33 @@
+{
+    "version": "0.0.2",
+    "opModes": [
+        {
+            "id": 1,
+            "name": "ARRANGE / COMPOSE",
+            "desc": "Create sheets for writing out hymn arrangements/cadenze",
+            "nameConfirmation": "create arrangement and composition sheets"
+        },
+        {
+            "id": 2,
+            "name": "PUBLISH MELODY ARRANGEMENTS",
+            "desc": "Create songbooks with given arrangements (in .ly files)",
+            "nameConfirmation": "publish this music with your accomp. arrangements"
+        }
+    ],
+    "dialog": {
+        "intro": "[Editoris Melicus]:  What can we help you with? (enter number)\n  >>> ",
+        "actionConfirmation": "[Editoris Melicus]: So you'd like us to {}? (y/n)\nWe'll use the settings defined in \"/data/configs.json\".\n  >>> ",
+        "exit": "[Editoris Melicus]:  Ok, nevermind.",
+        "performingAction1": "[Editoris Melicus]: Order accepted...",
+        "performingAction2": "[Editoris Melicus]: Now preparing to {}...\n",
+        "error": "[Editoris Melicus]:  Huh? We can't help you with that."
+    },
+    "paths": {
+        "gabctkDirectory": "../../gabctk",
+        "outputDirectoryLyData": "/build/ly-data",
+        "outputDirectoryLy": "/build/ly",
+        "outputDirectoryMidi": "/build/midi",
+        "outputDirectoryPdf": "/build/pdf",
+        "outputDirectoryXml": "/build/xml"
+    }
+}

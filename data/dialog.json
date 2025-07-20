@@ -1,8 +1,0 @@
-{
-    "intro": "PicSmith:  What can I help you with? (enter number)\n  >>> ",
-    "actionConfirmation": "PicSmith: So you'd like me to {}? (y/n)\n[NOTE: this uses the settings in config.json]\n  >>> ",
-    "exit": "PicSmith:  Nevermind, then.",
-    "performingAction1": "PicSmith: Order accepted...",
-    "performingAction2": "PicSmith: Now preparing to {}...\n",
-    "error": "PicSmith:  Huh? I can't help you with that."
-}
