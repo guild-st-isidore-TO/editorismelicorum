@@ -7,6 +7,7 @@ import sys, os, time, json, logging
 
 from praedica_min import praedica_min
 from lectormelicus.lector_melicus import lege_tabulae_gabc, copy_conv_gabc_vars
+from scriptormelicus.scriptor_melicus import write_song_ly
 from ed_melicus_utils import get_cfg_data
 
 # /////   Loading internal configuration
@@ -56,7 +57,7 @@ def print_frame(
 
 
 def print_intro():
-    main_frame_txt = "///   E D I T O R I S      M E L I C U S\n"
+    main_frame_txt = "///   E D I T O R I S      M E L I C O R U M\n"
     main_frame_txt = (
         main_frame_txt
         + f"///\n///------------------------------------------------------------\n"
@@ -137,28 +138,31 @@ def to_conv_ly_paths(cfg_path):
     return os.path.join(cfg_data["output_dir_ly_data"], cleaned_path)
 
 
-# def to_out_ly_filepath(cfg_path):
-#     cleaned_path = cfg_path.replace("examples/", "")
-#     cleaned_path = cleaned_path.replace(".gabc", ".ly")
-#     return os.path.join(cfg_data["output_ly_data"], cleaned_path)
-
-
 input_documents = cfg_data["documents"]
 
 if input_operation_mode == 1:
     print("NOTE: Arranging not available!")
+
 elif input_operation_mode == 2:
     for in_doc in input_documents:
         gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
+        var_filepath = 0
+        template_filepath = 0
+        doc_data = 0
 
         lege_tabulae_gabc(gabc_docs)
+
         for conv_gabc_doc in conv_gabc_docs:
-            # out_ly_path = conv_gabc_doc.replace("ly-data", "ly")
             out_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
             copy_conv_gabc_vars(conv_gabc_doc, out_ly_path)
+
+        write_song_ly(var_filepath, template_filepath, doc_data)
+
         praedica_min(in_doc["mainDocument"])
+
 elif input_operation_mode == 3:
     print("NOTE: Publishing not available!")
+
 else:
     print(get_dialog_string("error"))

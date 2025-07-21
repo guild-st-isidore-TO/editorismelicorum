@@ -21,12 +21,12 @@
         }
     ],
     "dialog": {
-        "intro": "[Editoris Melicus]:  What can we help you with? (enter number)\n  >>> ",
-        "actionConfirmation": "[Editoris Melicus]:  So you'd like us to {}? (y/n)\n                     We'll use settings from \"/data/configs.json\".\n  >>> ",
-        "exit": "[Editoris Melicus]:  Ok, nevermind.",
-        "performingAction1": "[Editoris Melicus]:  Order accepted...",
-        "performingAction2": "[Editoris Melicus]:  Now preparing to {}...\n",
-        "error": "[Editoris Melicus]:  Huh? We can't help you with that."
+        "intro": "[Editor Melicus]:  What can we help you with? (enter number)\n[You]:  ",
+        "actionConfirmation": "[Editor Melicus]:  So you'd like us to {}? (y/n)\n                     We'll use settings from \"/data/configs.json\".\n[You]:  ",
+        "exit": "[Editor Melicus]:  Ok, nevermind.",
+        "performingAction1": "[Editor Melicus]:  Order accepted...",
+        "performingAction2": "[Editor Melicus]:  Now preparing to {}...\n",
+        "error": "[Editor Melicus]:  Huh? We can't help you with that."
     },
     "paths": {
         "gabctkDirectory": "../gabctk",

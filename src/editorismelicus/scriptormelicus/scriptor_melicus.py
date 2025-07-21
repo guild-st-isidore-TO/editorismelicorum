@@ -8,9 +8,7 @@ from pathlib import Path
 
 from ed_melicus_utils import print_frame, get_cfg_data
 
-# ---------------
-# CONFIGURATION
 
-file_dir = os.path.dirname(os.path.realpath(__file__))
-cfg_data = get_cfg_data()
-print_frame("WIP - SCRIPTOR MELICUS", cfg_data)
+def write_song_ly(var_filepath, template_filepath, doc_data):
+    print("yerrr")
+    return 0

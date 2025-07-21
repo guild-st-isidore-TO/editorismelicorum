@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# The Reader of Music is in charge of re-copying music from outside.
+# The Reader of Music is in charge of copying and editing music from outside the shop.
 
 import sys
 import subprocess
@@ -29,8 +29,6 @@ def lege_tabulae_gabc(gabc_data_files):
         outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
         cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath} -l {outFilePath} -v"
 
-        print(gabc_data_files)
-        print(cmdString)
         print_frame("USING GABCTK", cfg_data)
 
         try:
@@ -127,18 +125,18 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
             for ly_line in f:
                 script_evt_type = analyze_conv_gabc_line(ly_line)
                 is_valid_copy = False
-                print(
-                    "- event: "
-                    + str(script_evt_type)
-                    + "\n         stack: "
-                    + str(ly_script_stack)
-                )
+                # print(
+                #     "- event: "
+                #     + str(script_evt_type)
+                #     + "\n         stack: "
+                #     + str(ly_script_stack)
+                # )
                 if script_evt_type is not None:
                     if (
                         script_evt_type in bracket_delim_blocks
                         or script_evt_type in dbl_ang_bracket_delim_blocks
                     ):
-                        print("         adding to stack: " + script_evt_type)
+                        # print("         adding to stack: " + script_evt_type)
                         ly_script_stack.append(script_evt_type)
 
                     if (
@@ -151,19 +149,19 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
                         script_evt_type == "end_bracket"
                         and ly_script_stack[-1] in bracket_delim_blocks
                     ):
-                        print(
-                            "         found end of block. Removing from stack: "
-                            + ly_script_stack[-1]
-                        )
+                        # print(
+                        #     "         found end of block. Removing from stack: "
+                        #     + ly_script_stack[-1]
+                        # )
                         ly_script_stack.remove(ly_script_stack[-1])
                     elif (
                         script_evt_type == "end_dbl_ang_bracket"
                         and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
                     ):
-                        print(
-                            "         found end of double angle block. Removing from stack: "
-                            + ly_script_stack[-1]
-                        )
+                        # print(
+                        #     "         found end of double angle block. Removing from stack: "
+                        #     + ly_script_stack[-1]
+                        # )
                         ly_script_stack.remove(ly_script_stack[-1])
 
                     if is_valid_copy:
