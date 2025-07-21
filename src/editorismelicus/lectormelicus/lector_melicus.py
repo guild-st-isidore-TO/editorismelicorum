@@ -105,7 +105,7 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
     conv_filename = os.path.basename(conv_ly_filepath).replace(".ly", "")
     conv_filename = conv_filename.replace("-", " ")
     conv_filename = conv_filename.title().replace(" ", "")
-    theme_name = f"Theme{conv_filename}"
+    music_name = f"Music{conv_filename}"
     lyrics_name = f"Lyrics{conv_filename}"
 
     bracket_delim_blocks = [
@@ -169,7 +169,7 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
                     if is_valid_copy:
                         valid_line = ly_line
                         if "MusiqueTheme =" in valid_line:
-                            valid_line = valid_line.replace("MusiqueTheme", theme_name)
+                            valid_line = valid_line.replace("MusiqueTheme", music_name)
                         if "Paroles =" in valid_line:
                             wr.write("\n")
                             valid_line = valid_line.replace("Paroles", lyrics_name)
