@@ -183,7 +183,7 @@ elif input_operation_mode == 2:
                 "Subtitle": gabc_file_meta[meta_key]["office-part"],
                 "Instrument": f"Mode {gabc_file_meta[meta_key]["mode"]}",
                 "Composer": gabc_file_meta[meta_key]["book"],
-                "Arranger": gabc_file_meta[meta_key]["transcriber"],
+                "Arranger": f"transcr. {gabc_file_meta[meta_key]["transcriber"]}",
                 "Music": f"Music{filename_slug}",
                 "Lyrics": f"Lyrics{filename_slug}",
                 "LyricsLink": f"vox{filename_slug}".lower(),

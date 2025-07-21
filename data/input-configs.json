@@ -4,7 +4,7 @@
             "name": "Editoris Melicorum Example",
             "id": "ed_meli_example",
             "author": "rjsalvadorr",
-            "mainDocument": "example-hello-world.ly",
+            "mainDocument": "edi_melicorum_example.ly",
             "gabcFiles": [
                 "examples/01-regina-caeli.gabc",
                 "examples/02-tantum-ergo.gabc",
