@@ -21,19 +21,19 @@ template_replace_map = {
 
 
 def write_song_ly(song_filepath, var_filepath, template_filepath, doc_data):
-    print("yerrr")
-
     # 1. read in var file, copy to song
     with open(var_filepath) as f:
         with open(song_filepath, "w") as wr:
             for ly_line in f:
                 wr.write(ly_line)
+            wr.write("\n")
 
-    # 2. read in template file
+    # 2. read in template file, replace values in template, copy to song
     with open(template_filepath) as tf:
-        for t_line in f:
-            template_line = t_line
-
-    # 3. read document data, replace values in template, copy to song
-
+        with open(song_filepath, "a") as twr:
+            for t_line in tf:
+                template_line = t_line
+                for key, value in template_replace_map.items():
+                    template_line = template_line.replace(key, doc_data[value])
+                twr.write(template_line)
     return 0
