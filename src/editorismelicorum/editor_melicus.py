@@ -150,25 +150,49 @@ elif input_operation_mode == 2:
         template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "new-song-template.ly"
         )
-        doc_data = {
-            "Title": "Test Title",
-            "Subtitle": "Test Subtitle",
-            "Instrument": "Test Instrument",
-            "Composer": "Test Composer",
-            "Arranger": "Test Arranger",
-            "Music": "Test Music",
-            "LyricsLink": "Test LyricsLink",
-            "Lyrics": "Test Lyrics",
-        }
 
         lege_tabulae_gabc(gabc_docs)
 
+        # Reading Metadata
+        meta_props = [
+            "name",
+            "office",
+            "mode",
+            "book",
+            "transcriber",
+        ]
+        for gabc_data_file in gabc_docs:
+            with open(gabc_data_file) as gdf:
+                for gabc_line in gdf:
+                    for m_prop in meta_props:
+                        if m_prop in gabc_line:
+                            meta_pair = gabc_line.split(":")
+                            # what do now???
+
+        # Copying LY vars, writing song part
         for conv_gabc_doc in conv_gabc_docs:
             var_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
             song_ly_path = conv_gabc_doc.replace("ly-data", "ly")
-            copy_conv_gabc_vars(conv_gabc_doc, var_ly_path)
-            write_song_ly(song_ly_path, var_ly_path, template_filepath, doc_data)
+            filename_slug = os.path.basename(conv_gabc_doc).replace(".ly", "")
+            filename_slug = filename_slug.replace("-", " ")
+            filename_slug = filename_slug.title().replace(" ", "")
+            doc_data = {
+                "Title": "Test Title",
+                "Subtitle": "Test Subtitle",
+                "Instrument": "Test Instrument",
+                "Composer": "Test Composer",
+                "Arranger": "Test Arranger",
+                "Music": f"Music{filename_slug}",
+                "Lyrics": f"Lyrics{filename_slug}",
+                "LyricsLink": f"Lyrics{filename_slug}".lower(),
+            }
 
+            copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
+            write_song_ly(
+                filename_slug, song_ly_path, var_ly_path, template_filepath, doc_data
+            )
+
+        # Preview publish
         praedica_min(in_doc["mainDocument"])
 
 elif input_operation_mode == 3:

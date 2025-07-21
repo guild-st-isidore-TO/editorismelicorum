@@ -20,14 +20,13 @@ Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
 
 def lege_tabulae_gabc(gabc_data_files):
-    """Reads a GABC file, and..."""
+    """Converts GABC files to LY"""
     for gabcDataFile in gabc_data_files:
 
-        inFilePath = gabcDataFile
-        inFileName = os.path.basename(inFilePath)
+        inFileName = os.path.basename(gabcDataFile)
         outFileName = inFileName.replace(".gabc", "")
         outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
-        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath} -l {outFilePath} -v"
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabcDataFile} -l {outFilePath} -v"
 
         print_frame("USING GABCTK", cfg_data)
 
@@ -97,14 +96,11 @@ def analyze_conv_gabc_line(conv_ly_line):
         return None
 
 
-def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
+def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
     """Reads and copies a file of converted LY code (from gabctk)"""
     ly_script_stack = []
-    conv_filename = os.path.basename(conv_ly_filepath).replace(".ly", "")
-    conv_filename = conv_filename.replace("-", " ")
-    conv_filename = conv_filename.title().replace(" ", "")
-    music_name = f"Music{conv_filename}"
-    lyrics_name = f"Lyrics{conv_filename}"
+    music_name = f"Music{fname_slug}"
+    lyrics_name = f"Lyrics{fname_slug}"
 
     bracket_delim_blocks = [
         "header",
@@ -125,18 +121,11 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
             for ly_line in f:
                 script_evt_type = analyze_conv_gabc_line(ly_line)
                 is_valid_copy = False
-                # print(
-                #     "- event: "
-                #     + str(script_evt_type)
-                #     + "\n         stack: "
-                #     + str(ly_script_stack)
-                # )
                 if script_evt_type is not None:
                     if (
                         script_evt_type in bracket_delim_blocks
                         or script_evt_type in dbl_ang_bracket_delim_blocks
                     ):
-                        # print("         adding to stack: " + script_evt_type)
                         ly_script_stack.append(script_evt_type)
 
                     if (
@@ -149,19 +138,11 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
                         script_evt_type == "end_bracket"
                         and ly_script_stack[-1] in bracket_delim_blocks
                     ):
-                        # print(
-                        #     "         found end of block. Removing from stack: "
-                        #     + ly_script_stack[-1]
-                        # )
                         ly_script_stack.remove(ly_script_stack[-1])
                     elif (
                         script_evt_type == "end_dbl_ang_bracket"
                         and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
                     ):
-                        # print(
-                        #     "         found end of double angle block. Removing from stack: "
-                        #     + ly_script_stack[-1]
-                        # )
                         ly_script_stack.remove(ly_script_stack[-1])
 
                     if is_valid_copy:
@@ -175,12 +156,9 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
 
                 else:
                     # "Regular degular" text lines
-
                     if (
                         "musiquetheme" in ly_script_stack
                         or "paroles" in ly_script_stack
                     ):
-                        ## Only writing variables data, so when 'musiquetheme'
-                        ## and 'paroles' are on the stack
                         wr.write(ly_line)
     return 0
