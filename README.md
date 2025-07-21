@@ -25,7 +25,7 @@ https://github.com/frescobaldi/frescobaldi/wiki
 ## USAGE
 
 1. Be in the root directory of this repo
-1. Run `python3 src/editorismelicus/editoris_melicus.py`
+1. Run `python3 src/editorismelicus/editor_melicus.py`
 
 ## WORKFLOWS
 
@@ -57,9 +57,9 @@ Uses `gabctk` and `pandoc`
 
 ## DESIGN
 
-The module can be thought of as a publishing house (**Editoris Melicus**) run by several people:
+The module can be thought of as a publishing house (**Editoris Melicorum**) run by several people:
 
-1. **Editoris**, _the Editor (in Chief)_  
+1. **Editor**, _(in Chief)_  
 Sets up jobs, sends deliverables
 1. **Lector**, _the Reader_  
 Reads source documents, prepares them for further arrangement
