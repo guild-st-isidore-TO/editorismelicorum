@@ -20,7 +20,7 @@ template_replace_map = {
 }
 
 
-def write_song_ly(song_filepath, var_filepath, template_filepath, doc_data):
+def write_song_ly(fname_slug, song_filepath, var_filepath, template_filepath, doc_data):
     # 1. read in var file, copy to song
     with open(var_filepath) as f:
         with open(song_filepath, "w") as wr:

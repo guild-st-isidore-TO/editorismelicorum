@@ -1,8 +1,8 @@
 {
     "documents": [
         {
-            "name": "Editoris Melicus Example",
-            "id": "2813308004",
+            "name": "Editoris Melicorum Example",
+            "id": "ed_meli_example",
             "author": "rjsalvadorr",
             "mainDocument": "example-hello-world.ly",
             "gabcFiles": [

@@ -128,12 +128,12 @@ time.sleep(1.5)
 cfg_data = get_cfg_data()
 
 
-def to_input_cfg_paths(cfg_path):
-    return os.path.join(cfg_data["data_dir"], cfg_path)
+def to_input_cfg_paths(cfg_filepath):
+    return os.path.join(cfg_data["data_dir"], cfg_filepath)
 
 
-def to_conv_ly_paths(cfg_path):
-    cleaned_path = cfg_path.replace("examples/", "")
+def to_conv_ly_paths(cfg_filepath):
+    cleaned_path = cfg_filepath.replace("examples/", "")
     cleaned_path = cleaned_path.replace(".gabc", ".ly")
     return os.path.join(cfg_data["output_dir_ly_data"], cleaned_path)
 
@@ -150,44 +150,54 @@ elif input_operation_mode == 2:
         template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "new-song-template.ly"
         )
-
-        lege_tabulae_gabc(gabc_docs)
-
-        # Reading Metadata
-        meta_props = [
+        meta_prop_keywords = [
             "name",
             "office",
             "mode",
             "book",
             "transcriber",
+            "publisher",
         ]
-        for gabc_data_file in gabc_docs:
-            with open(gabc_data_file) as gdf:
-                for gabc_line in gdf:
-                    for m_prop in meta_props:
-                        if m_prop in gabc_line:
-                            meta_pair = gabc_line.split(":")
-                            # what do now???
+
+        # Reading Metadata
+        gabc_file_meta = {"publisher": in_doc["author"]}
+        for gdf_idx, gabc_data_file in enumerate(list(gabc_docs)):
+            print("~~~~ ping!")
+            # with open(gabc_data_file) as gdf:
+            with open(gabc_data_file) as cgdf:
+                for cgd_line in cgdf:
+                    print(f"~~~~ pong!")
+                    for m_prop_kw in meta_prop_keywords:
+                        # print(f"~~~~ pung!")
+                        if m_prop_kw in cgd_line:
+                            meta_pair = cgd_line.split(":")
+                            print(meta_pair)
+                            meta_key = f"{in_doc['id']}_{gdf_idx}"
+                            gabc_file_meta[meta_pair[0]] = meta_pair[1][:-2]
+
+        lege_tabulae_gabc(gabc_docs)
 
         # Copying LY vars, writing song part
-        for conv_gabc_doc in conv_gabc_docs:
+        for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs):
             var_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
             song_ly_path = conv_gabc_doc.replace("ly-data", "ly")
             filename_slug = os.path.basename(conv_gabc_doc).replace(".ly", "")
             filename_slug = filename_slug.replace("-", " ")
             filename_slug = filename_slug.title().replace(" ", "")
-            doc_data = {
-                "Title": "Test Title",
-                "Subtitle": "Test Subtitle",
-                "Instrument": "Test Instrument",
-                "Composer": "Test Composer",
-                "Arranger": "Test Arranger",
-                "Music": f"Music{filename_slug}",
-                "Lyrics": f"Lyrics{filename_slug}",
-                "LyricsLink": f"Lyrics{filename_slug}".lower(),
-            }
 
             copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
+
+            doc_data = {
+                "Title": gabc_file_meta["name"],
+                "Subtitle": gabc_file_meta["office-part"],
+                "Instrument": f"Mode {gabc_file_meta["mode"]}",
+                "Composer": gabc_file_meta["book"],
+                "Arranger": gabc_file_meta["transcriber"],
+                "Music": f"Music{filename_slug}",
+                "Lyrics": f"Lyrics{filename_slug}",
+                "LyricsLink": f"vox{filename_slug}".lower(),
+            }
+
             write_song_ly(
                 filename_slug, song_ly_path, var_ly_path, template_filepath, doc_data
             )

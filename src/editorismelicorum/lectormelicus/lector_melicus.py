@@ -33,9 +33,9 @@ def lege_tabulae_gabc(gabc_data_files):
         try:
             retcode = subprocess.call(cmdString, shell=True)
             if retcode < 0:
-                print("Child was terminated by signal", -retcode, file=sys.stderr)
+                print("Child process terminated by signal", -retcode, file=sys.stderr)
             else:
-                print("Child returned", retcode, file=sys.stderr)
+                print("Child process returned", retcode, file=sys.stderr)
         except OSError as e:
             print("Execution failed:", e, file=sys.stderr)
 
