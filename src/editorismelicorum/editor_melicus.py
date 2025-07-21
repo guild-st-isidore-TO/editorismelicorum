@@ -8,7 +8,7 @@ import sys, os, time, json, logging
 from praedica_min import praedica_min
 from lectormelicus.lector_melicus import lege_tabulae_gabc, copy_conv_gabc_vars
 from scriptormelicus.scriptor_melicus import write_song_ly
-from ed_melicus_utils import get_cfg_data
+from editorismelicorum.ed_melicorum_utils import get_cfg_data
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
