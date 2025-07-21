@@ -60,35 +60,35 @@ def analyze_conv_gabc_line(conv_ly_line):
     if "\\midi{}" in subject_line:
         return "midi"
     elif "\\header" in subject_line:
-        return "header_start"
+        return "header"
     elif "\\paper" in subject_line:
-        return "paper_start"
+        return "paper"
 
     # ---------------
     #  VARIABLES
 
     elif "MusiqueTheme =" in subject_line:
-        return "musiquetheme_start"
+        return "musiquetheme"
     elif "Paroles =" in subject_line:
-        return "paroles_start"
+        return "paroles"
 
     # ---------------------------
     #  SCORE CREATION
 
     elif "\\score" in subject_line:
-        return "score_start"
+        return "score"
     elif "  <<" in subject_line:
-        return "staffgroup_start"
+        return "staffgroup"
     elif "\\new Staff <<" in subject_line:
-        return "staff_start"
+        return "staff"
     elif "\\new Voice" in subject_line:
-        return "voice_start"
+        return "voice"
     elif "\\new Lyrics" in subject_line:
-        return "lyrics_start"
+        return "lyrics"
     elif "\\layout" in subject_line:
-        return "layout_start"
+        return "layout"
     elif "\\context" in subject_line:
-        return "context_start"
+        return "context"
     elif "%" in subject_line:
         return "comment"
     elif "}" == subject_line:
@@ -99,53 +99,75 @@ def analyze_conv_gabc_line(conv_ly_line):
         return None
 
 
-def read_conv_gabc(conv_ly_filepath):
-    """Reads a file of converted LY code (from gabctk)"""
+def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
+    """Reads and copies a file of converted LY code (from gabctk)"""
     ly_script_stack = []
+    conv_filename = os.path.basename(conv_ly_filepath).replace(".ly", "")
+    conv_filename = conv_filename.title().replace(" ", "")
+    theme_name = f"Theme{conv_filename}"
+    lyrics_name = f"Lyrics{conv_filename}"
 
     bracket_delim_blocks = [
-        "header_start",
-        "paper_start",
-        "musiquetheme_start",
-        "paroles_start",
-        "score_start",
-        "lyrics_start",
-        "layout_start",
-        "voice_start",
-        "context_start",
+        "header",
+        "paper",
+        "musiquetheme",
+        "paroles",
+        "score",
+        "lyrics",
+        "layout",
+        "voice",
+        "context",
     ]
 
-    dbl_ang_bracket_delim_blocks = ["staffgroup_start", "staff_start"]
+    dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
 
     with open(conv_ly_filepath) as f:
-        for line in f:
-            script_evt_type = analyze_conv_gabc_line(line)
-            print(
-                "- event: " + str(script_evt_type) + "\n         stack: " + str(ly_script_stack)
-            )
-            if script_evt_type is not None:
-                if (
-                    script_evt_type in bracket_delim_blocks
-                    or script_evt_type in dbl_ang_bracket_delim_blocks
-                ):
-                    print("         adding to stack: " + script_evt_type)
-                    ly_script_stack.append(script_evt_type)
-                if (
-                    script_evt_type == "end_bracket"
-                    and ly_script_stack[-1] in bracket_delim_blocks
-                ):
-                    print(
-                        "         found end of block. Removing from stack: "
-                        + ly_script_stack[-1]
-                    )
-                    ly_script_stack.remove(ly_script_stack[-1])
-                elif (
-                    script_evt_type == "end_dbl_ang_bracket"
-                    and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
-                ):
-                    print(
-                        "         found end of double angle block. Removing from stack: "
-                        + ly_script_stack[-1]
-                    )
-                    ly_script_stack.remove(ly_script_stack[-1])
+        with open(out_ly_path, "w") as wr:
+            for ly_line in f:
+                script_evt_type = analyze_conv_gabc_line(ly_line)
+                print(
+                    "- event: "
+                    + str(script_evt_type)
+                    + "\n         stack: "
+                    + str(ly_script_stack)
+                )
+                if script_evt_type is not None:
+                    if (
+                        script_evt_type in bracket_delim_blocks
+                        or script_evt_type in dbl_ang_bracket_delim_blocks
+                    ):
+                        print("         adding to stack: " + script_evt_type)
+                        ly_script_stack.append(script_evt_type)
+
+                    if (
+                        "musiquetheme" in ly_script_stack
+                        or "paroles" in ly_script_stack
+                    ):
+                        copy_line = ly_line
+                        ## Only writing variables data, so when 'musiquetheme'
+                        ## and 'paroles' are on the stack
+                        if "MusiqueTheme =" in ly_line:
+                            copy_line = copy_line.replace("MusiqueTheme", theme_name)
+                        if "Paroles =" in ly_line:
+                            copy_line = copy_line.replace("Paroles", lyrics_name)
+                        wr.write(copy_line)
+
+                    if (
+                        script_evt_type == "end_bracket"
+                        and ly_script_stack[-1] in bracket_delim_blocks
+                    ):
+                        print(
+                            "         found end of block. Removing from stack: "
+                            + ly_script_stack[-1]
+                        )
+                        ly_script_stack.remove(ly_script_stack[-1])
+                    elif (
+                        script_evt_type == "end_dbl_ang_bracket"
+                        and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
+                    ):
+                        print(
+                            "         found end of double angle block. Removing from stack: "
+                            + ly_script_stack[-1]
+                        )
+                        ly_script_stack.remove(ly_script_stack[-1])
     return 0
