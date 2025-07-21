@@ -26,6 +26,9 @@ def get_cfg_data():
         cfg_data["output_dir_pdf"] = os.path.join(
             repo_dir, cfg_json["paths"]["outputDirectoryPdf"]
         )
+        cfg_data["data_templates_dir"] = os.path.join(
+            repo_dir, cfg_json["paths"]["dataTemplatesDirectory"]
+        )
 
     with open(f"{cfg_data['data_dir']}/input-configs.json", "r") as file:
         input_cfg_json = json.load(file)

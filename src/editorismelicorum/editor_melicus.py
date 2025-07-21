@@ -147,17 +147,27 @@ elif input_operation_mode == 2:
     for in_doc in input_documents:
         gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
-        var_filepath = 0
-        template_filepath = 0
-        doc_data = 0
+        template_filepath = os.path.join(
+            cfg_data["data_templates_dir"], "new-song-template.ly"
+        )
+        doc_data = {
+            "Title": "Test Title",
+            "Subtitle": "Test Subtitle",
+            "Instrument": "Test Instrument",
+            "Composer": "Test Composer",
+            "Arranger": "Test Arranger",
+            "LyricsLink": "Test LyricsLink",
+            "Music": "Test Music",
+            "LyricsLink": "Test LyricsLink",
+            "Lyrics": "Test Lyrics",
+        }
 
         lege_tabulae_gabc(gabc_docs)
 
         for conv_gabc_doc in conv_gabc_docs:
             out_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
             copy_conv_gabc_vars(conv_gabc_doc, out_ly_path)
-
-        write_song_ly(var_filepath, template_filepath, doc_data)
+            write_song_ly(out_ly_path, template_filepath, doc_data)
 
         praedica_min(in_doc["mainDocument"])
 

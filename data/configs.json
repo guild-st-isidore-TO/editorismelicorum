@@ -30,6 +30,7 @@
     },
     "paths": {
         "gabctkDirectory": "../gabctk",
+        "dataTemplatesDirectory": "data/templates",
         "outputDirectoryLyData": "build/ly-data",
         "outputDirectoryLy": "build/ly",
         "outputDirectoryMidi": "build/midi",
