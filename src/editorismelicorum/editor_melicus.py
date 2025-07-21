@@ -3,12 +3,12 @@
 
 # The Chief Editor of Music runs the show.
 
-import sys, os, time, json, logging
+import sys, os, time, json, logging, re
 
+from ed_melicorum_utils import get_cfg_data, write_roman
 from praedica_min import praedica_min
 from lectormelicus.lector_melicus import lege_tabulae_gabc, copy_conv_gabc_vars
 from scriptormelicus.scriptor_melicus import write_song_ly
-from ed_melicorum_utils import get_cfg_data
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -170,6 +170,10 @@ elif input_operation_mode == 2:
             filename_slug = os.path.basename(conv_gabc_doc).replace(".ly", "")
             filename_slug = filename_slug.replace("-", " ")
             filename_slug = filename_slug.title().replace(" ", "")
+            filename_slug = re.sub(
+                "[0-9]+", lambda match: write_roman(int(match.group())), filename_slug
+            )
+
             meta_key = f"{in_doc['id']}_{cgd_idx}"
 
             copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
