@@ -156,7 +156,6 @@ elif input_operation_mode == 2:
             "Instrument": "Test Instrument",
             "Composer": "Test Composer",
             "Arranger": "Test Arranger",
-            "LyricsLink": "Test LyricsLink",
             "Music": "Test Music",
             "LyricsLink": "Test LyricsLink",
             "Lyrics": "Test Lyrics",
@@ -165,9 +164,10 @@ elif input_operation_mode == 2:
         lege_tabulae_gabc(gabc_docs)
 
         for conv_gabc_doc in conv_gabc_docs:
-            out_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
-            copy_conv_gabc_vars(conv_gabc_doc, out_ly_path)
-            write_song_ly(out_ly_path, template_filepath, doc_data)
+            var_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
+            song_ly_path = conv_gabc_doc.replace("ly-data", "ly")
+            copy_conv_gabc_vars(conv_gabc_doc, var_ly_path)
+            write_song_ly(song_ly_path, var_ly_path, template_filepath, doc_data)
 
         praedica_min(in_doc["mainDocument"])
 
