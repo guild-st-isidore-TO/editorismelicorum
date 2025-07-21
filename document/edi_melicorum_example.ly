@@ -77,6 +77,12 @@
 
     \markup \vspace #1
     \markup \wordwrap {
+      Please note that this is a work in progress, and there might be some buggy things
+      that should be fixed promptly.
+    }
+
+    \markup \vspace #1
+    \markup \wordwrap {
       For more info, the repo is at https://github.com/soc-st-isidore-TO/editorismelicorum
     }
 
