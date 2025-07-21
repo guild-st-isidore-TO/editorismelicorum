@@ -25,7 +25,7 @@ https://github.com/frescobaldi/frescobaldi/wiki
 ## USAGE
 
 1. Be in the root directory of this repo
-1. Run `python3 src/editorismelicus/editor_melicus.py`
+1. Run `python3 src/editorismelicorum/editor_melicus.py`
 
 ## WORKFLOWS
 

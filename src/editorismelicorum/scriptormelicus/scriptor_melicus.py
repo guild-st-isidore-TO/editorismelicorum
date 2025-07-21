@@ -6,7 +6,7 @@
 import os
 from pathlib import Path
 
-from editorismelicorum.ed_melicorum_utils import print_frame, get_cfg_data
+from ed_melicorum_utils import print_frame, get_cfg_data
 
 
 def write_song_ly(var_filepath, template_filepath, doc_data):
