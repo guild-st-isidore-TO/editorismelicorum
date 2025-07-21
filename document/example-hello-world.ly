@@ -3,6 +3,8 @@
 
 #(set-default-paper-size "letter")
 
+\include "../build/ly/ed_meli_example_vars.ly"
+
 \book {
   %% book paper, which is inherited by all children bookparts
   \paper {
@@ -49,8 +51,6 @@
     \header { subtitle = "Second part" }
     { c'4 }
   }
-
-  \include "../build/ly/01-regina-caeli.ly"
-  \include "../build/ly/02-tantum-ergo.ly"
-  \include "../build/ly/03-ave-maria.ly"
+  
+  \include "../build/ly/ed_meli_example_bookparts.ly"
 }

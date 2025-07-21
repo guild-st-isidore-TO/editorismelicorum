@@ -152,13 +152,21 @@ elif input_operation_mode == 2:
         )
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], gabc_docs)
+
         var_ly_path = os.path.join(cfg_data["output_dir_ly"], f"{in_doc['id']}_vars.ly")
+        with open(var_ly_path, "w") as varc:
+            varc.write("\n")  # clearing text
+
+        song_ly_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_bookparts.ly"
+        )
+        with open(song_ly_path, "w") as songc:
+            songc.write("\n")  # clearing text
 
         print(gabc_file_meta)
 
         # Copying LY vars, writing song part
         for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs, start=1):
-            song_ly_path = conv_gabc_doc.replace("ly-data", "ly")
             filename_slug = os.path.basename(conv_gabc_doc).replace(".ly", "")
             filename_slug = filename_slug.replace("-", " ")
             filename_slug = filename_slug.title().replace(" ", "")
@@ -177,9 +185,7 @@ elif input_operation_mode == 2:
                 "LyricsLink": f"vox{filename_slug}".lower(),
             }
 
-            write_song_ly(
-                filename_slug, song_ly_path, var_ly_path, template_filepath, doc_data
-            )
+            write_song_ly(song_ly_path, template_filepath, doc_data)
 
         # Preview publish
         praedica_min(in_doc["mainDocument"])
