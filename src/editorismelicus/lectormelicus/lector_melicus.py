@@ -50,49 +50,50 @@ def mark_conv_gabc_line(conv_ly_line, action, data):
 
 def analyze_conv_gabc_line(conv_ly_line):
     """Checks a line of converted LY code (from gabctk) for certain features. Decides the appropriate action based on string patterns."""
+    subject_line = conv_ly_line.strip()
 
     # ---------------
     #  DECLARATIONS
 
-    if "\\version" in conv_ly_line:
+    if "\\version" in subject_line:
         return "version"
-    if "\\midi{}" in conv_ly_line:
+    if "\\midi{}" in subject_line:
         return "midi"
-    elif "\\header" in conv_ly_line:
+    elif "\\header" in subject_line:
         return "header_start"
-    elif "\\paper" in conv_ly_line:
+    elif "\\paper" in subject_line:
         return "paper_start"
 
     # ---------------
     #  VARIABLES
 
-    elif "MusiqueTheme" in conv_ly_line:
+    elif "MusiqueTheme =" in subject_line:
         return "musiquetheme_start"
-    elif "Paroles" in conv_ly_line:
+    elif "Paroles =" in subject_line:
         return "paroles_start"
 
     # ---------------------------
     #  SCORE CREATION
 
-    elif "\\score" in conv_ly_line:
+    elif "\\score" in subject_line:
         return "score_start"
-    elif "  <<" in conv_ly_line:
+    elif "  <<" in subject_line:
         return "staffgroup_start"
-    elif "\\new Staff <<" in conv_ly_line:
+    elif "\\new Staff <<" in subject_line:
         return "staff_start"
-    elif "\\new Voice" in conv_ly_line:
+    elif "\\new Voice" in subject_line:
         return "voice_start"
-    elif "\\new Lyrics" in conv_ly_line:
+    elif "\\new Lyrics" in subject_line:
         return "lyrics_start"
-    elif "\\layout" in conv_ly_line:
+    elif "\\layout" in subject_line:
         return "layout_start"
-    elif "\\context" in conv_ly_line:
+    elif "\\context" in subject_line:
         return "context_start"
-    elif "%" in conv_ly_line:
+    elif "%" in subject_line:
         return "comment"
-    elif "}" in conv_ly_line:
+    elif "}" == subject_line:
         return "end_bracket"
-    elif ">>" in conv_ly_line:
+    elif ">>" in subject_line:
         return "end_dbl_ang_bracket"
     else:
         return None
@@ -105,6 +106,8 @@ def read_conv_gabc(conv_ly_filepath):
     bracket_delim_blocks = [
         "header_start",
         "paper_start",
+        "musiquetheme_start",
+        "paroles_start",
         "score_start",
         "lyrics_start",
         "layout_start",
@@ -118,31 +121,31 @@ def read_conv_gabc(conv_ly_filepath):
         for line in f:
             script_evt_type = analyze_conv_gabc_line(line)
             print(
-                "EVT: " + script_evt_type
-                if script_evt_type is not None
-                else script_evt_type
+                "- event: " + str(script_evt_type) + "\n         stack: " + str(ly_script_stack)
             )
             if script_evt_type is not None:
                 if (
                     script_evt_type in bracket_delim_blocks
                     or script_evt_type in dbl_ang_bracket_delim_blocks
                 ):
+                    print("         adding to stack: " + script_evt_type)
                     ly_script_stack.append(script_evt_type)
-                    print("     adding to stack: " + script_evt_type)
                 if (
                     script_evt_type == "end_bracket"
                     and ly_script_stack[-1] in bracket_delim_blocks
                 ):
                     print(
-                        "     found end of block. Removing from stack: "
-                        + script_evt_type
+                        "         found end of block. Removing from stack: "
+                        + ly_script_stack[-1]
                     )
+                    ly_script_stack.remove(ly_script_stack[-1])
                 elif (
                     script_evt_type == "end_dbl_ang_bracket"
                     and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
                 ):
                     print(
-                        "     found end of double angle block. Removing from stack: "
-                        + script_evt_type
+                        "         found end of double angle block. Removing from stack: "
+                        + ly_script_stack[-1]
                     )
+                    ly_script_stack.remove(ly_script_stack[-1])
     return 0
