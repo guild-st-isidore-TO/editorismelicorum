@@ -103,6 +103,7 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
     """Reads and copies a file of converted LY code (from gabctk)"""
     ly_script_stack = []
     conv_filename = os.path.basename(conv_ly_filepath).replace(".ly", "")
+    conv_filename = conv_filename.replace("-", " ")
     conv_filename = conv_filename.title().replace(" ", "")
     theme_name = f"Theme{conv_filename}"
     lyrics_name = f"Lyrics{conv_filename}"
@@ -125,6 +126,7 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
         with open(out_ly_path, "w") as wr:
             for ly_line in f:
                 script_evt_type = analyze_conv_gabc_line(ly_line)
+                is_valid_copy = False
                 print(
                     "- event: "
                     + str(script_evt_type)
@@ -143,14 +145,7 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
                         "musiquetheme" in ly_script_stack
                         or "paroles" in ly_script_stack
                     ):
-                        copy_line = ly_line
-                        ## Only writing variables data, so when 'musiquetheme'
-                        ## and 'paroles' are on the stack
-                        if "MusiqueTheme =" in ly_line:
-                            copy_line = copy_line.replace("MusiqueTheme", theme_name)
-                        if "Paroles =" in ly_line:
-                            copy_line = copy_line.replace("Paroles", lyrics_name)
-                        wr.write(copy_line)
+                        is_valid_copy = True
 
                     if (
                         script_evt_type == "end_bracket"
@@ -170,4 +165,24 @@ def copy_conv_gabc_vars(conv_ly_filepath, out_ly_path):
                             + ly_script_stack[-1]
                         )
                         ly_script_stack.remove(ly_script_stack[-1])
+
+                    if is_valid_copy:
+                        valid_line = ly_line
+                        if "MusiqueTheme =" in valid_line:
+                            valid_line = valid_line.replace("MusiqueTheme", theme_name)
+                        if "Paroles =" in valid_line:
+                            wr.write("\n")
+                            valid_line = valid_line.replace("Paroles", lyrics_name)
+                        wr.write(valid_line)
+
+                else:
+                    # "Regular degular" text lines
+
+                    if (
+                        "musiquetheme" in ly_script_stack
+                        or "paroles" in ly_script_stack
+                    ):
+                        ## Only writing variables data, so when 'musiquetheme'
+                        ## and 'paroles' are on the stack
+                        wr.write(ly_line)
     return 0
