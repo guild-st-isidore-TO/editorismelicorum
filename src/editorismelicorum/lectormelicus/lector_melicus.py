@@ -19,15 +19,47 @@ cfg_data = get_cfg_data()
 Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
 
-def lege_tabulae_gabc(gabc_data_files):
-    """Converts GABC files to LY"""
-    for gabcDataFile in gabc_data_files:
+def get_gabc_metadata(gabc_data_file):
+    meta_prop_keywords = [
+        "name",
+        "office",
+        "mode",
+        "book",
+        "transcriber",
+        "publisher",
+    ]
 
-        inFileName = os.path.basename(gabcDataFile)
+    gabc_metadata = {}
+
+    ## reading metadata
+    with open(gabc_data_file) as cgdf:
+        for cgd_line in cgdf:
+            print(f"~~~~ pong!")
+            for m_prop_kw in meta_prop_keywords:
+                # print(f"~~~~ pung!")
+                if m_prop_kw in cgd_line:
+                    meta_pair = cgd_line.split(":")
+                    print(meta_pair)
+                    gabc_metadata[meta_pair[0]] = meta_pair[1][:-2]
+
+    print(f"gabc_metadata: {gabc_metadata}")
+    return gabc_metadata
+
+
+def lege_tabulae_gabc(doc_id, gabc_data_files):
+    """Converts GABC files to LY"""
+    doc_metadata = {}
+    ctr_files = 1
+
+    for gabc_data_file in gabc_data_files:
+
+        inFileName = os.path.basename(gabc_data_file)
         outFileName = inFileName.replace(".gabc", "")
         outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
-        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabcDataFile} -l {outFilePath} -v"
+        doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(gabc_data_file)
+        ctr_files = ctr_files + 1
 
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file} -l {outFilePath} -v"
         print_frame("USING GABCTK", cfg_data)
 
         try:
@@ -38,6 +70,8 @@ def lege_tabulae_gabc(gabc_data_files):
                 print("Child process returned", retcode, file=sys.stderr)
         except OSError as e:
             print("Execution failed:", e, file=sys.stderr)
+
+    return doc_metadata
 
 
 def mark_conv_gabc_line(conv_ly_line, action, data):
@@ -117,7 +151,7 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
 
     with open(conv_ly_filepath) as f:
-        with open(out_ly_path, "w") as wr:
+        with open(out_ly_path, "a") as wr:
             for ly_line in f:
                 script_evt_type = analyze_conv_gabc_line(ly_line)
                 is_valid_copy = False

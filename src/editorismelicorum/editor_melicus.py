@@ -150,49 +150,28 @@ elif input_operation_mode == 2:
         template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "new-song-template.ly"
         )
-        meta_prop_keywords = [
-            "name",
-            "office",
-            "mode",
-            "book",
-            "transcriber",
-            "publisher",
-        ]
 
-        # Reading Metadata
-        gabc_file_meta = {"publisher": in_doc["author"]}
-        for gdf_idx, gabc_data_file in enumerate(list(gabc_docs)):
-            print("~~~~ ping!")
-            # with open(gabc_data_file) as gdf:
-            with open(gabc_data_file) as cgdf:
-                for cgd_line in cgdf:
-                    print(f"~~~~ pong!")
-                    for m_prop_kw in meta_prop_keywords:
-                        # print(f"~~~~ pung!")
-                        if m_prop_kw in cgd_line:
-                            meta_pair = cgd_line.split(":")
-                            print(meta_pair)
-                            meta_key = f"{in_doc['id']}_{gdf_idx}"
-                            gabc_file_meta[meta_pair[0]] = meta_pair[1][:-2]
+        gabc_file_meta = lege_tabulae_gabc(in_doc["id"], gabc_docs)
+        var_ly_path = os.path.join(cfg_data["output_dir_ly"], f"{in_doc['id']}_vars.ly")
 
-        lege_tabulae_gabc(gabc_docs)
+        print(gabc_file_meta)
 
         # Copying LY vars, writing song part
-        for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs):
-            var_ly_path = conv_gabc_doc.replace(".ly", "-vars.ly")
+        for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs, start=1):
             song_ly_path = conv_gabc_doc.replace("ly-data", "ly")
             filename_slug = os.path.basename(conv_gabc_doc).replace(".ly", "")
             filename_slug = filename_slug.replace("-", " ")
             filename_slug = filename_slug.title().replace(" ", "")
+            meta_key = f"{in_doc['id']}_{cgd_idx}"
 
             copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
 
             doc_data = {
-                "Title": gabc_file_meta["name"],
-                "Subtitle": gabc_file_meta["office-part"],
-                "Instrument": f"Mode {gabc_file_meta["mode"]}",
-                "Composer": gabc_file_meta["book"],
-                "Arranger": gabc_file_meta["transcriber"],
+                "Title": gabc_file_meta[meta_key]["name"],
+                "Subtitle": gabc_file_meta[meta_key]["office-part"],
+                "Instrument": f"Mode {gabc_file_meta[meta_key]["mode"]}",
+                "Composer": gabc_file_meta[meta_key]["book"],
+                "Arranger": gabc_file_meta[meta_key]["transcriber"],
                 "Music": f"Music{filename_slug}",
                 "Lyrics": f"Lyrics{filename_slug}",
                 "LyricsLink": f"vox{filename_slug}".lower(),
