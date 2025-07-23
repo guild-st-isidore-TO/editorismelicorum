@@ -1,5 +1,7 @@
 # Editoris Melicorum
 
+![Editoris Melicorum mascot image](./static/edi_melicorum_pic.png "Editoris Melicorum mascot image")
+
 This project aims to create a digital music typesetting toolkit for use by music ministries in Catholic parishes.
 Its main objectives are building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
 and laying them out into documents for use of the community.
