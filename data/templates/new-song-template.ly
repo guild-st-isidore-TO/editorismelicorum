@@ -7,6 +7,7 @@
     arranger = "TemplateArranger"
   }
 
+  \tocItem \markup { \bold "TemplateTitle" — \italic "TemplateSubtitle, TemplateInstrument" }
   \score{
     <<
       \new Staff <<

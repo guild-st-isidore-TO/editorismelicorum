@@ -181,7 +181,7 @@ elif input_operation_mode == 2:
             doc_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
                 "Subtitle": gabc_file_meta[meta_key]["office-part"],
-                "Instrument": f"Mode {gabc_file_meta[meta_key]["mode"]}",
+                "Instrument": f"Mode {write_roman(int(gabc_file_meta[meta_key]["mode"]))}",
                 "Composer": gabc_file_meta[meta_key]["book"],
                 "Arranger": f"transcr. {gabc_file_meta[meta_key]["transcriber"]}",
                 "Music": f"Music{filename_slug}",

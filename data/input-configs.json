@@ -6,9 +6,15 @@
             "author": "rjsalvadorr",
             "mainDocument": "edi_melicorum_example.ly",
             "gabcFiles": [
-                "examples/01-regina-caeli.gabc",
-                "examples/02-tantum-ergo.gabc",
-                "examples/03-ave-maria.gabc"
+                "examples/01-ave-maria.gabc",
+                "examples/02-crux_fidelis.gabc",
+                "examples/03-sanctus_xi.gabc",
+                "examples/04-dominus_dixit.gabc",
+                "examples/05-kyrie_xvi.gabc",
+                "examples/06-pange_lingua.gabc",
+                "examples/07-ascendit_deus.gabc",
+                "examples/08-nos_autem.gabc",
+                "examples/11-regina-caeli.gabc"
             ]
         }
     ]
