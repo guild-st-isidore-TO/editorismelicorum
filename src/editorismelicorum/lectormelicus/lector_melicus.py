@@ -20,6 +20,17 @@ Path(cfg_data["output_dir_ly_data"]).mkdir(parents=True, exist_ok=True)
 
 
 def get_gabc_metadata(gabc_data_file):
+    source_abbrevs = {
+        "Liber antiphonarius, 1960": "L.Ant '60",
+        "The Liber Usualis, 1961": "L.Usu '61",
+        "Chants of the Church, 1956": "Ch.otC '56",
+        "Graduale Romanum, 1908": "G.Rom '08",
+        "Graduale Romanum, 1961": "G.Rom '61",
+        "Graduale Romanum, 1974": "G.Rom '74",
+        "Graduale simplex, 1975": "G.Smp '75",
+        "Gregorian Missal, 1990": "Gr.Mis '90",
+        "Liber cantualis, 1983": "L.Cant '83",
+    }
     meta_prop_keywords = [
         "name",
         "office",
@@ -40,7 +51,13 @@ def get_gabc_metadata(gabc_data_file):
                 if m_prop_kw in cgd_line:
                     meta_pair = cgd_line.split(":")
                     print(meta_pair)
-                    gabc_metadata[meta_pair[0]] = meta_pair[1][:-2]
+                    display_val = meta_pair[1][:-2]
+                    if m_prop_kw is 'book':
+                        for s_full, s_abbrev in source_abbrevs.items():
+                            display_val = display_val.replace(s_full, s_abbrev)
+                        display_val = display_val.replace(' & ', '; ')
+                        display_val = display_val.replace(' p. ', ' p.')
+                    gabc_metadata[meta_pair[0]] = display_val
 
     print(f"gabc_metadata: {gabc_metadata}")
     return gabc_metadata

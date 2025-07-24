@@ -56,7 +56,7 @@
     \header {
       subtitle = "FABRICA SALVADORIS MMXXV"
       subsubtitle = "Salvador Workshop, 2025"
-      poet = "Versio — nulla.ii"
+      poet = "Versio — nulla.iii"
     }
 
     \markup \vspace #2
@@ -115,6 +115,24 @@
       on the first ledger line below the Bass clef. Extended range guitars can reach to
       B1, or under the second ledger line below the Bass clef.  Some guitars with
       longer scale lengths can go even lower to A1.
+    }
+
+    \markup \vspace #1
+    \markup \wordwrap {
+      Source documents have been abbreviated as follows:
+    }
+
+    \markup \vspace #1
+    \markup \left-column {
+      "L.Ant '60 --- Liber antiphonarius, 1960"
+      "L.Usu '61 --- The Liber Usualis, 1961"
+      "Ch.otC '56 --- Chants of the Church, 1956"
+      "G.Rom '08 --- Graduale Romanum, 1908"
+      "G.Rom '61 --- Graduale Romanum, 1961"
+      "G.Rom '74 --- Graduale Romanum, 1974"
+      "G.Smp '75 --- Graduale simplex, 1975"
+      "Gr.Mis '90 --- Gregorian Missal, 1990"
+      "L.Cant '83 --- Liber cantualis, 1983"
     }
   }
   

@@ -1,8 +1,7 @@
 \bookpart {
   \header {
     title = "TemplateTitle"
-    subtitle = "TemplateSubtitle"
-    instrument = "TemplateInstrument"
+    subtitle = "TemplateSubtitle - TemplateInstrument"
     composer = "TemplateComposer"
     arranger = "TemplateArranger"
   }
