@@ -56,7 +56,7 @@
     \header {
       subtitle = "FABRICA SALVADORIS MMXXV"
       subsubtitle = "Salvador Workshop, 2025"
-      poet = "Versio — nulla.nulla.ii"
+      poet = "Versio — nulla.ii"
     }
 
     \markup \vspace #2
@@ -96,9 +96,8 @@
 
     \markup \vspace #1
     \markuplist \table-of-contents
-    \pageBreak
 
-    \markup \vspace #1
+    \markup \vspace #2
     \markup \wordwrap {
       The music was sourced from GregoBase (https://gregobase.selapa.net/scores.php) and
       converted by the Editoris into modern standard notation.
