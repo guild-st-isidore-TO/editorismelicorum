@@ -89,7 +89,7 @@
 
     \markup \vspace #1
     \markup \wordwrap {
-      For more info, the repo is at https://github.com/soc-st-isidore-TO/editorismelicorum
+      For more info, the repo is at \bold https://github.com/soc-st-isidore-TO/editorismelicorum
     }
 
     \pageBreak
