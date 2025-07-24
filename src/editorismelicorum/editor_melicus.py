@@ -176,7 +176,7 @@ elif input_operation_mode == 2:
 
             meta_key = f"{in_doc['id']}_{cgd_idx}"
 
-            copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
+            transpose_key = copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
 
             doc_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
@@ -187,6 +187,7 @@ elif input_operation_mode == 2:
                 "Music": f"Music{filename_slug}",
                 "Lyrics": f"Lyrics{filename_slug}",
                 "LyricsLink": f"vox{filename_slug}".lower(),
+                "TransposeKey": f"{transpose_key}",
             }
 
             write_song_ly(song_ly_path, template_filepath, doc_data)

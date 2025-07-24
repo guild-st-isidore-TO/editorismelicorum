@@ -56,7 +56,7 @@
     \header {
       subtitle = "FABRICA SALVADORIS MMXXV"
       subsubtitle = "Salvador Workshop, 2025"
-      poet = "Versio — nulla.iii"
+      poet = "Versio — nulla.iv"
     }
 
     \markup \vspace #2

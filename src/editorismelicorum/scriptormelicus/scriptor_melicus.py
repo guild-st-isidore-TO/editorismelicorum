@@ -17,6 +17,7 @@ template_replace_map = {
     "TemplateLyricsLink": "LyricsLink",
     "TemplateMusic": "Music",
     "TemplateLyrics": "Lyrics",
+    "TemplateTransposeKey": "TransposeKey",
 }
 
 

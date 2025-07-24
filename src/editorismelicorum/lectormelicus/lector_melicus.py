@@ -52,11 +52,11 @@ def get_gabc_metadata(gabc_data_file):
                     meta_pair = cgd_line.split(":")
                     print(meta_pair)
                     display_val = meta_pair[1][:-2]
-                    if m_prop_kw is 'book':
+                    if m_prop_kw is "book":
                         for s_full, s_abbrev in source_abbrevs.items():
                             display_val = display_val.replace(s_full, s_abbrev)
-                        display_val = display_val.replace(' & ', '; ')
-                        display_val = display_val.replace(' p. ', ' p.')
+                        display_val = display_val.replace(" & ", "; ")
+                        display_val = display_val.replace(" p. ", " p.")
                     gabc_metadata[meta_pair[0]] = display_val
 
     print(f"gabc_metadata: {gabc_metadata}")
@@ -76,7 +76,8 @@ def lege_tabulae_gabc(doc_id, gabc_data_files):
         doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(gabc_data_file)
         ctr_files = ctr_files + 1
 
-        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file} -l {outFilePath} -v"
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file}  -l {outFilePath} -v"
+        # cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file}  -l {outFilePath} -d 2 -v"
         print_frame("USING GABCTK", cfg_data)
 
         try:
@@ -137,6 +138,12 @@ def analyze_conv_gabc_line(conv_ly_line):
         return "layout"
     elif "\\context" in subject_line:
         return "context"
+    elif "\\transpose" in subject_line:
+        return "transpose"
+
+    # ---------------------------
+    #  PUNCTUATION
+
     elif "%" in subject_line:
         return "comment"
     elif "}" == subject_line:
@@ -166,6 +173,7 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
     ]
 
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
+    ly_transpose = "des"
 
     with open(conv_ly_filepath) as f:
         with open(out_ly_path, "a") as wr:
@@ -184,6 +192,13 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
                         or "paroles" in ly_script_stack
                     ):
                         is_valid_copy = True
+                    elif script_evt_type is "transpose":
+                        ly_transpose = ly_line.strip().replace(
+                            "\cadenzaOn \\transpose c ", ""
+                        )
+                        ly_transpose = ly_transpose.replace(
+                            "{\MusiqueTheme}", ""
+                        )
 
                     if (
                         script_evt_type == "end_bracket"
@@ -212,4 +227,4 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
                         or "paroles" in ly_script_stack
                     ):
                         wr.write(ly_line)
-    return 0
+    return ly_transpose
