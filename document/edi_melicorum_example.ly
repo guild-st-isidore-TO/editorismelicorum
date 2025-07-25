@@ -43,7 +43,6 @@
 
   %% book header, which is inherited by the first bookpart
   \header {
-    title = "EDITORIS MELICORUM - Example Guitar Songbook"
     copyright = "FABRICA SALVADORIS MMXXV (Copyright - Salvador Workshop, 2025)"
     parttagline = "gen. by Editoris Melicorum"
     tagline = "Example Songbook [DRAFT]"
@@ -54,16 +53,29 @@
     \paper { page-breaking = #ly:minimal-breaking }
 
     \header {
-      subtitle = "FABRICA SALVADORIS MMXXV"
-      subsubtitle = "Salvador Workshop, 2025"
-      poet = "Versio — nulla.iv"
+      title =  \markup \center-column { 
+        \vspace #2
+        "EDITORIS MELICORUM"
+        "Example Guitar Songbook"
+      }
+      subtitle = \markup \center-column { 
+        \vspace #1
+        "FABRICA SALVADORIS MMXXV" 
+        \italic "Salvador Workshop, 2025"
+      }
+      subsubtitle = \markup \center-column { 
+        \vspace #1
+        "Faciebat Torontinum (Canada)"
+        \typewriter "versio nulla.iv"
+      }
     }
 
     \markup \vspace #2
     \markup \wordwrap {
       This songbook example has some Gregorian-style hymns (in Standard Notation) with space for
-      writing arrangements. It was generated through \bold "Editoris Melicorum"
-      \italic "(Publishers of Music/Melodies)", a software project by Salvador Workshop.
+      writing arrangements. This file was generated through \bold "Editoris Melicorum"
+      \italic "(Publishers of Music/Melodies)", a software project by
+      \italic "Salvador Workshop" and the \italic "Society of St. Isidore (TO)"
     }
 
     \markup \vspace #1
