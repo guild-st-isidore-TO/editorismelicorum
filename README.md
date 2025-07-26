@@ -6,6 +6,8 @@ This project aims to create a digital music typesetting toolkit for use by music
 Its main objectives are building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
 and laying them out into documents for use of the community.
 
+Check out an [example document here](./static/edi_melicorum_example_0.6.pdf)
+
 ## SETUP
 
 ### Requirements
