@@ -18,6 +18,7 @@ template_replace_map = {
     "TemplateMusic": "Music",
     "TemplateLyrics": "Lyrics",
     "TemplateTransposeKey": "TransposeKey",
+    "TemplateDatabase": "Database",
 }
 
 

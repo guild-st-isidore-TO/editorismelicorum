@@ -148,7 +148,7 @@ elif input_operation_mode == 2:
         gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
         template_filepath = os.path.join(
-            cfg_data["data_templates_dir"], "new-song-template.ly"
+            cfg_data["data_templates_dir"], "edi_melicorum_ex_song.ly"
         )
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], gabc_docs)
@@ -181,13 +181,14 @@ elif input_operation_mode == 2:
             doc_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
                 "Subtitle": gabc_file_meta[meta_key]["office-part"],
-                "Instrument": f"Mode {write_roman(int(gabc_file_meta[meta_key]["mode"]))}",
+                "Instrument": f"Modus {write_roman(int(gabc_file_meta[meta_key]["mode"]))}",
                 "Composer": gabc_file_meta[meta_key]["book"],
-                "Arranger": f"transcr. {gabc_file_meta[meta_key]["transcriber"]}",
+                "Arranger": f"descr. {gabc_file_meta[meta_key]["transcriber"]}",
                 "Music": f"Music{filename_slug}",
                 "Lyrics": f"Lyrics{filename_slug}",
                 "LyricsLink": f"vox{filename_slug}".lower(),
                 "TransposeKey": f"{transpose_key}",
+                "Database": "GregoBase",
             }
 
             write_song_ly(song_ly_path, template_filepath, doc_data)

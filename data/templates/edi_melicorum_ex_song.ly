@@ -1,9 +1,10 @@
 \bookpart {
   \header {
     title = "TemplateTitle"
-    subtitle = "TemplateSubtitle - TemplateInstrument"
+    subtitle = \markup \italic { "TemplateSubtitle - TemplateInstrument" }
     composer = "TemplateComposer"
     arranger = "TemplateArranger"
+    meter = "lib. info: TemplateDatabase"
   }
 
   \tocItem \markup { \bold "TemplateTitle" — \italic "TemplateSubtitle, TemplateInstrument" }

@@ -66,7 +66,7 @@
       subsubtitle = \markup \center-column { 
         \vspace #1
         "Faciebat Torontinum (Canada)"
-        \typewriter "versio nulla.iv"
+        \typewriter "versio nulla.vi"
       }
     }
 
@@ -136,15 +136,26 @@
 
     \markup \vspace #1
     \markup \left-column {
-      "L.Ant '60 --- Liber antiphonarius, 1960"
-      "L.Usu '61 --- The Liber Usualis, 1961"
-      "Ch.otC '56 --- Chants of the Church, 1956"
-      "G.Rom '08 --- Graduale Romanum, 1908"
-      "G.Rom '61 --- Graduale Romanum, 1961"
-      "G.Rom '74 --- Graduale Romanum, 1974"
-      "G.Smp '75 --- Graduale simplex, 1975"
-      "Gr.Mis '90 --- Gregorian Missal, 1990"
-      "L.Cant '83 --- Liber cantualis, 1983"
+      \line { \bold "L.Ant '60" "--- Liber antiphonarius, 1960" }
+      \line { \bold "L.Usu '61" "--- The Liber Usualis, 1961" }
+      \line { \bold "Ch.otC '56" "--- Chants of the Church, 1956" }
+      \line { \bold "G.Rom '08" "--- Graduale Romanum, 1908" }
+      \line { \bold "G.Rom '61" "--- Graduale Romanum, 1961" }
+      \line { \bold "G.Rom '74" "--- Graduale Romanum, 1974" }
+      \line { \bold "G.Smp '75" "--- Graduale simplex, 1975" }
+      \line { \bold "Gr.Mis '90" "--- Gregorian Missal, 1990" }
+      \line { \bold "L.Cant '83" "--- Liber cantualis, 1983" }
+    }
+
+    \markup \vspace #1
+    \markup \wordwrap {
+      Other abbreviations:
+    }
+
+    \markup \vspace #1
+    \markup \left-column {
+      \line { \bold "lib. info." "--- librarium informaticum" \italic "(database)" }
+      \line { \bold "descr." "--- describébat" \italic "(transcribed in/by)" }
     }
   }
   
