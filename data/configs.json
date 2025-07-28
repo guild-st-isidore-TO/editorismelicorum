@@ -1,5 +1,14 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
+    "paths": {
+        "gabctkDirectory": "../gabctk",
+        "dataTemplatesDirectory": "data/templates",
+        "outputDirectoryLyData": "build/ly-data",
+        "outputDirectoryLy": "build/ly",
+        "outputDirectoryMidi": "build/midi",
+        "outputDirectoryPdf": "build/pdf",
+        "outputDirectoryXml": "build/xml"
+    },
     "opModes": [
         {
             "id": 1,
@@ -27,14 +36,5 @@
         "performingAction1": "[Editor Melicus]:  Order accepted...",
         "performingAction2": "[Editor Melicus]:  Now preparing to {}...\n",
         "error": "[Editor Melicus]:  Huh? We can't help you with that."
-    },
-    "paths": {
-        "gabctkDirectory": "../gabctk",
-        "dataTemplatesDirectory": "data/templates",
-        "outputDirectoryLyData": "build/ly-data",
-        "outputDirectoryLy": "build/ly",
-        "outputDirectoryMidi": "build/midi",
-        "outputDirectoryPdf": "build/pdf",
-        "outputDirectoryXml": "build/xml"
     }
 }

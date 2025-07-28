@@ -66,7 +66,7 @@
       subsubtitle = \markup \center-column { 
         \vspace #1
         "Faciebat Torontinum (Canada)"
-        \typewriter "versio nulla.vi"
+        \typewriter "versio nulla.vii"
       }
     }
 
@@ -83,14 +83,14 @@
       This project aims to create a digital music typesetting toolkit for use by music ministries
       in Catholic parishes. Its main objectives are building musical accompaniments around
       traditional hymns (the kind written in Gregorian notation), and laying them out into
-      documents for use of the community.
+      documents for use by the community.
     }
 
     \markup \vspace #1
     \markup \wordwrap {
-      As an initial step, the Editoris project is building a proof of concept: a songbook with
-      traditional style accompaniments written out for classical guitar. And the tools
-      to enable a musician to create such a thing efficiently.
+      As initial steps, the Editoris project is building some proofs of concept:
+      songbooks with traditional style accompaniments written out for classical guitar.
+      And the sheets to enable musicians to create those arrangements.
     }
 
     \markup \vspace #1
