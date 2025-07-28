@@ -133,7 +133,16 @@ Uses `gabctk` and `pandoc`
     - congregation hymnal -- The hymns, with only the melody line (Gregorian notation)
     - choir hymnal -- The hymns, with melody line, guitar line, and general accompaniment line (all in Standard notation)
 
-## DESIGN
+## IMPLEMENTATION
+
+The Editoris toolkit works mainly through a set of Python scripts that do a few things like:
+
+1. read GABC files
+1. read user inputs
+1. assemble documents
+1. etc. 
+
+### Philosophy
 
 The module can be thought of as a publishing house (**Editoris Melicorum**) run by several people:
 
@@ -147,12 +156,6 @@ Combines source documents and prepared arrangements, and engraves new copies
 Knowledge resource for the rest of the team
 
 The module has been structured to reflect these personas and their division of responsibilities.
-
-### General data flow
-
-Initial sketch of how `gabctk` and `LilyPond` fit together
-
-![System  Design - gabc-ly-tools](./static/design/graphviz.svg "System  Design - gabc-ly-tools")
 
 ## CONTRIBUTING
 
