@@ -1,5 +1,4 @@
 \bookpart {
-
   \markup \vspace #1
   \markuplist \table-of-contents
 
