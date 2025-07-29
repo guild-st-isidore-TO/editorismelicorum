@@ -16,6 +16,42 @@
                 "examples/08-nos_autem.gabc",
                 "examples/11-regina-caeli.gabc"
             ]
+        },
+        {
+            "name": "Marian Antiphons (Simple Tone)",
+            "id": "marian_ant_sim",
+            "author": "rjsalvadorr",
+            "mainDocument": "marian-antiphons-simple.ly",
+            "gabcFiles": [
+                "marian-antiphons-simple/01-alma-redemptoris-mater-sim.gabc",
+                "marian-antiphons-simple/02-ave-regina-caelorum-sim.gabc",
+                "marian-antiphons-simple/03-regina-caeli-sim.gabc",
+                "marian-antiphons-simple/04-salve-regina-sim.gabc"
+            ]
+        },
+        {
+            "name": "Marian Antiphons (Solemn Tone)",
+            "id": "marian_ant_sol",
+            "author": "rjsalvadorr",
+            "mainDocument": "marian-antiphons-solemn.ly",
+            "gabcFiles": [
+                "marian-antiphons-solemn/01-alma-redemptoris-mater-sol.gabc",
+                "marian-antiphons-solemn/02-ave-regina-caelorum-sol.gabc",
+                "marian-antiphons-solemn/03-regina-caeli-sol.gabc",
+                "marian-antiphons-solemn/04-salve-regina-sol.gabc"
+            ]
+        },
+        {
+            "name": "Marian Hymns",
+            "id": "marian_hymns",
+            "author": "rjsalvadorr",
+            "mainDocument": "marian-hymns.ly",
+            "gabcFiles": [
+                "marian-hymns/01-ave-maria.gabc",
+                "marian-hymns/02-ave-maris-stella.gabc",
+                "marian-hymns/03-stabat-mater.gabc",
+                "marian-hymns/04-sub-tuum-praesidium.gabc"
+            ]
         }
     ]
 }

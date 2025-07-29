@@ -55,7 +55,7 @@ def get_gabc_metadata(gabc_data_file):
                     if m_prop_kw is "book":
                         for s_full, s_abbrev in source_abbrevs.items():
                             display_val = display_val.replace(s_full, s_abbrev)
-                        display_val = display_val.replace(" & ", "; ")
+                        display_val = display_val.replace(" & ", ";  ")
                         display_val = display_val.replace(" p. ", " p.")
                     gabc_metadata[meta_pair[0]] = display_val
 
