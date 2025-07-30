@@ -3,11 +3,12 @@
   \header {
     title = \markup \center-column { 
       \vspace #5
-      "TemplateDocTitleLat"
-      \italic "TemplateDocTitle"
+      \fontsize #1.5 "TemplateDocTitleLat"
+      \vspace #0.25
+      \fontsize #1.5 \italic "TemplateDocTitle"
       \vspace #1
-      "Vox et Cithara Moderna"
-      \italic "for Voice and Guitar"
+      \fontsize #-0.5 "Vox et Cithara Moderna"
+      \fontsize #-0.5 \italic "for Voice and Guitar"
     }
     subtitle = \markup \center-column { 
       \vspace #2
