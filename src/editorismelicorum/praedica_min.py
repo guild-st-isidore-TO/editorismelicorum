@@ -31,7 +31,7 @@ def praedica_min(main_doc):
         f"lilypond -l VERBOSE -o {cfg_data['out_file_path']} {cfg_data['in_file_path']}"
     )
 
-    print_frame("USING LILYPOND", cfg_data)
+    print_frame("USING LILYPOND", cfg_data, {})
 
     try:
         retcode = subprocess.call(cfg_data["cmd_string"], shell=True)

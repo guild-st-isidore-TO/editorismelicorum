@@ -78,7 +78,7 @@ def print_char_line(char, num_chars):
     return out
 
 
-def print_frame(str, data_dict):
+def print_frame(str, data_dict, other_dict):
     char_div1 = "="
     char_div2 = "-"
     char_div3 = "·"
@@ -95,6 +95,11 @@ def print_frame(str, data_dict):
 
     for dkey, dvalue in data_dict.items():
         output = output + f"{dkey}: {dvalue}\n"
+
+    output = output + "\n"
+
+    for okey, ovalue in other_dict.items():
+        output = output + f"{okey}: {ovalue}\n"
 
     output = output + f"{footer_line}\n\n"
 

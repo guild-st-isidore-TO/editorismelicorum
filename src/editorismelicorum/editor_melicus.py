@@ -129,13 +129,14 @@ time.sleep(1.5)
 cfg_data = get_cfg_data()
 
 
-def to_input_cfg_paths(cfg_filepath):
-    return os.path.join(cfg_data["data_dir"], cfg_filepath)
+# def to_input_cfg_paths(cfg_filepath):
+#     return os.path.join(cfg_data["data_dir"], cfg_filepath)
 
 
 def to_conv_ly_paths(cfg_filepath):
-    cleaned_path = cfg_filepath.replace("examples/", "")
-    cleaned_path = cleaned_path.replace(".gabc", ".ly")
+    # cleaned_path = cfg_filepath.replace("examples/", "")
+    # cleaned_path = cleaned_path.replace(".gabc", ".ly")
+    cleaned_path = cfg_filepath.replace(".gabc", ".ly")
     return os.path.join(cfg_data["output_dir_ly_data"], cleaned_path)
 
 
@@ -147,7 +148,7 @@ if input_operation_mode == 1:
     # ARRANGE / COMPOSE
 
     for in_doc in input_documents:
-        gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
+        # gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
         title_template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
@@ -156,7 +157,7 @@ if input_operation_mode == 1:
             cfg_data["data_templates_dir"], "ed_melicorum_bookpart_1.ly"
         )
 
-        gabc_file_meta = lege_tabulae_gabc(in_doc["id"], gabc_docs)
+        gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["gabcFiles"])
 
         var_ly_path = os.path.join(cfg_data["output_dir_ly"], f"{in_doc['id']}_vars.ly")
         with open(var_ly_path, "w") as varc:

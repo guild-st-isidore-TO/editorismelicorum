@@ -69,16 +69,27 @@ def lege_tabulae_gabc(doc_id, gabc_data_files):
     ctr_files = 1
 
     for gabc_data_file in gabc_data_files:
+        inFilePath = os.path.join(cfg_data["data_dir"], gabc_data_file)
 
-        inFileName = os.path.basename(gabc_data_file)
-        outFileName = inFileName.replace(".gabc", "")
-        outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
-        doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(gabc_data_file)
+        doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(inFilePath)
         ctr_files = ctr_files + 1
 
-        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file}  -l {outFilePath} -v"
+        # inFileName = os.path.basename(gabc_data_file)
+        # outFileName = inFileName.replace(".gabc", "")
+        # outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
+        outFilePath = os.path.join(
+            cfg_data["output_dir_ly_data"], gabc_data_file
+        ).replace(".gabc", ".ly")
+        outFileDir = Path(outFilePath).parent
+        Path(outFileDir).mkdir(parents=True, exist_ok=True)
+
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath}  -l {outFilePath} -v"
         # cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file}  -l {outFilePath} -d 2 -v"
-        print_frame("USING GABCTK", cfg_data)
+        print_frame(
+            "USING GABCTK",
+            cfg_data,
+            {"cmdString": cmdString, "outFilePath": outFilePath},
+        )
 
         try:
             retcode = subprocess.call(cmdString, shell=True)
@@ -175,6 +186,7 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
     ly_transpose = "des"
 
+    print(conv_ly_filepath)
     with open(conv_ly_filepath) as f:
         with open(out_ly_path, "a") as wr:
             for ly_line in f:
@@ -196,9 +208,7 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
                         ly_transpose = ly_line.strip().replace(
                             "\cadenzaOn \\transpose c ", ""
                         )
-                        ly_transpose = ly_transpose.replace(
-                            "{\MusiqueTheme}", ""
-                        )
+                        ly_transpose = ly_transpose.replace("{\MusiqueTheme}", "")
 
                     if (
                         script_evt_type == "end_bracket"
