@@ -2,11 +2,11 @@
 
 ![Editoris Melicorum mascot image](./static/edi_melicorum_pic.png "Editoris Melicorum mascot image")
 
-This project aims to create a digital music typesetting toolkit for use by music ministries in Catholic parishes.
-Its main objectives are building musical accompaniments around traditional hymns (the kind written in Gregorian notation),
-and laying them out into documents for use of the community.
+The Editoris project aims to create a digital music typesetting toolkit for use by music ministries in Catholic
+parishes. The toolkit helps with building musical arrangements around traditional hymns in Gregorian notation.
+As well as laying them out into documents, both for the congregation and the choir/musicians.
 
-Check out an [example document here](./static/edi_melicorum_example_0.6.pdf)
+Check out an [example document here](./static/marian-hymns-0.1.pdf)
 
 ## USAGE
 
