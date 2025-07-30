@@ -13,19 +13,19 @@
         {
             "id": 1,
             "name": "ARRANGE / COMPOSE",
-            "desc": "Create sheets for writing out hymn arrangements/cadenze",
+            "desc": "Create blank sheets for writing out hymn arrangements/cadenze",
             "nameConfirmation": "create arrangement sheets"
         },
         {
             "id": 2,
-            "name": "DRAFT MELODY ARRANGEMENTS",
-            "desc": "Draft songbooks with given arrangements (in .ly files)",
+            "name": "DRAFT ARRANGEMENTS",
+            "desc": "Draft songbooks with written arrangements (in .ly files)",
             "nameConfirmation": "preview your arrangements"
         },
         {
             "id": 3,
-            "name": "PUBLISH MELODY ARRANGEMENTS",
-            "desc": "Create songbooks with given arrangements (in .ly files)",
+            "name": "PUBLISH ARRANGEMENTS",
+            "desc": "Create songbooks with written arrangements (in .ly files)",
             "nameConfirmation": "publish your arrangements"
         }
     ],

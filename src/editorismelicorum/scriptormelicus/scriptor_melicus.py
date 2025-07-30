@@ -19,6 +19,9 @@ template_replace_map = {
     "TemplateLyrics": "Lyrics",
     "TemplateTransposeKey": "TransposeKey",
     "TemplateDatabase": "Database",
+    "TemplateDocTitleLat": "DocTitleLat",
+    "TemplateDocTitle": "DocTitle",
+    "TemplateDocVersion": "DocVersion",
 }
 
 
@@ -26,6 +29,19 @@ def write_song_ly(song_filepath, template_filepath, doc_data):
     # read in template file, replace values in template, copy to song
     with open(template_filepath) as tf:
         with open(song_filepath, "a") as twr:
+            for t_line in tf:
+                template_line = t_line
+                for key, value in template_replace_map.items():
+                    template_line = template_line.replace(key, doc_data[value])
+                twr.write(template_line)
+            twr.write("\n\n")
+    return 0
+
+
+def write_title_ly(title_filepath, template_filepath, doc_data):
+    # read in template file, replace values in template, copy to title
+    with open(template_filepath) as tf:
+        with open(title_filepath, "a") as twr:
             for t_line in tf:
                 template_line = t_line
                 for key, value in template_replace_map.items():

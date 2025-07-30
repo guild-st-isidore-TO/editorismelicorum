@@ -7,8 +7,9 @@ import sys, os, time, json, logging, re
 
 from ed_melicorum_utils import get_cfg_data, write_roman
 from praedica_min import praedica_min
+from incoha import incoha
 from lectormelicus.lector_melicus import lege_tabulae_gabc, copy_conv_gabc_vars
-from scriptormelicus.scriptor_melicus import write_song_ly
+from scriptormelicus.scriptor_melicus import write_song_ly, write_title_ly
 
 # /////   Loading internal configuration
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -141,14 +142,18 @@ def to_conv_ly_paths(cfg_filepath):
 input_documents = cfg_data["documents"]
 
 if input_operation_mode == 1:
-    print("NOTE: Arranging not available!")
 
-elif input_operation_mode == 2:
+    # ------------------------------------
+    # ARRANGE / COMPOSE
+
     for in_doc in input_documents:
         gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
-        template_filepath = os.path.join(
-            cfg_data["data_templates_dir"], "edi_melicorum_ex_song.ly"
+        title_template_filepath = os.path.join(
+            cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
+        )
+        song_template_filepath = os.path.join(
+            cfg_data["data_templates_dir"], "ed_melicorum_bookpart_1.ly"
         )
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], gabc_docs)
@@ -163,6 +168,12 @@ elif input_operation_mode == 2:
         with open(song_ly_path, "w") as songc:
             songc.write("\n")  # clearing text
 
+        title_ly_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_title.ly"
+        )
+        with open(title_ly_path, "w") as titlec:
+            titlec.write("\n")  # clearing text
+
         print(gabc_file_meta)
 
         # Copying LY vars, writing song part
@@ -176,7 +187,9 @@ elif input_operation_mode == 2:
 
             meta_key = f"{in_doc['id']}_{cgd_idx}"
 
-            transpose_key = copy_conv_gabc_vars(filename_slug, conv_gabc_doc, var_ly_path)
+            transpose_key = copy_conv_gabc_vars(
+                filename_slug, conv_gabc_doc, var_ly_path
+            )
 
             doc_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
@@ -189,14 +202,29 @@ elif input_operation_mode == 2:
                 "LyricsLink": f"vox{filename_slug}".lower(),
                 "TransposeKey": f"{transpose_key}",
                 "Database": "GregoBase",
+                "DocTitle": in_doc["name"],
+                "DocTitleLat": in_doc["nameLat"],
+                "DocVersion": in_doc["version"],
             }
 
-            write_song_ly(song_ly_path, template_filepath, doc_data)
+            write_title_ly(title_ly_path, title_template_filepath, doc_data)
+            write_song_ly(song_ly_path, song_template_filepath, doc_data)
 
-        # Preview publish
-        praedica_min(in_doc["mainDocument"])
+        # Create arrangement / composition sheets
+        incoha(in_doc["mainDocument"])
+
+elif input_operation_mode == 2:
+
+    # ------------------------------------
+    # DRAFT ARRANGEMENTS (PREVIEW)
+
+    print("NOTE: Drafts not available!")
 
 elif input_operation_mode == 3:
+
+    # ------------------------------------
+    # PUBLISH ARRANGEMENTS
+
     print("NOTE: Publishing not available!")
 
 else:

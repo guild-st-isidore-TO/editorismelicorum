@@ -21,9 +21,8 @@ Path(cfg_data["output_dir_pdf"]).mkdir(parents=True, exist_ok=True)
 # USING LILYPOND
 
 
-def praedica_min(main_doc):
-    """Publishes preview versions"""
-    ## TODO: Turn this into an actual publishing doc, not just a "blank sheets" copy
+def incoha(main_doc):
+    """Drafts arrangement / composition sheets"""
 
     cfg_data["in_file_path"] = f"{cfg_data['doc_dir']}/{main_doc}"
     cfg_data["out_file_path"] = f"{cfg_data['output_dir_pdf']}"
