@@ -175,7 +175,12 @@ if input_operation_mode == 1:
         with open(title_ly_path, "w") as titlec:
             titlec.write("\n")  # clearing text
 
-        print(gabc_file_meta)
+        doc_data = {
+            "DocTitle": in_doc["name"],
+            "DocTitleLat": in_doc["nameLat"],
+            "DocVersion": in_doc["version"],
+        }
+        write_title_ly(title_ly_path, title_template_filepath, doc_data)
 
         # Copying LY vars, writing song part
         for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs, start=1):
@@ -192,7 +197,7 @@ if input_operation_mode == 1:
                 filename_slug, conv_gabc_doc, var_ly_path
             )
 
-            doc_data = {
+            song_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
                 "Subtitle": gabc_file_meta[meta_key]["office-part"],
                 "Instrument": f"Modus {write_roman(int(gabc_file_meta[meta_key]["mode"]))}",
@@ -203,13 +208,9 @@ if input_operation_mode == 1:
                 "LyricsLink": f"vox{filename_slug}".lower(),
                 "TransposeKey": f"{transpose_key}",
                 "Database": "GregoBase",
-                "DocTitle": in_doc["name"],
-                "DocTitleLat": in_doc["nameLat"],
-                "DocVersion": in_doc["version"],
             }
 
-            write_title_ly(title_ly_path, title_template_filepath, doc_data)
-            write_song_ly(song_ly_path, song_template_filepath, doc_data)
+            write_song_ly(song_ly_path, song_template_filepath, song_data)
 
         # Create arrangement / composition sheets
         incoha(in_doc["mainDocument"])

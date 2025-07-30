@@ -15,7 +15,7 @@
   %%------------------------------------
   %% Title Page
 
-  \include "../build/ly/marian_ant_sim_title.ly"
+  \include "../build/ly/marian_hymns_title.ly"
   
   %%------------------------------------
   %% Table of Contents, Preface
@@ -25,6 +25,6 @@
   %%------------------------------------
   %% Main Content
 
-  \include "../build/ly/marian_ant_sim_bookparts.ly"
+  \include "../build/ly/marian_hymns_bookparts.ly"
 
 }

@@ -160,3 +160,7 @@ The module has been structured to reflect these personas and their division of r
 ## CONTRIBUTING
 
 Want to contribute to the _Editoris_ project? Shoot an email to `salvador.workshop@gmail.com`
+
+## Notes
+
+- The ``(`)`` symbol in GABC input code causes errors in `gabctk`, and should be removed

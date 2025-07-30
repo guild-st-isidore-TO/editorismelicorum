@@ -45,12 +45,9 @@ def get_gabc_metadata(gabc_data_file):
     ## reading metadata
     with open(gabc_data_file) as cgdf:
         for cgd_line in cgdf:
-            print(f"~~~~ pong!")
             for m_prop_kw in meta_prop_keywords:
-                # print(f"~~~~ pung!")
                 if m_prop_kw in cgd_line:
                     meta_pair = cgd_line.split(":")
-                    print(meta_pair)
                     display_val = meta_pair[1][:-2]
                     if m_prop_kw is "book":
                         for s_full, s_abbrev in source_abbrevs.items():
@@ -186,7 +183,6 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
     ly_transpose = "des"
 
-    print(conv_ly_filepath)
     with open(conv_ly_filepath) as f:
         with open(out_ly_path, "a") as wr:
             for ly_line in f:

@@ -2,7 +2,7 @@
 
   \header {
     title = \markup \center-column { 
-      \vspace #2
+      \vspace #5
       "TemplateDocTitleLat"
       \italic "TemplateDocTitle"
       \vspace #1
@@ -10,21 +10,21 @@
       \italic "for Voice and Guitar"
     }
     subtitle = \markup \center-column { 
-      \vspace #1
+      \vspace #2
       "EX FABRICA SALVADORIS"
       \italic "from Salvador Workshop"
       "FACIEBAT TORONTINUM (CANADA) MMXXV"
       \italic "made in Toronto (Canada), 2025"
     }
     subsubtitle = \markup \center-column { 
-      \vspace #1
+      \vspace #2
       "EXCUDIT EDITORIS MELICORUM"
       \italic "engraved by Editoris Melicorum"
       \typewriter "versio TemplateDocVersion"
     }
   }
 
-  \markup \vspace #2
+  \markup \vspace #5
   \markup \wordwrap {
     This file was generated through \bold "Editoris Melicorum"
     \italic "(Publishers of Music/Melodies)", a software project by

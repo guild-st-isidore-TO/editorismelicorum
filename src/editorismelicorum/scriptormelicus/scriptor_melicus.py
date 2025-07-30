@@ -24,6 +24,8 @@ template_replace_map = {
     "TemplateDocVersion": "DocVersion",
 }
 
+capitalized_vals = ["DocTitleLat"]
+
 
 def write_song_ly(song_filepath, template_filepath, doc_data):
     # read in template file, replace values in template, copy to song
@@ -32,7 +34,11 @@ def write_song_ly(song_filepath, template_filepath, doc_data):
             for t_line in tf:
                 template_line = t_line
                 for key, value in template_replace_map.items():
-                    template_line = template_line.replace(key, doc_data[value])
+                    if value in doc_data:
+                        in_string = doc_data[value]
+                        if value in capitalized_vals:
+                            in_string = in_string.upper()
+                        template_line = template_line.replace(key, in_string)
                 twr.write(template_line)
             twr.write("\n\n")
     return 0
@@ -45,7 +51,11 @@ def write_title_ly(title_filepath, template_filepath, doc_data):
             for t_line in tf:
                 template_line = t_line
                 for key, value in template_replace_map.items():
-                    template_line = template_line.replace(key, doc_data[value])
+                    if value in doc_data:
+                        in_string = doc_data[value]
+                        if value in capitalized_vals:
+                            in_string = in_string.upper()
+                        template_line = template_line.replace(key, in_string)
                 twr.write(template_line)
             twr.write("\n\n")
     return 0
