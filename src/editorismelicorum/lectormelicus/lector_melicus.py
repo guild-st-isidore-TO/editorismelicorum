@@ -232,5 +232,11 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
                         "musiquetheme" in ly_script_stack
                         or "paroles" in ly_script_stack
                     ):
+                        ly_line = ly_line.replace('&zwj;*__', '')
+                        ly_line = ly_line.replace('&zwj;*_', '')
+                        ly_line = ly_line.replace('<nlba>', '')
+                        ly_line = ly_line.replace('</nlba>', '')
+                        ly_line = ly_line.replace('<eu>', '')
+                        ly_line = ly_line.replace('</eu>', '')
                         wr.write(ly_line)
     return ly_transpose

@@ -31,6 +31,23 @@ def write_roman(num):
     return "".join([a for a in roman_num(num)])
 
 
+def write_roman_version(ver_str):
+    out_str = ""
+    separator = "."
+    semver_parts = ver_str.split(separator)
+
+    for pt_idx, part in enumerate(semver_parts):
+        if pt_idx > 0:
+            out_str = out_str + separator
+        if part == "0":
+            out_str = out_str + "nulla"
+        else:
+            part_num = int(part)
+            out_str = out_str + f"{write_roman(part_num).lower()}"
+
+    return out_str
+
+
 file_dir = os.path.dirname(os.path.realpath(__file__))
 repo_dir = os.path.join(file_dir, "../../")
 

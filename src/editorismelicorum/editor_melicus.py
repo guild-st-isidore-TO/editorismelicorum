@@ -5,7 +5,7 @@
 
 import sys, os, time, json, logging, re
 
-from ed_melicorum_utils import get_cfg_data, write_roman
+from ed_melicorum_utils import get_cfg_data, write_roman, write_roman_version
 from praedica_min import praedica_min
 from incoha import incoha
 from lectormelicus.lector_melicus import lege_tabulae_gabc, copy_conv_gabc_vars
@@ -178,7 +178,7 @@ if input_operation_mode == 1:
         doc_data = {
             "DocTitle": in_doc["name"],
             "DocTitleLat": in_doc["nameLat"],
-            "DocVersion": in_doc["version"],
+            "DocVersion": write_roman_version(in_doc["version"]),
         }
         write_title_ly(title_ly_path, title_template_filepath, doc_data)
 
@@ -213,7 +213,7 @@ if input_operation_mode == 1:
             write_song_ly(song_ly_path, song_template_filepath, song_data)
 
         # Create arrangement / composition sheets
-        incoha(in_doc["mainDocument"])
+        incoha(in_doc["mainDocument"], in_doc["version"])
 
 elif input_operation_mode == 2:
 
