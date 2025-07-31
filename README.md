@@ -157,6 +157,10 @@ Knowledge resource for the rest of the team
 
 The module has been structured to reflect these personas and their division of responsibilities.
 
+### Data Flow
+
+![Editoris Melicorum data flow (Jul 2025)](./static/design/data-flow-v2.svg "Editoris Melicorum data flow (Jul 2025)")
+
 ## CONTRIBUTING
 
 Want to contribute to the _Editoris_ project? Shoot an email to `salvador.workshop@gmail.com`
