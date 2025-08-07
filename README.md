@@ -1,5 +1,11 @@
 # Editoris Melicorum (EMEL)
 
+Editors of Melodies - GSI's music typesetting toolkit
+
+Part of the FAVI System: https://github.com/guild-st-isidore-TO/fabrica-virtualis
+
+---
+
 ![Editoris Melicorum mascot image](./static/edi_melicorum_pic.png "Editoris Melicorum mascot image")
 
 Editoris Melicorum is a digital music typesetting toolkit for music ministries in Catholic
