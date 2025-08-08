@@ -37,14 +37,60 @@ https://lilypond.org/download.html
 
 https://github.com/frescobaldi/frescobaldi/wiki
 
-### Configuration
+## SERVER USAGE
+
+### Operating Systems
+
+EMEL has been tested on:
+
+MacOS Ventura 13.2.1
+
+### Installation/Setup
+
+Open this repo's directory in the terminal and run:
+
+```
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### Running/Deploying the Server
+
+Building docker image
+
+```
+docker build -t editoris-melicorum .
+```
+
+Listing docker images
+
+```
+docker images
+```
+
+Run docker image
+
+```
+docker run -d -p 5050:5050 editoris-melicorum
+```
+
+Listing docker image/container status
+
+```
+docker ps -a
+```
+
+## CONFIGURATION
 
 These configs can be found in `data/`:
 
 - `configs.json` -- Configurations for the editorismelicorum system
 - `input-configs.json` -- Configurations for documents being written and edited by the system
 
-#### gabctk path
+### gabctk path
 
 `configs.json` looks like:
 
@@ -68,7 +114,7 @@ The `gabctkDirectory` value needs to point to the `gabctk` local repo (and locat
 
 Output paths can be changed as well, if necessary
 
-#### documents
+### documents
 
 `input-configs.json` looks like:
 
