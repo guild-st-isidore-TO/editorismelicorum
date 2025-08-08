@@ -6,6 +6,9 @@ Part of the FAVI System: https://github.com/guild-st-isidore-TO/fabrica-virtuali
 
 ---
 
+> STATUS (VIII Augustii MMXXV)  
+Active Development -- Now extending working functionality while integrating it into the web API.
+
 ![Editoris Melicorum mascot image](./static/edi_melicorum_pic.png "Editoris Melicorum mascot image")
 
 Editoris Melicorum is a digital music typesetting toolkit for music ministries in Catholic
