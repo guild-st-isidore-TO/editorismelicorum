@@ -77,6 +77,13 @@ Run docker image
 docker run -d -p 5050:5050 editoris-melicorum
 ```
 
+These paths should be accessible on the browser after running the image above:
+
+```
+http://localhost:5050/
+http://localhost:5050/api/v1/books/all
+```
+
 Listing docker image/container status
 
 ```
