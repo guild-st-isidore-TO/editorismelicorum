@@ -28,17 +28,17 @@
       \vspace #2
       \abs-fontsize #14 "excudit Editoris Melicorum"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey20) \italic "engraved by Editoris Melicorum"
+      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "engraved by Editoris Melicorum"
 
       \vspace #0.4
       \abs-fontsize #14 "faciebat Torontinum (Canada) MMXXV"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey20) \italic "made in Toronto (Canada), 2025"
+      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "made in Toronto (Canada), 2025"
   
       \vspace #0.4
       \abs-fontsize #14 "versio TemplateDocVersionLat"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey20) \italic "version TemplateDocVersion"
+      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "version TemplateDocVersion"
     }
   }
 
