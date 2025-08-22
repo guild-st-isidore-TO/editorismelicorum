@@ -4,7 +4,7 @@
             "name": "Editoris Example",
             "nameLat": "Exemplum Editorum",
             "id": "ed_meli_example",
-            "version": "0.9",
+            "version": "0.10",
             "author": "rjsalvadorr",
             "mainDocument": "edi_melicorum_example.ly",
             "gabcFiles": [
@@ -23,7 +23,7 @@
             "name": "Marian Antiphons (Simple Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Simplici)",
             "id": "marian_ant_sim",
-            "version": "0.2",
+            "version": "0.3",
             "author": "rjsalvadorr",
             "mainDocument": "marian-antiphons-simple.ly",
             "gabcFiles": [
@@ -37,7 +37,7 @@
             "name": "Marian Antiphons (Solemn Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Solemnis)",
             "id": "marian_ant_sol",
-            "version": "0.2",
+            "version": "0.3",
             "author": "rjsalvadorr",
             "mainDocument": "marian-antiphons-solemn.ly",
             "gabcFiles": [
@@ -51,7 +51,7 @@
             "name": "Marian Hymns",
             "nameLat": "Hymni Mariæ",
             "id": "marian_hymns",
-            "version": "0.2",
+            "version": "0.3",
             "author": "rjsalvadorr",
             "mainDocument": "marian-hymns.ly",
             "gabcFiles": [

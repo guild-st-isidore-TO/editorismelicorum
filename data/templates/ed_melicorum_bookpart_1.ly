@@ -11,6 +11,8 @@
   \score{
     <<
       \new Staff <<
+        \set Staff.instrumentName = "Voice"
+        \set Staff.shortInstrumentName = "Vox"
         \set Staff.midiInstrument = "flute"
         \set Staff.autoBeaming = ##f
         \new Voice = "TemplateLyricsLink" {
@@ -20,12 +22,18 @@
       \new Lyrics \lyricsto TemplateLyricsLink {
         \TemplateLyrics
       }
-      \new Staff {
+      \new Staff \with {
+        instrumentName = "Guitar (accomp.)"
+        shortInstrumentName = "Gt-Ac"
+      } {
         \clef "G_8"
         R1*60
       }
-      \new Staff {
-        \clef bass
+      \new Staff \with {
+        instrumentName = "Guitar (solo)"
+        shortInstrumentName = "Gt-So"
+      } {
+        \clef "G_8"
         R1*60
       }
     >>

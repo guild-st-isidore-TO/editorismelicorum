@@ -178,7 +178,8 @@ if input_operation_mode == 1:
         doc_data = {
             "DocTitle": in_doc["name"],
             "DocTitleLat": in_doc["nameLat"],
-            "DocVersion": write_roman_version(in_doc["version"]),
+            "DocVersion": in_doc["version"],
+            "DocVersionLat": write_roman_version(in_doc["version"]),
         }
         write_title_ly(title_ly_path, title_template_filepath, doc_data)
 

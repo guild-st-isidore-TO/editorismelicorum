@@ -21,6 +21,7 @@ template_replace_map = {
     "TemplateDatabase": "Database",
     "TemplateDocTitleLat": "DocTitleLat",
     "TemplateDocTitle": "DocTitle",
+    "TemplateDocVersionLat": "DocVersionLat",
     "TemplateDocVersion": "DocVersion",
 }
 

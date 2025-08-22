@@ -10,8 +10,9 @@
 
   \markup \vspace #1
   \markup \wordwrap {
-    There are two staves below each hymn. The guitar part is written in Treble clef,
-    octave below. And under that is a general/keyboard part in Bass clef, actual pitch.
+    There are two staves below each hymn, both written in Treble clef (octave below).
+    The first is the accompaniment line for the vocals. And the second is a solo guitar
+    line, for interludes/intros/outros.
   }
 
   \markup \vspace #1

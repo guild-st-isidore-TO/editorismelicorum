@@ -238,5 +238,7 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
                         ly_line = ly_line.replace('</nlba>', '')
                         ly_line = ly_line.replace('<eu>', '')
                         ly_line = ly_line.replace('</eu>', '')
+                        ly_line = ly_line.replace('<sc>', '')
+                        ly_line = ly_line.replace('</sc>', '')
                         wr.write(ly_line)
     return ly_transpose
