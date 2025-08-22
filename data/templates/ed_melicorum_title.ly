@@ -19,9 +19,9 @@
       \abs-fontsize #17 \with-color #(x11-color 'grey40) \italic "from Salvador Workshop"
 
       \vspace #0.7
-      \abs-fontsize #21 "et Collegium Sancti Gregorii (TO)"
+      \abs-fontsize #21 "et Collegium Sancti Isidori (TO)"
       \vspace #0.5
-      \abs-fontsize #17 \with-color #(x11-color 'grey40) \italic "and the Guild of St. Gregory (TO)"
+      \abs-fontsize #17 \with-color #(x11-color 'grey40) \italic "and the Guild of St. Isidore (TO)"
 
     }
     subsubtitle = \markup \center-column { 
