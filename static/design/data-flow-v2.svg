@@ -1,307 +1,310 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="769pt" height="660pt" viewBox="0.00 0.00 769 659.6">
-<g id="graph0" class="graph" transform="translate(31.338480582217983,577.8198722363089) scale(0.7986929535031919)" data-name="">
-<polygon fill="white" stroke="none" points="-4,4 -4,-655.6 765,-655.6 765,4 -4,4"/>
-<text text-anchor="middle" x="380.5" y="-25" font-family="Times,serif" font-size="14.00">EDITORIS MELICORUM</text>
-<text text-anchor="middle" x="380.5" y="-8.2" font-family="Times,serif" font-size="14.00">System Data Flow</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="614pt" height="744pt" viewBox="0.00 0.00 614 743.6">
+<g id="graph0" class="graph" transform="translate(60.171135753417616,650.2202495165226) scale(0.8536274453830517)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-739.6 610,-739.6 610,4 -4,4"/>
+<text text-anchor="middle" x="303" y="-41.8" font-family="Times,serif" font-size="14.00">EDITORIS MELICORUM</text>
+<text text-anchor="middle" x="303" y="-25" font-family="Times,serif" font-size="14.00">System data flow diagram</text>
+<g id="clust1" class="cluster" data-name="cluster_00">
+
+<polygon fill="none" stroke="black" points="8,-144 8,-727.6 598,-727.6 598,-144 8,-144"/>
+<text text-anchor="middle" x="303" y="-711" font-family="Times,serif" font-size="14.00">EDITORIS</text>
+<text text-anchor="middle" x="303" y="-694.2" font-family="Times,serif" font-size="14.00">MELICORUM</text>
+</g><text text-anchor="middle" x="303" y="-8.2" font-family="Times,serif" font-size="14.00">v3.0</text>
 <g id="clust2" class="cluster" data-name="cluster_10">
 
-<polygon fill="none" stroke="black" points="259,-440.8 259,-600.2 465,-600.2 465,-440.8 259,-440.8"/>
-<text text-anchor="middle" x="362" y="-583.6" font-family="Times,serif" font-size="14.00">LECTOR MELICUS</text>
+<polygon fill="none" stroke="black" points="141,-491.2 141,-667.4 347,-667.4 347,-491.2 141,-491.2"/>
+<text text-anchor="middle" x="244" y="-650.8" font-family="Times,serif" font-size="14.00">LECTOR</text>
+<text text-anchor="middle" x="244" y="-634" font-family="Times,serif" font-size="14.00">Reader</text>
+</g><g id="clust5" class="cluster" data-name="cluster_20">
+
+<polygon fill="none" stroke="black" points="355,-563.2 355,-678 590,-678 590,-563.2 355,-563.2"/>
+<text text-anchor="middle" x="472.5" y="-661.4" font-family="Times,serif" font-size="14.00">Input data</text>
+<text text-anchor="middle" x="472.5" y="-644.6" font-family="Times,serif" font-size="14.00">(.gabc and .ly files)</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_11">
+
+<polygon fill="none" stroke="black" points="172,-317.6 172,-483.2 376,-483.2 376,-317.6 172,-317.6"/>
+<text text-anchor="middle" x="274" y="-466.6" font-family="Times,serif" font-size="14.00">SCRIPTOR</text>
+<text text-anchor="middle" x="274" y="-449.8" font-family="Times,serif" font-size="14.00">Writer</text>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_12">
+
+<polygon fill="none" stroke="black" points="28,-317.6 28,-483.2 164,-483.2 164,-317.6 28,-317.6"/>
+<text text-anchor="middle" x="96" y="-466.6" font-family="Times,serif" font-size="14.00">SCHOLASTICUS</text>
+<text text-anchor="middle" x="96" y="-449.8" font-family="Times,serif" font-size="14.00">Scholar</text>
 </g>
 <g id="clust6" class="cluster" data-name="cluster_30">
 
-<polygon fill="none" stroke="black" points="16,-356 16,-432.8 340,-432.8 340,-356 16,-356"/>
-<text text-anchor="middle" x="178" y="-416.2" font-family="Times,serif" font-size="14.00">Formatted input data</text>
-</g><g id="clust7" class="cluster" data-name="cluster_31">
-
-<polygon fill="none" stroke="black" points="301,-199.2 301,-276 679,-276 679,-199.2 301,-199.2"/>
-<text text-anchor="middle" x="490" y="-259.4" font-family="Times,serif" font-size="14.00">Lilypond document parts</text>
-</g><g id="clust1" class="cluster" data-name="cluster_00">
-
-<polygon fill="none" stroke="black" points="8,-127.2 8,-643.6 753,-643.6 753,-127.2 8,-127.2"/>
-<text text-anchor="middle" x="380.5" y="-627" font-family="Times,serif" font-size="14.00">EDITORIS MELICORUM</text>
+<polygon fill="none" stroke="black" points="384,-389.6 384,-483.2 590,-483.2 590,-389.6 384,-389.6"/>
+<text text-anchor="middle" x="487" y="-466.6" font-family="Times,serif" font-size="14.00">Formatted input data</text>
+<text text-anchor="middle" x="487" y="-449.8" font-family="Times,serif" font-size="14.00">(.ly files)</text>
 </g>
-<!-- gabcSource --><g id="clust5" class="cluster" data-name="cluster_20" data-comment="gabcSource">
 
-<polygon fill="none" stroke="black" points="16,-512.8 16,-610.8 251,-610.8 251,-512.8 16,-512.8"/>
-<text text-anchor="middle" x="133.5" y="-594.2" font-family="Times,serif" font-size="14.00">Input data</text>
-</g><g id="clust3" class="cluster" data-name="cluster_11" data-comment="gabcSource">
+<g id="clust7" class="cluster" data-name="cluster_31">
 
-<polygon fill="none" stroke="black" points="348,-284 348,-432.8 552,-432.8 552,-284 348,-284"/>
-<text text-anchor="middle" x="450" y="-416.2" font-family="Times,serif" font-size="14.00">SCRIPTOR MELICUS</text>
+<polygon fill="none" stroke="black" points="63,-216 63,-309.6 359,-309.6 359,-216 63,-216"/>
+<text text-anchor="middle" x="211" y="-293" font-family="Times,serif" font-size="14.00">Lilypond document parts</text>
+<text text-anchor="middle" x="211" y="-276.2" font-family="Times,serif" font-size="14.00">(.ly files)</text>
 </g>
-<g id="node14" class="node" pointer-events="visible" data-name="gabcSource">
-
-<path fill="none" stroke="blue" d="M243.34,-572.88C243.34,-575.76 218.54,-578.1 188,-578.1 157.46,-578.1 132.66,-575.76 132.66,-572.88 132.66,-572.88 132.66,-525.92 132.66,-525.92 132.66,-523.04 157.46,-520.7 188,-520.7 218.54,-520.7 243.34,-523.04 243.34,-525.92 243.34,-525.92 243.34,-572.88 243.34,-572.88"/>
-<path fill="none" stroke="blue" d="M243.34,-572.88C243.34,-570 218.54,-567.66 188,-567.66 157.46,-567.66 132.66,-570 132.66,-572.88"/>
-<text text-anchor="middle" x="188" y="-553.6" font-family="Times,serif" font-size="14.00">GABC sources</text>
-<text text-anchor="middle" x="188" y="-536.8" font-family="Times,serif" font-size="14.00">(GregoBase, etc)</text>
-</g><g id="node15" class="node" pointer-events="visible" data-name="lySource" data-comment="gabcSource">
-
-<path fill="none" stroke="blue" d="M114.15,-572.88C114.15,-575.76 93.91,-578.1 69,-578.1 44.09,-578.1 23.85,-575.76 23.85,-572.88 23.85,-572.88 23.85,-525.92 23.85,-525.92 23.85,-523.04 44.09,-520.7 69,-520.7 93.91,-520.7 114.15,-523.04 114.15,-525.92 114.15,-525.92 114.15,-572.88 114.15,-572.88"/>
-<path fill="none" stroke="blue" d="M114.15,-572.88C114.15,-570 93.91,-567.66 69,-567.66 44.09,-567.66 23.85,-570 23.85,-572.88"/>
-<text text-anchor="middle" x="69" y="-553.6" font-family="Times,serif" font-size="14.00">LY sources</text>
-<text text-anchor="middle" x="69" y="-536.8" font-family="Times,serif" font-size="14.00">(CMAA, etc)</text>
-</g>
-<!-- gabcParser -->
 <!-- editor -->
 <g id="node1" class="node" pointer-events="visible" data-name="editor">
 
-<polygon fill="none" stroke="red" points="535.83,-171.2 472.17,-171.2 468.17,-167.2 468.17,-135.2 531.83,-135.2 535.83,-139.2 535.83,-171.2"/>
-<polyline fill="none" stroke="red" points="531.83,-167.2 531.83,-135.2"/>
-<polyline fill="none" stroke="red" points="531.83,-167.2 535.83,-171.2"/>
-<text text-anchor="middle" x="502" y="-149" font-family="Times,serif" font-size="14.00">EDITOR</text><polyline fill="none" stroke="red" points="531.83,-167.2 468.17,-167.2"/>
-
-</g><g id="clust4" class="cluster" data-name="cluster_12" data-comment="editor">
-
-<polygon fill="none" stroke="black" points="560,-284 560,-432.8 745,-432.8 745,-284 560,-284"/>
-<text text-anchor="middle" x="652.5" y="-416.2" font-family="Times,serif" font-size="14.00">SCHOLASTICUS MELICUS</text>
+<polygon fill="none" stroke="red" points="255.83,-188 192.17,-188 188.17,-184 188.17,-152 251.83,-152 255.83,-156 255.83,-188"/>
+<polyline fill="none" stroke="red" points="251.83,-184 188.17,-184"/>
+<polyline fill="none" stroke="red" points="251.83,-184 251.83,-152"/>
+<polyline fill="none" stroke="red" points="251.83,-184 255.83,-188"/>
+<text text-anchor="middle" x="222" y="-165.8" font-family="Times,serif" font-size="14.00">EDITOR</text>
 </g>
-<!-- gabcSource&#45;&gt;gabcParser -->
-<g id="node8" class="node" pointer-events="visible" data-name="lector" data-comment="gabcSource-&gt;gabcParser">
+<!-- finalDocuments -->
+<g id="node2" class="node" pointer-events="visible" data-name="finalDocuments">
 
-<polygon fill="none" stroke="red" points="448.44,-567.4 381.56,-567.4 377.56,-563.4 377.56,-531.4 444.44,-531.4 448.44,-535.4 448.44,-567.4"/>
-<polyline fill="none" stroke="red" points="444.44,-563.4 444.44,-531.4"/>
-<polyline fill="none" stroke="red" points="444.44,-563.4 448.44,-567.4"/>
-<text text-anchor="middle" x="413" y="-545.2" font-family="Times,serif" font-size="14.00">LECTOR</text><polyline fill="none" stroke="red" points="444.44,-563.4 377.56,-563.4"/>
-
+<polygon fill="none" stroke="darkgreen" points="287.57,-115.8 284.57,-119.8 263.57,-119.8 260.57,-115.8 156.43,-115.8 156.43,-74.6 287.57,-74.6 287.57,-115.8"/>
+<text text-anchor="middle" x="222" y="-99.4" font-family="Times,serif" font-size="14.00">Arrangement sheets,</text>
+<text text-anchor="middle" x="222" y="-82.6" font-family="Times,serif" font-size="14.00">hymnals, etc.</text>
 </g>
-<!-- lyTranslation --><g id="edge7" class="edge" data-name="lector-&gt;lectorParsers" data-comment="lyTranslation">
+<!-- editor&#45;&gt;finalDocuments -->
+<g id="edge1" class="edge" data-name="editor-&gt;finalDocuments">
 
-<path fill="none" stroke="black" d="M381.37,-523.89C365.28,-511.42 346.1,-496.55 331.52,-485.25"/>
-<polygon fill="black" stroke="black" points="380.95,-523.56 388.14,-524.07 390.43,-530.91 383.24,-530.4 380.95,-523.56"/>
-</g>
-<g id="edge10" class="edge" data-name="scriptor-&gt;scriptorReaders" data-comment="lyTranslation">
-
-<path fill="none" stroke="black" d="M465.9,-356.91C452.17,-347.49 436.73,-336.9 424.15,-328.26"/>
-<polygon fill="black" stroke="black" points="465.63,-356.73 472.84,-356.82 475.52,-363.52 468.31,-363.42 465.63,-356.73"/>
-</g>
-<g id="node6" class="node" pointer-events="visible" data-name="scriptor" data-comment="lyTranslation">
-
-<polygon fill="none" stroke="red" points="542.41,-400 463.59,-400 459.59,-396 459.59,-364 538.41,-364 542.41,-368 542.41,-400"/>
-<polyline fill="none" stroke="red" points="538.41,-396 538.41,-364"/>
-<polyline fill="none" stroke="red" points="538.41,-396 542.41,-400"/>
-<text text-anchor="middle" x="501" y="-377.8" font-family="Times,serif" font-size="14.00">SCRIPTOR</text><polyline fill="none" stroke="red" points="538.41,-396 459.59,-396"/>
-
-</g>
-<!-- gabcParser&#45;&gt;lyTranslation -->
-
-<!-- scholasticus -->
-<!-- formattedMusicData&#45;&gt;scriptorReaders -->
-<g id="edge16" class="edge" data-name="formattedMusicData-&gt;scriptorReaders">
-
-<path fill="none" stroke="black" d="M296.97,-363.52C314.63,-354.43 336.41,-343.22 355.31,-333.49"/>
-<polygon fill="black" stroke="black" points="356.83,-336.64 364.12,-328.95 353.63,-330.42 356.83,-336.64"/>
-</g>
-<!-- formattedStructureData&#45;&gt;scriptorReaders -->
-<!-- formattedStructureData&#45;&gt;scriptorReaders -->
-
-
-<!-- formattedStructureData&#45;&gt;scriptorReaders -->
-<g id="edge17" class="edge" data-name="formattedStructureData-&gt;scriptorReaders">
-
-<path fill="none" stroke="black" d="M156.98,-363.57C166.31,-360.91 175.9,-358.29 185,-356 238.74,-342.47 300.76,-329.74 344.16,-321.3"/>
-<polygon fill="black" stroke="black" points="344.68,-324.76 353.84,-319.43 343.36,-317.89 344.68,-324.76"/>
-</g><!-- scholasticus -->
-
-<!-- scholasticus -->
-<!-- scholasticus -->
-<g id="node13" class="node" pointer-events="visible" data-name="scholasticus">
-
-<polygon fill="none" stroke="red" points="700.24,-400 583.76,-400 579.76,-396 579.76,-364 696.24,-364 700.24,-368 700.24,-400"/>
-<polyline fill="none" stroke="red" points="696.24,-396 696.24,-364"/>
-<polyline fill="none" stroke="red" points="696.24,-396 700.24,-400"/>
-<text text-anchor="middle" x="640" y="-377.8" font-family="Times,serif" font-size="14.00">SCHOLASTICUS</text><polyline fill="none" stroke="red" points="696.24,-396 579.76,-396"/>
-
-</g>
-<!-- lyProcessor --><g id="edge8" class="edge" data-name="lector-&gt;lectorCopiers" data-comment="lyProcessor">
-
-<path fill="none" stroke="black" d="M413,-519.25C413,-507.86 413,-495.18 413,-485.25"/>
-<polygon fill="black" stroke="black" points="413,-518.91 417,-524.91 413,-530.91 409,-524.91 413,-518.91"/>
-</g><g id="edge1" class="edge" data-name="editor-&gt;finalDocuments" data-comment="lyProcessor">
-
-<path fill="none" stroke="black" d="M502,-134.95C502,-127.69 502,-119.01 502,-110.69"/>
-<polygon fill="black" stroke="black" points="505.5,-110.88 502,-100.88 498.5,-110.88 505.5,-110.88"/>
+<path fill="none" stroke="black" d="M222,-151.75C222,-144.49 222,-135.81 222,-127.49"/>
+<polygon fill="black" stroke="black" points="225.5,-127.68 222,-117.68 218.5,-127.68 225.5,-127.68"/>
 </g>
 <!-- docTitleData -->
 <g id="node3" class="node" pointer-events="visible" data-name="docTitleData">
 
-<polygon fill="none" stroke="darkgreen" points="665.02,-243.2 572.98,-243.2 572.98,-207.2 671.02,-207.2 671.02,-237.2 665.02,-243.2"/>
-<polyline fill="none" stroke="darkgreen" points="665.02,-243.2 665.02,-237.2"/>
-<polyline fill="none" stroke="darkgreen" points="671.02,-237.2 665.02,-237.2"/>
-<text text-anchor="middle" x="622" y="-221" font-family="Times,serif" font-size="14.00">Doc. title page</text>
+<polygon fill="none" stroke="darkgreen" points="345.36,-260 278.64,-260 278.64,-224 351.36,-224 351.36,-254 345.36,-260"/>
+<polyline fill="none" stroke="darkgreen" points="345.36,-260 345.36,-254"/>
+<polyline fill="none" stroke="darkgreen" points="351.36,-254 345.36,-254"/>
+<text text-anchor="middle" x="315" y="-237.8" font-family="Times,serif" font-size="14.00">Title page</text>
 </g>
-<!-- lyTranslation&#45;&gt;lyProcessor -->
+<!-- docTitleData&#45;&gt;editor -->
+<g id="edge2" class="edge" data-name="docTitleData-&gt;editor">
 
-<!-- docMusicData --><g id="edge3" class="edge" data-name="docMusicData-&gt;editor" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M502,-206.9C502,-199.61 502,-190.93 502,-182.74"/>
-<polygon fill="black" stroke="black" points="505.5,-182.82 502,-172.82 498.5,-182.82 505.5,-182.82"/>
+<path fill="none" stroke="black" d="M292.01,-223.7C280.61,-215.11 266.65,-204.61 254.2,-195.24"/>
+<polygon fill="black" stroke="black" points="256.35,-192.47 246.26,-189.26 252.14,-198.07 256.35,-192.47"/>
 </g>
-<!-- docMusicData --><g id="edge9" class="edge" data-name="scriptor-&gt;scriptorWriters" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M501.41,-351.95C501.53,-343.84 501.65,-335.28 501.76,-328.1"/>
-<polygon fill="black" stroke="black" points="501.42,-351.7 505.33,-357.75 501.25,-363.7 497.33,-357.64 501.42,-351.7"/>
-</g>
-<!-- docMusicData --><g id="edge18" class="edge" data-name="scriptorWriters-&gt;docTitleData" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M537.87,-291.63C546.64,-286.92 555.84,-281.57 564,-276 574.82,-268.61 585.93,-259.51 595.49,-251.11"/>
-<polygon fill="black" stroke="black" points="597.54,-253.97 602.65,-244.69 592.87,-248.76 597.54,-253.97"/>
-</g>
-<!-- docMusicData --><g id="node17" class="node" pointer-events="visible" data-name="formattedStructureData" data-comment="docMusicData">
-
-<polygon fill="none" stroke="darkgreen" points="170.34,-400 23.66,-400 23.66,-364 176.34,-364 176.34,-394 170.34,-400"/>
-<polyline fill="none" stroke="darkgreen" points="170.34,-400 170.34,-394"/>
-<polyline fill="none" stroke="darkgreen" points="176.34,-394 170.34,-394"/>
-<text text-anchor="middle" x="100" y="-377.8" font-family="Times,serif" font-size="14.00">Formatted structure data</text>
-</g><g id="edge11" class="edge" data-name="scholasticus-&gt;scholasticusTranslators" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M632.19,-352.24C629.97,-344.04 627.61,-335.37 625.64,-328.1"/>
-<polygon fill="black" stroke="black" points="632.16,-352.12 637.59,-356.86 635.3,-363.7 629.87,-358.95 632.16,-352.12"/>
-</g><g id="edge6" class="edge" data-name="lector-&gt;scholasticusTranslators" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M456.08,-524.9C488.72,-504.79 531.93,-472.78 556,-432.8 573.94,-403 553.86,-386.26 571,-356 577.04,-345.33 586.54,-335.84 595.64,-328.36"/>
-<polygon fill="none" stroke="black" points="456.19,-524.84 453.1,-531.36 445.89,-531.01 448.98,-524.49 456.19,-524.84"/>
-</g>
-<!-- docMusicData -->
-
 <!-- docMusicData -->
 <g id="node4" class="node" pointer-events="visible" data-name="docMusicData">
 
-<polygon fill="none" stroke="darkgreen" points="549.08,-243.2 448.92,-243.2 448.92,-207.2 555.08,-207.2 555.08,-237.2 549.08,-243.2"/>
-<polyline fill="none" stroke="darkgreen" points="549.08,-243.2 549.08,-237.2"/>
-<polyline fill="none" stroke="darkgreen" points="555.08,-237.2 549.08,-237.2"/>
-<text text-anchor="middle" x="502" y="-221" font-family="Times,serif" font-size="14.00">Doc. music data</text>
-</g><g id="edge2" class="edge" data-name="docTitleData-&gt;editor" data-comment="docMusicData">
-
-<path fill="none" stroke="black" d="M592.03,-206.72C576.74,-197.8 557.94,-186.83 541.48,-177.23"/>
-<polygon fill="black" stroke="black" points="543.3,-174.24 532.9,-172.22 539.77,-180.29 543.3,-174.24"/>
+<polygon fill="none" stroke="darkgreen" points="254.82,-260 183.18,-260 183.18,-224 260.82,-224 260.82,-254 254.82,-260"/>
+<polyline fill="none" stroke="darkgreen" points="254.82,-260 254.82,-254"/>
+<polyline fill="none" stroke="darkgreen" points="260.82,-254 254.82,-254"/>
+<text text-anchor="middle" x="222" y="-237.8" font-family="Times,serif" font-size="14.00">Music data</text>
 </g>
-<!-- lyFormatter -->
+<!-- docMusicData&#45;&gt;editor -->
+<g id="edge3" class="edge" data-name="docMusicData-&gt;editor">
 
-<!-- docStructureData -->
-<!-- docStructureData --><g id="node9" class="node" pointer-events="visible" data-name="lectorParsers" data-comment="docStructureData">
-
-<polygon fill="none" stroke="red" points="351.42,-484.8 270.58,-484.8 266.58,-480.8 266.58,-448.8 347.42,-448.8 351.42,-452.8 351.42,-484.8"/>
-<polyline fill="none" stroke="red" points="347.42,-480.8 266.58,-480.8"/>
-<polyline fill="none" stroke="red" points="347.42,-480.8 347.42,-448.8"/>
-<polyline fill="none" stroke="red" points="347.42,-480.8 351.42,-484.8"/>
-<text text-anchor="middle" x="309" y="-462.6" font-family="Times,serif" font-size="14.00">Lec. Parsers</text>
-</g><g id="edge4" class="edge" data-name="docStructureData-&gt;editor" data-comment="docStructureData">
-
-<path fill="none" stroke="black" d="M402.97,-206.72C420.03,-197.67 441.05,-186.52 459.34,-176.82"/>
-<polygon fill="black" stroke="black" points="460.92,-179.95 468.11,-172.17 457.64,-173.76 460.92,-179.95"/>
+<path fill="none" stroke="black" d="M222,-223.7C222,-216.41 222,-207.73 222,-199.54"/>
+<polygon fill="black" stroke="black" points="225.5,-199.62 222,-189.62 218.5,-199.62 225.5,-199.62"/>
 </g>
-<!-- docStructureData --><g id="node10" class="node" pointer-events="visible" data-name="lectorCopiers" data-comment="docStructureData">
-
-<polygon fill="none" stroke="red" points="456.53,-484.8 373.47,-484.8 369.47,-480.8 369.47,-448.8 452.53,-448.8 456.53,-452.8 456.53,-484.8"/>
-<polyline fill="none" stroke="red" points="452.53,-480.8 369.47,-480.8"/>
-<polyline fill="none" stroke="red" points="452.53,-480.8 452.53,-448.8"/>
-<polyline fill="none" stroke="red" points="452.53,-480.8 456.53,-484.8"/>
-<text text-anchor="middle" x="413" y="-462.6" font-family="Times,serif" font-size="14.00">Lec. Copiers</text>
-</g>
-<g id="edge13" class="edge" data-name="lySource-&gt;lectorParsers" data-comment="docStructureData">
-
-<path fill="none" stroke="black" d="M106.54,-521.78C112.23,-518.44 118.15,-515.32 124,-512.8 166.23,-494.62 217.2,-482.91 254.93,-476.01"/>
-<polygon fill="black" stroke="black" points="255.46,-479.47 264.7,-474.28 254.24,-472.57 255.46,-479.47"/>
-</g>
-<!-- docStructureData --><g id="edge5" class="edge" data-name="scriptor-&gt;scholasticusTranslators" data-comment="docStructureData">
-
-<path fill="none" stroke="black" d="M540.89,-357.73C557.39,-348.11 576.18,-337.15 591.41,-328.26"/>
-<polygon fill="none" stroke="black" points="541.34,-357.47 538.17,-363.95 530.97,-363.52 534.14,-357.04 541.34,-357.47"/>
-</g>
-<!-- docStructureData -->
-<!-- docStructureData -->
-<g id="node16" class="node" pointer-events="visible" data-name="formattedMusicData" data-comment="docStructureData">
-
-<polygon fill="none" stroke="darkgreen" points="325.8,-400 194.2,-400 194.2,-364 331.8,-364 331.8,-394 325.8,-400"/>
-<polyline fill="none" stroke="darkgreen" points="325.8,-400 325.8,-394"/>
-<polyline fill="none" stroke="darkgreen" points="331.8,-394 325.8,-394"/>
-<text text-anchor="middle" x="263" y="-377.8" font-family="Times,serif" font-size="14.00">Formatted music data</text>
-</g>
-
-<!-- docStructureData --><g id="node11" class="node" pointer-events="visible" data-name="scriptorWriters" data-comment="docStructureData">
-
-<polygon fill="none" stroke="red" points="543.64,-328 464.36,-328 460.36,-324 460.36,-292 539.64,-292 543.64,-296 543.64,-328"/>
-<polyline fill="none" stroke="red" points="539.64,-324 460.36,-324"/>
-<polyline fill="none" stroke="red" points="539.64,-324 539.64,-292"/>
-<polyline fill="none" stroke="red" points="539.64,-324 543.64,-328"/>
-<text text-anchor="middle" x="502" y="-305.8" font-family="Times,serif" font-size="14.00">Scr. Writers</text>
-</g><g id="node12" class="node" pointer-events="visible" data-name="scriptorReaders" data-comment="docStructureData">
-
-<polygon fill="none" stroke="red" points="442.25,-328 359.75,-328 355.75,-324 355.75,-292 438.25,-292 442.25,-296 442.25,-328"/>
-<polyline fill="none" stroke="red" points="438.25,-324 355.75,-324"/>
-<polyline fill="none" stroke="red" points="438.25,-324 438.25,-292"/>
-<polyline fill="none" stroke="red" points="438.25,-324 442.25,-328"/>
-<text text-anchor="middle" x="399" y="-305.8" font-family="Times,serif" font-size="14.00">Scr. Readers</text>
-</g><g id="edge14" class="edge" data-name="lectorCopiers-&gt;formattedMusicData" data-comment="docStructureData">
-
-<path fill="none" stroke="black" d="M376.31,-448.46C361.62,-441.47 347.35,-434.63 344,-432.8 329.07,-424.67 313.04,-415.02 299.21,-406.39"/>
-<polygon fill="black" stroke="black" points="301.19,-403.5 290.86,-401.13 297.46,-409.42 301.19,-403.5"/>
-</g>
-
-<!-- docStructureData --><g id="edge15" class="edge" data-name="lectorCopiers-&gt;formattedStructureData" data-comment="docStructureData">
-
-<path fill="none" stroke="black" d="M381.24,-448.35C374.41,-445.31 367.11,-442.56 360,-440.8 284.43,-422.05 259.66,-454.9 185,-432.8 166.3,-427.26 147.4,-416.78 132.18,-406.85"/>
-<polygon fill="black" stroke="black" points="134.25,-404.03 124,-401.32 130.32,-409.82 134.25,-404.03"/>
-</g>
-
-<!-- docStructureData -->
-<!-- docStructureData -->
-
-<!-- docStructureData -->
-
 <!-- docStructureData -->
 <g id="node5" class="node" pointer-events="visible" data-name="docStructureData">
 
-<polygon fill="none" stroke="darkgreen" points="425.12,-243.2 308.88,-243.2 308.88,-207.2 431.12,-207.2 431.12,-237.2 425.12,-243.2"/>
-<polyline fill="none" stroke="darkgreen" points="425.12,-243.2 425.12,-237.2"/>
-<polyline fill="none" stroke="darkgreen" points="431.12,-237.2 425.12,-237.2"/>
-<text text-anchor="middle" x="370" y="-221" font-family="Times,serif" font-size="14.00">Doc. structure data</text>
+<polygon fill="none" stroke="darkgreen" points="159.13,-260 70.87,-260 70.87,-224 165.13,-224 165.13,-254 159.13,-260"/>
+<polyline fill="none" stroke="darkgreen" points="159.13,-260 159.13,-254"/>
+<polyline fill="none" stroke="darkgreen" points="165.13,-254 159.13,-254"/>
+<text text-anchor="middle" x="118" y="-237.8" font-family="Times,serif" font-size="14.00">Structure data</text>
 </g>
-<!-- lyProcessor&#45;&gt;lyFormatter -->
-<g id="edge12" class="edge" data-name="gabcSource-&gt;lectorParsers" data-comment="lyProcessor-&gt;lyFormatter">
+<!-- docStructureData&#45;&gt;editor -->
+<g id="edge4" class="edge" data-name="docStructureData-&gt;editor">
 
-<path fill="none" stroke="black" d="M228.63,-521.34C243.13,-511.68 259.35,-500.87 273.4,-491.52"/>
-<polygon fill="black" stroke="black" points="275.09,-494.6 281.47,-486.14 271.21,-488.77 275.09,-494.6"/>
+<path fill="none" stroke="black" d="M143.98,-223.52C156.98,-214.76 172.91,-204.04 186.97,-194.58"/>
+<polygon fill="black" stroke="black" points="188.76,-197.59 195.1,-189.11 184.85,-191.79 188.76,-197.59"/>
+</g>
+<!-- scriptor -->
+<g id="node6" class="node" pointer-events="visible" data-name="scriptor">
+
+<polygon fill="none" stroke="red" points="263.41,-433.6 184.59,-433.6 180.59,-429.6 180.59,-397.6 259.41,-397.6 263.41,-401.6 263.41,-433.6"/>
+<polyline fill="none" stroke="red" points="259.41,-429.6 180.59,-429.6"/>
+<polyline fill="none" stroke="red" points="259.41,-429.6 259.41,-397.6"/>
+<polyline fill="none" stroke="red" points="259.41,-429.6 263.41,-433.6"/>
+<text text-anchor="middle" x="222" y="-411.4" font-family="Times,serif" font-size="14.00">SCRIPTOR</text>
+</g>
+<!-- scholasticusTranslators -->
+<g id="node7" class="node" pointer-events="visible" data-name="scholasticusTranslators">
+
+<polygon fill="none" stroke="darkorange" points="149.48,-361.6 42.52,-361.6 42.52,-357.6 38.52,-357.6 38.52,-353.6 42.52,-353.6 42.52,-333.6 38.52,-333.6 38.52,-329.6 42.52,-329.6 42.52,-325.6 149.48,-325.6 149.48,-361.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="42.52,-357.6 46.52,-357.6 46.52,-353.6 42.52,-353.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="42.52,-333.6 46.52,-333.6 46.52,-329.6 42.52,-329.6"/>
+
+<text text-anchor="middle" x="96" y="-339.4" font-family="Times,serif" font-size="14.00">Sch. Translators</text></g>
+<!-- scriptor&#45;&gt;scholasticusTranslators -->
+<g id="edge5" class="edge" data-name="scriptor-&gt;scholasticusTranslators">
+
+<path fill="none" stroke="black" d="M180.11,-391.33C162.79,-381.71 143.06,-370.75 127.07,-361.86"/>
+<polygon fill="none" stroke="black" points="180.04,-391.29 187.23,-390.71 190.53,-397.12 183.34,-397.7 180.04,-391.29"/>
+</g>
+<!-- scriptorWriters -->
+<g id="node11" class="node" pointer-events="visible" data-name="scriptorWriters">
+
+<polygon fill="none" stroke="darkorange" points="263.64,-361.6 180.36,-361.6 180.36,-357.6 176.36,-357.6 176.36,-353.6 180.36,-353.6 180.36,-333.6 176.36,-333.6 176.36,-329.6 180.36,-329.6 180.36,-325.6 263.64,-325.6 263.64,-361.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="180.36,-357.6 184.36,-357.6 184.36,-353.6 180.36,-353.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="180.36,-333.6 184.36,-333.6 184.36,-329.6 180.36,-329.6"/>
+
+<text text-anchor="middle" x="222" y="-339.4" font-family="Times,serif" font-size="14.00">Scr. Writers</text></g>
+<!-- scriptor&#45;&gt;scriptorWriters -->
+<g id="edge9" class="edge" data-name="scriptor-&gt;scriptorWriters">
+
+<path fill="none" stroke="black" d="M222,-385.55C222,-377.44 222,-368.88 222,-361.7"/>
+<polygon fill="black" stroke="black" points="222,-385.3 226,-391.3 222,-397.3 218,-391.3 222,-385.3"/>
+</g>
+<!-- scriptorReaders -->
+<g id="node12" class="node" pointer-events="visible" data-name="scriptorReaders">
+
+<polygon fill="none" stroke="darkorange" points="368.25,-361.6 281.75,-361.6 281.75,-357.6 277.75,-357.6 277.75,-353.6 281.75,-353.6 281.75,-333.6 277.75,-333.6 277.75,-329.6 281.75,-329.6 281.75,-325.6 368.25,-325.6 368.25,-361.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="281.75,-357.6 285.75,-357.6 285.75,-353.6 281.75,-353.6"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="281.75,-333.6 285.75,-333.6 285.75,-329.6 281.75,-329.6"/>
+
+<text text-anchor="middle" x="325" y="-339.4" font-family="Times,serif" font-size="14.00">Scr. Readers</text></g>
+<!-- scriptor&#45;&gt;scriptorReaders -->
+<g id="edge10" class="edge" data-name="scriptor-&gt;scriptorReaders">
+
+<path fill="none" stroke="black" d="M257.45,-390.51C271.31,-381.09 286.9,-370.5 299.6,-361.86"/>
+<polygon fill="black" stroke="black" points="257.65,-390.37 254.94,-397.05 247.73,-397.12 250.44,-390.44 257.65,-390.37"/>
+</g>
+<!-- lector -->
+<g id="node8" class="node" pointer-events="visible" data-name="lector">
+
+<polygon fill="none" stroke="red" points="228.44,-617.8 161.56,-617.8 157.56,-613.8 157.56,-581.8 224.44,-581.8 228.44,-585.8 228.44,-617.8"/>
+<polyline fill="none" stroke="red" points="224.44,-613.8 157.56,-613.8"/>
+<polyline fill="none" stroke="red" points="224.44,-613.8 224.44,-581.8"/>
+<polyline fill="none" stroke="red" points="224.44,-613.8 228.44,-617.8"/>
+<text text-anchor="middle" x="193" y="-595.6" font-family="Times,serif" font-size="14.00">LECTOR</text>
+</g>
+<!-- lector&#45;&gt;scholasticusTranslators -->
+<g id="edge6" class="edge" data-name="lector-&gt;scholasticusTranslators">
+
+<path fill="none" stroke="black" d="M146.52,-581.05C106.71,-563.05 51.96,-531 27,-483.2 7.74,-446.33 7.19,-426.18 27,-389.6 33.27,-378.03 43.94,-368.97 55.04,-362.1"/>
+<polygon fill="none" stroke="black" points="146.32,-580.96 153.42,-579.69 157.32,-585.75 150.22,-587.02 146.32,-580.96"/>
+</g>
+<!-- lectorParsers -->
+<g id="node9" class="node" pointer-events="visible" data-name="lectorParsers">
+
+<polygon fill="none" stroke="darkorange" points="339.42,-535.2 254.58,-535.2 254.58,-531.2 250.58,-531.2 250.58,-527.2 254.58,-527.2 254.58,-507.2 250.58,-507.2 250.58,-503.2 254.58,-503.2 254.58,-499.2 339.42,-499.2 339.42,-535.2"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="254.58,-531.2 258.58,-531.2 258.58,-527.2 254.58,-527.2"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="254.58,-507.2 258.58,-507.2 258.58,-503.2 254.58,-503.2"/>
+
+<text text-anchor="middle" x="297" y="-513" font-family="Times,serif" font-size="14.00">Lec. Parsers</text></g>
+<!-- lector&#45;&gt;lectorParsers -->
+<g id="edge7" class="edge" data-name="lector-&gt;lectorParsers">
+
+<path fill="none" stroke="black" d="M224.63,-574.29C240.72,-561.82 259.9,-546.95 274.48,-535.65"/>
+<polygon fill="black" stroke="black" points="225.05,-573.96 222.76,-580.8 215.57,-581.31 217.86,-574.47 225.05,-573.96"/>
+</g>
+<!-- lectorCopiers -->
+<g id="node10" class="node" pointer-events="visible" data-name="lectorCopiers">
+
+<polygon fill="none" stroke="darkorange" points="236.53,-535.2 149.47,-535.2 149.47,-531.2 145.47,-531.2 145.47,-527.2 149.47,-527.2 149.47,-507.2 145.47,-507.2 145.47,-503.2 149.47,-503.2 149.47,-499.2 236.53,-499.2 236.53,-535.2"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="149.47,-531.2 153.47,-531.2 153.47,-527.2 149.47,-527.2"/>
+<polyline fill="none" stroke="rgb(255, 140, 0)" points="149.47,-507.2 153.47,-507.2 153.47,-503.2 149.47,-503.2"/>
+
+<text text-anchor="middle" x="193" y="-513" font-family="Times,serif" font-size="14.00">Lec. Copiers</text></g>
+<!-- lector&#45;&gt;lectorCopiers -->
+<g id="edge8" class="edge" data-name="lector-&gt;lectorCopiers">
+
+<path fill="none" stroke="black" d="M193,-569.65C193,-558.26 193,-545.58 193,-535.65"/>
+<polygon fill="black" stroke="black" points="193,-569.31 197,-575.31 193,-581.31 189,-575.31 193,-569.31"/>
+</g>
+<!-- formattedMusicData -->
+<g id="node16" class="node" pointer-events="visible" data-name="formattedMusicData">
+
+<polygon fill="none" stroke="darkgreen" points="575.82,-433.6 504.18,-433.6 504.18,-397.6 581.82,-397.6 581.82,-427.6 575.82,-433.6"/>
+<polyline fill="none" stroke="darkgreen" points="575.82,-433.6 575.82,-427.6"/>
+<polyline fill="none" stroke="darkgreen" points="581.82,-427.6 575.82,-427.6"/>
+<text text-anchor="middle" x="543" y="-411.4" font-family="Times,serif" font-size="14.00">Music data</text>
+</g>
+<!-- lectorCopiers&#45;&gt;formattedMusicData -->
+<g id="edge14" class="edge" data-name="lectorCopiers-&gt;formattedMusicData">
+
+<path fill="none" stroke="black" d="M224.46,-498.81C231.37,-495.72 238.78,-492.94 246,-491.2 272.91,-484.72 470.57,-496.21 495,-483.2 510.89,-474.74 522.79,-458.41 530.76,-444.04"/>
+<polygon fill="black" stroke="black" points="533.74,-445.9 535.19,-435.41 527.51,-442.71 533.74,-445.9"/>
+</g>
+<!-- formattedStructureData -->
+<g id="node17" class="node" pointer-events="visible" data-name="formattedStructureData">
+
+<polygon fill="none" stroke="darkgreen" points="480.13,-433.6 391.87,-433.6 391.87,-397.6 486.13,-397.6 486.13,-427.6 480.13,-433.6"/>
+<polyline fill="none" stroke="darkgreen" points="480.13,-433.6 480.13,-427.6"/>
+<polyline fill="none" stroke="darkgreen" points="486.13,-427.6 480.13,-427.6"/>
+<text text-anchor="middle" x="439" y="-411.4" font-family="Times,serif" font-size="14.00">Structure data</text>
+</g>
+<!-- lectorCopiers&#45;&gt;formattedStructureData -->
+<g id="edge15" class="edge" data-name="lectorCopiers-&gt;formattedStructureData">
+
+<path fill="none" stroke="black" d="M225.07,-498.7C231.81,-495.71 239,-492.99 246,-491.2 274.9,-483.81 353.17,-496.25 380,-483.2 397.72,-474.58 412.43,-458.01 422.73,-443.56"/>
+<polygon fill="black" stroke="black" points="425.63,-445.53 428.29,-435.27 419.81,-441.62 425.63,-445.53"/>
+</g>
+<!-- scriptorWriters&#45;&gt;docTitleData -->
+<g id="edge18" class="edge" data-name="scriptorWriters-&gt;docTitleData">
+
+<path fill="none" stroke="black" d="M251.04,-325.22C257.65,-320.59 264.37,-315.27 270,-309.6 281.55,-297.95 291.99,-282.96 299.89,-270.14"/>
+<polygon fill="black" stroke="black" points="302.78,-272.13 304.89,-261.74 296.77,-268.55 302.78,-272.13"/>
+</g>
+<!-- scriptorWriters&#45;&gt;docMusicData -->
+<g id="edge19" class="edge" data-name="scriptorWriters-&gt;docMusicData">
+
+<path fill="none" stroke="black" d="M222,-325.25C222,-310.56 222,-289.19 222,-271.92"/>
+<polygon fill="black" stroke="black" points="225.5,-272 222,-262 218.5,-272 225.5,-272"/>
+</g>
+<!-- scriptorWriters&#45;&gt;docStructureData -->
+<g id="edge20" class="edge" data-name="scriptorWriters-&gt;docStructureData">
+
+<path fill="none" stroke="black" d="M193.88,-325.14C187.1,-320.43 180.07,-315.1 174,-309.6 160.59,-297.43 147.45,-282.05 137.28,-269.14"/>
+<polygon fill="black" stroke="black" points="140.24,-267.23 131.36,-261.45 134.69,-271.51 140.24,-267.23"/>
+</g>
+<!-- scholasticus -->
+<g id="node13" class="node" pointer-events="visible" data-name="scholasticus">
+
+<polygon fill="none" stroke="red" points="156.24,-433.6 39.76,-433.6 35.76,-429.6 35.76,-397.6 152.24,-397.6 156.24,-401.6 156.24,-433.6"/>
+<polyline fill="none" stroke="red" points="152.24,-429.6 35.76,-429.6"/>
+<polyline fill="none" stroke="red" points="152.24,-429.6 152.24,-397.6"/>
+<polyline fill="none" stroke="red" points="152.24,-429.6 156.24,-433.6"/>
+<text text-anchor="middle" x="96" y="-411.4" font-family="Times,serif" font-size="14.00">SCHOLASTICUS</text>
+</g>
+<!-- scholasticus&#45;&gt;scholasticusTranslators -->
+<g id="edge11" class="edge" data-name="scholasticus-&gt;scholasticusTranslators">
+
+<path fill="none" stroke="black" d="M96,-385.55C96,-377.44 96,-368.88 96,-361.7"/>
+<polygon fill="black" stroke="black" points="96,-385.3 100,-391.3 96,-397.3 92,-391.3 96,-385.3"/>
+</g>
+<!-- gabcSource -->
+<g id="node14" class="node" pointer-events="visible" data-name="gabcSource">
+
+<path fill="none" stroke="blue" d="M582.34,-623.28C582.34,-626.16 557.54,-628.5 527,-628.5 496.46,-628.5 471.66,-626.16 471.66,-623.28 471.66,-623.28 471.66,-576.32 471.66,-576.32 471.66,-573.44 496.46,-571.1 527,-571.1 557.54,-571.1 582.34,-573.44 582.34,-576.32 582.34,-576.32 582.34,-623.28 582.34,-623.28"/>
+<path fill="none" stroke="blue" d="M582.34,-623.28C582.34,-620.4 557.54,-618.06 527,-618.06 496.46,-618.06 471.66,-620.4 471.66,-623.28"/>
+<text text-anchor="middle" x="527" y="-604" font-family="Times,serif" font-size="14.00">GABC sources</text>
+<text text-anchor="middle" x="527" y="-587.2" font-family="Times,serif" font-size="14.00">(GregoBase, etc)</text>
+</g>
+<!-- gabcSource&#45;&gt;lectorParsers -->
+<g id="edge12" class="edge" data-name="gabcSource-&gt;lectorParsers">
+
+<path fill="none" stroke="black" d="M481.49,-572.14C475.06,-568.89 468.44,-565.8 462,-563.2 425.92,-548.63 383.54,-537.19 350.77,-529.49"/>
+<polygon fill="black" stroke="black" points="351.6,-526.09 341.07,-527.26 350.04,-532.91 351.6,-526.09"/>
+</g>
+<!-- lySource -->
+<g id="node15" class="node" pointer-events="visible" data-name="lySource">
+
+<path fill="none" stroke="blue" d="M453.15,-623.28C453.15,-626.16 432.91,-628.5 408,-628.5 383.09,-628.5 362.85,-626.16 362.85,-623.28 362.85,-623.28 362.85,-576.32 362.85,-576.32 362.85,-573.44 383.09,-571.1 408,-571.1 432.91,-571.1 453.15,-573.44 453.15,-576.32 453.15,-576.32 453.15,-623.28 453.15,-623.28"/>
+<path fill="none" stroke="blue" d="M453.15,-623.28C453.15,-620.4 432.91,-618.06 408,-618.06 383.09,-618.06 362.85,-620.4 362.85,-623.28"/>
+<text text-anchor="middle" x="408" y="-604" font-family="Times,serif" font-size="14.00">LY sources</text>
+<text text-anchor="middle" x="408" y="-587.2" font-family="Times,serif" font-size="14.00">(CMAA, etc)</text>
+</g>
+<!-- lySource&#45;&gt;lectorParsers -->
+<g id="edge13" class="edge" data-name="lySource-&gt;lectorParsers">
+
+<path fill="none" stroke="black" d="M371.35,-572.19C358.03,-562.52 343.08,-551.66 330.09,-542.23"/>
+<polygon fill="black" stroke="black" points="332.41,-539.58 322.26,-536.54 328.29,-545.25 332.41,-539.58"/>
+</g>
+<!-- formattedMusicData&#45;&gt;scriptorReaders -->
+<g id="edge16" class="edge" data-name="formattedMusicData-&gt;scriptorReaders">
+
+<path fill="none" stroke="black" d="M511.96,-397.17C506.41,-394.42 500.61,-391.77 495,-389.6 457.4,-375.04 413.35,-363.53 379.51,-355.79"/>
+<polygon fill="black" stroke="black" points="380.45,-352.41 369.93,-353.64 378.92,-359.24 380.45,-352.41"/>
+</g>
+<!-- formattedStructureData&#45;&gt;scriptorReaders -->
+<g id="edge17" class="edge" data-name="formattedStructureData-&gt;scriptorReaders">
+
+<path fill="none" stroke="black" d="M410.53,-397.12C396,-388.2 378.14,-377.23 362.51,-367.63"/>
+<polygon fill="black" stroke="black" points="364.75,-364.9 354.4,-362.65 361.09,-370.87 364.75,-364.9"/>
 </g>
 
-
-
-
-<g id="edge19" class="edge" data-name="scriptorWriters-&gt;docMusicData" data-comment="lyProcessor-&gt;lyFormatter">
-
-<path fill="none" stroke="black" d="M502,-291.84C502,-281.15 502,-267.12 502,-254.77"/>
-<polygon fill="black" stroke="black" points="505.5,-255.13 502,-245.13 498.5,-255.13 505.5,-255.13"/>
-</g>
-<g id="edge20" class="edge" data-name="scriptorWriters-&gt;docStructureData" data-comment="lyProcessor-&gt;lyFormatter">
-
-<path fill="none" stroke="black" d="M467.44,-291.62C458.38,-286.79 448.71,-281.39 440,-276 427.19,-268.08 413.59,-258.66 401.82,-250.15"/>
-<polygon fill="black" stroke="black" points="404.18,-247.54 394.04,-244.46 400.05,-253.19 404.18,-247.54"/>
-</g>
-
-
-
-
-
-
-<g id="node2" class="node" pointer-events="visible" data-name="finalDocuments" data-comment="lyProcessor-&gt;lyFormatter">
-
-<polygon fill="none" stroke="darkgreen" points="567.57,-99 564.57,-103 543.57,-103 540.57,-99 436.43,-99 436.43,-57.8 567.57,-57.8 567.57,-99"/>
-<text text-anchor="middle" x="502" y="-82.6" font-family="Times,serif" font-size="14.00">Arrangement sheets,</text>
-<text text-anchor="middle" x="502" y="-65.8" font-family="Times,serif" font-size="14.00">hymnals, etc.</text>
-</g>
-
-
-
-<g id="node7" class="node" pointer-events="visible" data-name="scholasticusTranslators" data-comment="lyProcessor-&gt;lyFormatter">
-
-<polygon fill="none" stroke="red" points="674.48,-328 571.52,-328 567.52,-324 567.52,-292 670.48,-292 674.48,-296 674.48,-328"/>
-<polyline fill="none" stroke="red" points="670.48,-324 567.52,-324"/>
-<polyline fill="none" stroke="red" points="670.48,-324 670.48,-292"/>
-<polyline fill="none" stroke="red" points="670.48,-324 674.48,-328"/>
-<text text-anchor="middle" x="621" y="-305.8" font-family="Times,serif" font-size="14.00">Sch. Translators</text>
-</g>
 </g>
 </svg>

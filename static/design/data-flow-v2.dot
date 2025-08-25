@@ -1,11 +1,11 @@
 digraph {
-    label = "\nEDITORIS MELICORUM\nSystem Data Flow";
+    label = "\nEDITORIS MELICORUM\nSystem data flow diagram\nv3.0";
     node [shape = box;];
     
     editor -> finalDocuments;
 
     subgraph cluster_00 {
-        label = "EDITORIS MELICORUM";
+        label = "EDITORIS\nMELICORUM";
         docTitleData -> editor;
         docMusicData -> editor;
         docStructureData -> editor;
@@ -13,22 +13,22 @@ digraph {
         lector -> scholasticusTranslators [dir=both, arrowhead=none, arrowtail=odiamond]; 
         
         subgraph cluster_10 {
-            label = "LECTOR MELICUS";
+            label = "LECTOR\nReader";
             lector -> lectorParsers [dir=both, arrowhead=none, arrowtail=diamond]; 
             lector -> lectorCopiers [dir=both, arrowhead=none, arrowtail=diamond]; 
         }
         subgraph cluster_11 {
-            label = "SCRIPTOR MELICUS";
+            label = "SCRIPTOR\nWriter";
             scriptor -> scriptorWriters [dir=both, arrowhead=none, arrowtail=diamond]; 
             scriptor -> scriptorReaders [dir=both, arrowhead=none, arrowtail=diamond]; 
         }
         subgraph cluster_12 {
-            label = "SCHOLASTICUS MELICUS";
+            label = "SCHOLASTICUS\nScholar";
             scholasticus -> scholasticusTranslators [dir=both, arrowhead=none, arrowtail=diamond]; 
         }
         
         subgraph cluster_20 {
-            label = "Input data";
+            label = "Input data\n(.gabc and .ly files)";
             gabcSource -> lectorParsers;
             lySource -> lectorParsers;
         }
@@ -36,14 +36,14 @@ digraph {
         // gabcParser -> lyTranslation [color = red;];
         
         subgraph cluster_30 {
-            label = "Formatted input data";
+            label = "Formatted input data\n(.ly files)";
             lectorCopiers -> formattedMusicData;
             lectorCopiers -> formattedStructureData;
             formattedMusicData -> scriptorReaders;
             formattedStructureData -> scriptorReaders;
         }
         subgraph cluster_31 {
-            label = "Lilypond document parts";
+            label = "Lilypond document parts\n(.ly files)";
             scriptorWriters -> docTitleData;
             scriptorWriters -> docMusicData;
             scriptorWriters -> docStructureData;
@@ -62,22 +62,22 @@ digraph {
     editor [label = "EDITOR";shape = box3d;color = red;];
     
     lector [label = "LECTOR";shape = box3d;color = red;];
-    lectorParsers [label = "Lec. Parsers";shape = box3d;color = red;];
-    lectorCopiers [label = "Lec. Copiers";shape = box3d;color = red;];
+    lectorParsers [label = "Lec. Parsers";shape = component;color = darkorange;];
+    lectorCopiers [label = "Lec. Copiers";shape = component;color = darkorange;];
     
     scriptor [label = "SCRIPTOR";shape = box3d;color = red;];
-    scriptorReaders [label = "Scr. Readers";shape = box3d;color = red;];
-    scriptorWriters [label = "Scr. Writers";shape = box3d;color = red;];
+    scriptorReaders [label = "Scr. Readers";shape = component;color = darkorange;];
+    scriptorWriters [label = "Scr. Writers";shape = component;color = darkorange;];
     
     scholasticus [label = "SCHOLASTICUS";shape = box3d;color = red;];
-    scholasticusTranslators [label = "Sch. Translators";shape = box3d;color = red;];
+    scholasticusTranslators [label = "Sch. Translators";shape = component;color = darkorange;];
     
-    formattedMusicData [label = "Formatted music data";shape = note;color = darkgreen;];
-    formattedStructureData [label = "Formatted structure data";shape = note;color = darkgreen;];
+    formattedMusicData [label = "Music data";shape = note;color = darkgreen;];
+    formattedStructureData [label = "Structure data";shape = note;color = darkgreen;];
     
-    docTitleData [label = "Doc. title page";shape = note;color = darkgreen;];
-    docMusicData [label = "Doc. music data";shape = note;color = darkgreen;];
-    docStructureData [label = "Doc. structure data";shape = note;color = darkgreen;];
+    docTitleData [label = "Title page";shape = note;color = darkgreen;];
+    docMusicData [label = "Music data";shape = note;color = darkgreen;];
+    docStructureData [label = "Structure data";shape = note;color = darkgreen;];
     
     finalDocuments [label = "Arrangement sheets,\nhymnals, etc.";shape = folder;color = darkgreen;];
 }

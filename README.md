@@ -221,7 +221,7 @@ The module has been structured to reflect these personas and their division of r
 
 ### Data Flow
 
-![Editoris Melicorum data flow (Jul 2025)](./static/design/data-flow-v2.svg "Editoris Melicorum data flow (Jul 2025)")
+![Editoris Melicorum data flow](./static/design/data-flow-v2.svg "Editoris Melicorum data flow")
 
 ## CONTRIBUTING
 
