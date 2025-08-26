@@ -1,4 +1,6 @@
 \bookpart {
+  \pointAndClickOff
+
   \header {
     title = "TemplateTitle"
     subtitle = \markup \italic { "TemplateSubtitle - TemplateInstrument" }

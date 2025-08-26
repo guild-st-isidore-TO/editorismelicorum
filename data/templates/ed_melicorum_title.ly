@@ -1,44 +1,45 @@
 \bookpart {
+  \pointAndClickOff
 
   \header {
     title = \markup \center-column { 
       \vspace #4
       \abs-fontsize #26 "TemplateDocTitleLat"
       \vspace #0.8
-      \abs-fontsize #24 \with-color #(x11-color 'grey40) \italic "TemplateDocTitle"
+      \abs-fontsize #24 \with-color #(x11-color 'grey30) \italic "TemplateDocTitle"
 
       \vspace #1.2
-      \abs-fontsize #18 "per Vox et Cithara Moderna"
+      \abs-fontsize #18 "pro Vox et Cithara Hispanica"
       \vspace #0.2
-      \abs-fontsize #16 \with-color #(x11-color 'grey40) \italic "for Voice and Guitar"
+      \abs-fontsize #16 \with-color #(x11-color 'grey30) \italic "for Voice and Spanish (Classical) Guitar"
     }
     subtitle = \markup \center-column { 
       \vspace #2.5
       \abs-fontsize #21 "ex Fabrica Salvadoris"
       \vspace #0.5
-      \abs-fontsize #17 \with-color #(x11-color 'grey40) \italic "from Salvador Workshop"
+      \abs-fontsize #17 \with-color #(x11-color 'grey30) \italic "from Salvador Workshop"
 
       \vspace #0.7
       \abs-fontsize #21 "et Collegium Sancti Isidori (TO)"
       \vspace #0.5
-      \abs-fontsize #17 \with-color #(x11-color 'grey40) \italic "and the Guild of St. Isidore (TO)"
+      \abs-fontsize #17 \with-color #(x11-color 'grey30) \italic "and the Guild of St. Isidore (TO)"
 
     }
     subsubtitle = \markup \center-column { 
       \vspace #2
       \abs-fontsize #14 "excudit Editoris Melicorum"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "engraved by Editoris Melicorum"
+      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic "engraved by Editoris Melicorum"
 
       \vspace #0.4
       \abs-fontsize #14 "faciebat Torontinum (Canada) MMXXV"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "made in Toronto (Canada), 2025"
+      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic "made in Toronto (Canada), 2025"
   
       \vspace #0.4
       \abs-fontsize #14 "versio TemplateDocVersionLat"
       \vspace #0.3
-      \abs-fontsize #13 \with-color #(x11-color 'grey40) \italic "version TemplateDocVersion"
+      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic "version TemplateDocVersion"
     }
   }
 

@@ -1,4 +1,6 @@
 \bookpart {
+  \pointAndClickOff
+  
   \header {
     title = "TemplateTitle"
     subtitle = \markup \italic { "TemplateSubtitle - TemplateInstrument" }
@@ -24,14 +26,14 @@
       }
       \new Staff \with {
         instrumentName = "Guitar (accomp.)"
-        shortInstrumentName = "Gt-Ac"
+        shortInstrumentName = "Gtr-A"
       } {
         \clef "G_8"
         R1*60
       }
       \new Staff \with {
         instrumentName = "Guitar (solo)"
-        shortInstrumentName = "Gt-So"
+        shortInstrumentName = "Gtr-S"
       } {
         \clef "G_8"
         R1*60

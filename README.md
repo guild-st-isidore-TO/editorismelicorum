@@ -17,7 +17,7 @@ As well as laying them out into documents, both for the congregation and the cho
 
 Check out an [example document here](./static/marian-hymns-v0.3.pdf)
 
-## USAGE
+## LOCAL USAGE
 
 1. Be in the root directory of this repo
 1. Run `python3 src/editorismelicorum/editor_melicus.py`
