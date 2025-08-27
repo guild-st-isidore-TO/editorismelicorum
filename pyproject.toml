@@ -1,0 +1,12 @@
+[project]
+name = "editoris-melicorum"
+version = "0.0.6"
+description = "Editoris Melicorum is a digital music typesetting toolkit for music ministries in Catholic parishes. The toolkit helps build musical arrangements around traditional hymns in Gregorian notation."
+authors = [{ name = "RJ Salvador", email = "salvador.workshop@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+# [build-system]
+# requires = ["poetry-core>=2.0.0,<3.0.0"]
+# build-backend = "poetry.core.masonry.api"
