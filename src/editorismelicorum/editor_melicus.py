@@ -148,7 +148,6 @@ if input_operation_mode == 1:
     # ARRANGE / COMPOSE
 
     for in_doc in input_documents:
-        # gabc_docs = map(to_input_cfg_paths, in_doc["gabcFiles"])
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
         title_template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
@@ -159,21 +158,37 @@ if input_operation_mode == 1:
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["gabcFiles"])
 
-        var_ly_path = os.path.join(cfg_data["output_dir_ly"], f"{in_doc['id']}_vars.ly")
-        with open(var_ly_path, "w") as varc:
-            varc.write("\n")  # clearing text
+        vars_vocals_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_vocals.ly"
+        )
+        vars_lyrics_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_lyrics.ly"
+        )
+        vars_gtr_comp_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_gtr_comp.ly"
+        )
+        vars_gtr_solo_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_gtr_solo.ly"
+        )
 
         song_ly_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_bookparts.ly"
         )
-        with open(song_ly_path, "w") as songc:
-            songc.write("\n")  # clearing text
 
         title_ly_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_title.ly"
         )
-        with open(title_ly_path, "w") as titlec:
-            titlec.write("\n")  # clearing text
+
+        clear_fpaths = [
+            vars_vocals_path,
+            vars_gtr_comp_path,
+            vars_gtr_solo_path,
+            song_ly_path,
+            title_ly_path,
+        ]
+        for fpath in clear_fpaths:
+            with open(fpath, "w") as ofile:
+                ofile.write("\n")  # clearing text
 
         doc_data = {
             "DocTitle": in_doc["name"],
@@ -195,7 +210,12 @@ if input_operation_mode == 1:
             meta_key = f"{in_doc['id']}_{cgd_idx}"
 
             transpose_key = copy_conv_gabc_vars(
-                filename_slug, conv_gabc_doc, var_ly_path
+                filename_slug,
+                conv_gabc_doc,
+                vars_vocals_path,
+                vars_lyrics_path,
+                vars_gtr_comp_path,
+                vars_gtr_solo_path,
             )
 
             song_data = {

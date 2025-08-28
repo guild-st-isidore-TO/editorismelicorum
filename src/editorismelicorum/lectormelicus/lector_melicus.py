@@ -162,7 +162,14 @@ def analyze_conv_gabc_line(conv_ly_line):
         return None
 
 
-def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
+def copy_conv_gabc_vars(
+    fname_slug,
+    conv_ly_filepath,
+    vocals_ly_path,
+    lyrics_ly_path,
+    gtr_comp_ly_path,
+    gtr_solo_ly_path,
+):
     """Reads and copies a file of converted LY code (from gabctk)"""
     ly_script_stack = []
     music_name = f"Music{fname_slug}"
@@ -182,63 +189,74 @@ def copy_conv_gabc_vars(fname_slug, conv_ly_filepath, out_ly_path):
 
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
     ly_transpose = "des"
+    output_types = ["vocals", "lyrics", "gtr_comp", "gtr_solo"]
+    output_type = "vocals"
+
+    def get_write_path(o_type):
+        match o_type:
+            case "lyrics":
+                return lyrics_ly_path
+            case "gtr_comp":
+                return gtr_comp_ly_path
+            case "gtr_solo":
+                return gtr_solo_ly_path
+            case _:
+                # defaults to "vocals"
+                return vocals_ly_path
 
     with open(conv_ly_filepath) as f:
-        with open(out_ly_path, "a") as wr:
-            for ly_line in f:
-                script_evt_type = analyze_conv_gabc_line(ly_line)
-                is_valid_copy = False
-                if script_evt_type is not None:
-                    if (
-                        script_evt_type in bracket_delim_blocks
-                        or script_evt_type in dbl_ang_bracket_delim_blocks
-                    ):
-                        ly_script_stack.append(script_evt_type)
+        for ly_line in f:
+            script_evt_type = analyze_conv_gabc_line(ly_line)
+            is_valid_copy = False
+            if script_evt_type is not None:
+                if (
+                    script_evt_type in bracket_delim_blocks
+                    or script_evt_type in dbl_ang_bracket_delim_blocks
+                ):
+                    ly_script_stack.append(script_evt_type)
 
-                    if (
-                        "musiquetheme" in ly_script_stack
-                        or "paroles" in ly_script_stack
-                    ):
-                        is_valid_copy = True
-                    elif script_evt_type is "transpose":
-                        ly_transpose = ly_line.strip().replace(
-                            "\cadenzaOn \\transpose c ", ""
-                        )
-                        ly_transpose = ly_transpose.replace("{\MusiqueTheme}", "")
+                if "musiquetheme" in ly_script_stack or "paroles" in ly_script_stack:
+                    is_valid_copy = True
+                elif script_evt_type is "transpose":
+                    ly_transpose = ly_line.strip().replace(
+                        "\cadenzaOn \\transpose c ", ""
+                    )
+                    ly_transpose = ly_transpose.replace("{\MusiqueTheme}", "")
 
-                    if (
-                        script_evt_type == "end_bracket"
-                        and ly_script_stack[-1] in bracket_delim_blocks
-                    ):
-                        ly_script_stack.remove(ly_script_stack[-1])
-                    elif (
-                        script_evt_type == "end_dbl_ang_bracket"
-                        and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
-                    ):
-                        ly_script_stack.remove(ly_script_stack[-1])
+                if (
+                    script_evt_type == "end_bracket"
+                    and ly_script_stack[-1] in bracket_delim_blocks
+                ):
+                    ly_script_stack.remove(ly_script_stack[-1])
+                elif (
+                    script_evt_type == "end_dbl_ang_bracket"
+                    and ly_script_stack[-1] in dbl_ang_bracket_delim_blocks
+                ):
+                    ly_script_stack.remove(ly_script_stack[-1])
 
-                    if is_valid_copy:
-                        valid_line = ly_line
-                        if "MusiqueTheme =" in valid_line:
-                            valid_line = valid_line.replace("MusiqueTheme", music_name)
-                        if "Paroles =" in valid_line:
-                            wr.write("\n")
-                            valid_line = valid_line.replace("Paroles", lyrics_name)
+                if is_valid_copy:
+                    valid_line = ly_line
+                    if "MusiqueTheme =" in valid_line:
+                        valid_line = valid_line.replace("MusiqueTheme", music_name)
+                        output_type = "vocals"
+                    if "Paroles =" in valid_line:
+                        valid_line = valid_line.replace("Paroles", lyrics_name)
+                        output_type = "lyrics"
+
+                    with open(get_write_path(output_type), "a") as wr:
                         wr.write(valid_line)
 
-                else:
-                    # "Regular degular" text lines
-                    if (
-                        "musiquetheme" in ly_script_stack
-                        or "paroles" in ly_script_stack
-                    ):
-                        ly_line = ly_line.replace('&zwj;*__', '')
-                        ly_line = ly_line.replace('&zwj;*_', '')
-                        ly_line = ly_line.replace('<nlba>', '')
-                        ly_line = ly_line.replace('</nlba>', '')
-                        ly_line = ly_line.replace('<eu>', '')
-                        ly_line = ly_line.replace('</eu>', '')
-                        ly_line = ly_line.replace('<sc>', '')
-                        ly_line = ly_line.replace('</sc>', '')
+            else:
+                # "Regular degular" text lines
+                if "musiquetheme" in ly_script_stack or "paroles" in ly_script_stack:
+                    ly_line = ly_line.replace("&zwj;*__", "")
+                    ly_line = ly_line.replace("&zwj;*_", "")
+                    ly_line = ly_line.replace("<nlba>", "")
+                    ly_line = ly_line.replace("</nlba>", "")
+                    ly_line = ly_line.replace("<eu>", "")
+                    ly_line = ly_line.replace("</eu>", "")
+                    ly_line = ly_line.replace("<sc>", "")
+                    ly_line = ly_line.replace("</sc>", "")
+                    with open(get_write_path(output_type), "a") as wr:
                         wr.write(ly_line)
     return ly_transpose
