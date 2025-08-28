@@ -8,30 +8,38 @@
             "nameLat": "Antiphonæ Mariæ (Tono Simplici)",
             "version": "0.5",
             "author": "rjsalvadorr",
-            "gabcFiles": [
+            "sourceDocs": [
                 {
-                    "id": "",
+                    "id": "alma_red_sim",
                     "path": "marian-antiphons-simple/01-alma-redemptoris-mater-sim.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Alma Redemptoris Mater"
                 },
                 {
-                    "id": "",
+                    "id": "ave_reg_sim",
                     "path": "marian-antiphons-simple/02-ave-regina-caelorum-sim.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Ave Regina Cælorum"
                 },
                 {
-                    "id": "",
+                    "id": "regina_cae_sim",
                     "path": "marian-antiphons-simple/03-regina-caeli-sim.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Regina Cæli"
                 },
                 {
-                    "id": "",
+                    "id": "salve_reg_sim",
                     "path": "marian-antiphons-simple/04-salve-regina-sim.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Salve Regina"
                 }
             ]
         },
@@ -43,30 +51,38 @@
             "nameLat": "Antiphonæ Mariæ (Tono Solemnis)",
             "version": "0.5",
             "author": "rjsalvadorr",
-            "gabcFiles": [
+            "sourceDocs": [
                 {
-                    "id": "",
+                    "id": "alma_red_sol",
                     "path": "marian-antiphons-solemn/01-alma-redemptoris-mater-sol.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Alma Redemptoris Mater"
                 },
                 {
-                    "id": "",
+                    "id": "ave_reg_sol",
                     "path": "marian-antiphons-solemn/02-ave-regina-caelorum-sol.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Ave Regina Cælorum"
                 },
                 {
-                    "id": "",
+                    "id": "regina_cae_sol",
                     "path": "marian-antiphons-solemn/03-regina-caeli-sol.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Regina Cæli"
                 },
                 {
-                    "id": "",
+                    "id": "salve_reg_sol",
                     "path": "marian-antiphons-solemn/04-salve-regina-sol.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Salve Regina"
                 }
             ]
         },
@@ -78,30 +94,38 @@
             "nameLat": "Hymni Mariæ",
             "version": "0.5",
             "author": "rjsalvadorr",
-            "gabcFiles": [
+            "sourceDocs": [
                 {
-                    "id": "",
+                    "id": "ave_maria",
                     "path": "marian-hymns/01-ave-maria.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Ave Maria"
                 },
                 {
-                    "id": "",
+                    "id": "ave_mar_ste",
                     "path": "marian-hymns/02-ave-maris-stella.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Ave Maris Stella"
                 },
                 {
-                    "id": "",
+                    "id": "stabat_mat",
                     "path": "marian-hymns/03-stabat-mater.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Stabat Mater"
                 },
                 {
-                    "id": "",
+                    "id": "sub_tuum",
                     "path": "marian-hymns/04-sub-tuum-praesidium.gabc",
-                    "tags": [],
-                    "name": ""
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Sub Tuum Præsidium"
                 }
             ]
         }

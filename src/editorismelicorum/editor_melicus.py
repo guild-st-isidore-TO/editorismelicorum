@@ -129,13 +129,7 @@ time.sleep(1.5)
 cfg_data = get_cfg_data()
 
 
-# def to_input_cfg_paths(cfg_filepath):
-#     return os.path.join(cfg_data["data_dir"], cfg_filepath)
-
-
 def to_conv_ly_paths(cfg_filepath):
-    # cleaned_path = cfg_filepath.replace("examples/", "")
-    # cleaned_path = cleaned_path.replace(".gabc", ".ly")
     cleaned_path = cfg_filepath.replace(".gabc", ".ly")
     return os.path.join(cfg_data["output_dir_ly_data"], cleaned_path)
 
@@ -159,16 +153,16 @@ if input_operation_mode == 1:
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["gabcFiles"])
 
         vars_vocals_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_vocals.ly"
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_vocals.ly"
         )
         vars_lyrics_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_lyrics.ly"
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_lyrics.ly"
         )
         vars_gtr_comp_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_gtr_comp.ly"
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_gtr_comp.ly"
         )
         vars_gtr_solo_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_vars_gtr_solo.ly"
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_gtr_solo.ly"
         )
 
         song_ly_path = os.path.join(

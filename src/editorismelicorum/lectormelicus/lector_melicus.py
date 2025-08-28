@@ -71,9 +71,6 @@ def lege_tabulae_gabc(doc_id, gabc_data_files):
         doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(inFilePath)
         ctr_files = ctr_files + 1
 
-        # inFileName = os.path.basename(gabc_data_file)
-        # outFileName = inFileName.replace(".gabc", "")
-        # outFilePath = f"{cfg_data["output_dir_ly_data"]}/{outFileName}.ly"
         outFilePath = os.path.join(
             cfg_data["output_dir_ly_data"], gabc_data_file
         ).replace(".gabc", ".ly")
