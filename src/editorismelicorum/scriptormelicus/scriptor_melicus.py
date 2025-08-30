@@ -17,6 +17,8 @@ template_replace_map = {
     "TemplateLyricsLink": "LyricsLink",
     "TemplateMusic": "Music",
     "TemplateLyrics": "Lyrics",
+    "TemplateGuitarAccomp": "GuitarAccomp",
+    "TemplateGuitarSolo": "GuitarSolo",
     "TemplateTransposeKey": "TransposeKey",
     "TemplateDatabase": "Database",
     "TemplateDocTitleLat": "DocTitleLat",

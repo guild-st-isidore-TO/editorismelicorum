@@ -147,7 +147,7 @@ if input_operation_mode == 1:
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
         )
         song_template_filepath = os.path.join(
-            cfg_data["data_templates_dir"], "ed_melicorum_bookpart_1.ly"
+            cfg_data["data_templates_dir"], "ed_melicorum_bookpart_2.ly"
         )
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["gabcFiles"])

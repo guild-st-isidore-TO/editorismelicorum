@@ -1,6 +1,6 @@
 \bookpart {
   \pointAndClickOff
-
+  
   \header {
     title = "TemplateTitle"
     subtitle = \markup \italic { "TemplateSubtitle - TemplateInstrument" }
@@ -13,6 +13,8 @@
   \score{
     <<
       \new Staff <<
+        \set Staff.instrumentName = "Voice"
+        \set Staff.shortInstrumentName = "Vox"
         \set Staff.midiInstrument = "flute"
         \set Staff.autoBeaming = ##f
         \new Voice = "TemplateLyricsLink" {
@@ -22,13 +24,19 @@
       \new Lyrics \lyricsto TemplateLyricsLink {
         \TemplateLyrics
       }
-      \new Staff {
+      \new Staff \with {
+        instrumentName = "Guitar (accomp.)"
+        shortInstrumentName = "Gtr-A"
+      } {
         \clef "G_8"
-        TemplateUpperStaff
+        \TemplateGuitarAccomp
       }
-      \new Staff {
-        \clef bass
-        TemplateLowerStaff
+      \new Staff \with {
+        instrumentName = "Guitar (solo)"
+        shortInstrumentName = "Gtr-S"
+      } {
+        \clef "G_8"
+        \TemplateGuitarSolo
       }
     >>
     \layout{

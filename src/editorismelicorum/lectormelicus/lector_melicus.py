@@ -185,7 +185,7 @@ def copy_conv_gabc_vars(
     ]
 
     dbl_ang_bracket_delim_blocks = ["staffgroup", "staff"]
-    ly_transpose = "des"
+    ly_transpose = "c"
     output_types = ["vocals", "lyrics", "gtr_comp", "gtr_solo"]
     output_type = "vocals"
 
@@ -200,6 +200,9 @@ def copy_conv_gabc_vars(
             case _:
                 # defaults to "vocals"
                 return vocals_ly_path
+
+    # -------------------------
+    # Reading converted LY file
 
     with open(conv_ly_filepath) as f:
         for ly_line in f:
@@ -231,6 +234,9 @@ def copy_conv_gabc_vars(
                 ):
                     ly_script_stack.remove(ly_script_stack[-1])
 
+                # ------------------------------
+                # Writing the data we care about
+
                 if is_valid_copy:
                     valid_line = ly_line
                     if "MusiqueTheme =" in valid_line:
@@ -256,4 +262,18 @@ def copy_conv_gabc_vars(
                     ly_line = ly_line.replace("</sc>", "")
                     with open(get_write_path(output_type), "a") as wr:
                         wr.write(ly_line)
+
+    # -------------------------------------
+    # Computed variables (transposed, etc.)
+
+    lines_gtr_comp = ["R1*60"]
+    with open(gtr_comp_ly_path, "a") as wr:
+        for ly_line in lines_gtr_comp:
+            wr.write(valid_line)
+
+    lines_gtr_solo = ["R1*60"]
+    with open(gtr_solo_ly_path, "a") as wr:
+        for ly_line in lines_gtr_solo:
+            wr.write(valid_line)
+
     return ly_transpose
