@@ -143,6 +143,7 @@ if input_operation_mode == 1:
 
     for in_doc in input_documents:
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
+
         title_template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
         )
@@ -218,8 +219,10 @@ if input_operation_mode == 1:
                 "Instrument": f"Modus {write_roman(int(gabc_file_meta[meta_key]["mode"]))}",
                 "Composer": gabc_file_meta[meta_key]["book"],
                 "Arranger": f"descr. {gabc_file_meta[meta_key]["transcriber"]}",
-                "Music": f"Music{filename_slug}",
+                "Vocals": f"Vocals{filename_slug}",
                 "Lyrics": f"Lyrics{filename_slug}",
+                "GuitarAccomp": f"GtrAcc{filename_slug}",
+                "GuitarSolo": f"GtrSol{filename_slug}",
                 "LyricsLink": f"vox{filename_slug}".lower(),
                 "TransposeKey": f"{transpose_key}",
                 "Database": "GregoBase",

@@ -10,7 +10,7 @@ from pathlib import Path
 
 from ed_melicorum_utils import print_frame, get_cfg_data
 
-# ---------------
+# -------------
 # CONFIGURATION
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
@@ -169,7 +169,7 @@ def copy_conv_gabc_vars(
 ):
     """Reads and copies a file of converted LY code (from gabctk)"""
     ly_script_stack = []
-    music_name = f"Music{fname_slug}"
+    vocals_name = f"Vocals{fname_slug}"
     lyrics_name = f"Lyrics{fname_slug}"
 
     bracket_delim_blocks = [
@@ -240,7 +240,7 @@ def copy_conv_gabc_vars(
                 if is_valid_copy:
                     valid_line = ly_line
                     if "MusiqueTheme =" in valid_line:
-                        valid_line = valid_line.replace("MusiqueTheme", music_name)
+                        valid_line = valid_line.replace("MusiqueTheme", vocals_name)
                         output_type = "vocals"
                     if "Paroles =" in valid_line:
                         valid_line = valid_line.replace("Paroles", lyrics_name)

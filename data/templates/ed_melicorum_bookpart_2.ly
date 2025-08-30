@@ -18,7 +18,7 @@
         \set Staff.midiInstrument = "flute"
         \set Staff.autoBeaming = ##f
         \new Voice = "TemplateLyricsLink" {
-          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateMusic }
+          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateVocals }
         }
       >>
       \new Lyrics \lyricsto TemplateLyricsLink {
