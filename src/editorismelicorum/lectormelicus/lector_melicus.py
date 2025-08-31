@@ -60,19 +60,19 @@ def get_gabc_metadata(gabc_data_file):
     return gabc_metadata
 
 
-def lege_tabulae_gabc(doc_id, gabc_data_files):
+def lege_tabulae_gabc(doc_id, source_docs):
     """Converts GABC files to LY"""
     doc_metadata = {}
     ctr_files = 1
 
-    for gabc_data_file in gabc_data_files:
-        inFilePath = os.path.join(cfg_data["data_dir"], gabc_data_file)
+    for source_doc in source_docs:
+        inFilePath = os.path.join(cfg_data["data_dir"], source_doc["path"])
 
         doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(inFilePath)
         ctr_files = ctr_files + 1
 
         outFilePath = os.path.join(
-            cfg_data["output_dir_ly_data"], gabc_data_file
+            cfg_data["output_dir_ly_data"], source_doc["path"]
         ).replace(".gabc", ".ly")
         outFileDir = Path(outFilePath).parent
         Path(outFileDir).mkdir(parents=True, exist_ok=True)
@@ -171,6 +171,8 @@ def copy_conv_gabc_vars(
     ly_script_stack = []
     vocals_name = f"Vocals{fname_slug}"
     lyrics_name = f"Lyrics{fname_slug}"
+    gtr_comp_name = f"GtrComp{fname_slug}"
+    gtr_solo_name = f"GtrSolo{fname_slug}"
 
     bracket_delim_blocks = [
         "header",
@@ -204,6 +206,9 @@ def copy_conv_gabc_vars(
     # -------------------------
     # Reading converted LY file
 
+    lines_gtr_comp = []
+    lines_gtr_solo = []
+
     with open(conv_ly_filepath) as f:
         for ly_line in f:
             script_evt_type = analyze_conv_gabc_line(ly_line)
@@ -227,6 +232,8 @@ def copy_conv_gabc_vars(
                     script_evt_type == "end_bracket"
                     and ly_script_stack[-1] in bracket_delim_blocks
                 ):
+                    if "musiquetheme" in ly_script_stack:
+                        lines_gtr_solo.append("}}\n\n")
                     ly_script_stack.remove(ly_script_stack[-1])
                 elif (
                     script_evt_type == "end_dbl_ang_bracket"
@@ -241,13 +248,19 @@ def copy_conv_gabc_vars(
                     valid_line = ly_line
                     if "MusiqueTheme =" in valid_line:
                         valid_line = valid_line.replace("MusiqueTheme", vocals_name)
+                        gtr_solo_ln = ly_line.replace("MusiqueTheme", gtr_solo_name)
                         output_type = "vocals"
+
+                        lines_gtr_solo.append(gtr_solo_ln)
+                        lines_gtr_solo.append("\\transpose c c' {\n")
                     if "Paroles =" in valid_line:
                         valid_line = valid_line.replace("Paroles", lyrics_name)
                         output_type = "lyrics"
 
-                    with open(get_write_path(output_type), "a") as wr:
-                        wr.write(valid_line)
+                    with open(get_write_path(output_type), "a") as evt_file:
+                        evt_file.write(valid_line)
+                    if output_type == "vocals" and script_evt_type == "comment":
+                        lines_gtr_solo.append(valid_line)
 
             else:
                 # "Regular degular" text lines
@@ -260,20 +273,20 @@ def copy_conv_gabc_vars(
                     ly_line = ly_line.replace("</eu>", "")
                     ly_line = ly_line.replace("<sc>", "")
                     ly_line = ly_line.replace("</sc>", "")
-                    with open(get_write_path(output_type), "a") as wr:
-                        wr.write(ly_line)
+                    with open(get_write_path(output_type), "a") as non_evt_file:
+                        non_evt_file.write(ly_line)
+                    if output_type == "vocals":
+                        lines_gtr_solo.append(ly_line)
 
     # -------------------------------------
     # Computed variables (transposed, etc.)
 
-    lines_gtr_comp = ["R1*60"]
-    with open(gtr_comp_ly_path, "a") as wr:
-        for ly_line in lines_gtr_comp:
-            wr.write(valid_line)
+    with open(gtr_comp_ly_path, "a") as gtr_comp_file:
+        for gtr_comp_line in lines_gtr_comp:
+            gtr_comp_file.write(gtr_comp_line)
 
-    lines_gtr_solo = ["R1*60"]
-    with open(gtr_solo_ly_path, "a") as wr:
-        for ly_line in lines_gtr_solo:
-            wr.write(valid_line)
+    with open(gtr_solo_ly_path, "a") as gtr_solo_file:
+        for gtr_solo_line in lines_gtr_solo:
+            gtr_solo_file.write(gtr_solo_line)
 
     return ly_transpose

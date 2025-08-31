@@ -129,8 +129,8 @@ time.sleep(1.5)
 cfg_data = get_cfg_data()
 
 
-def to_conv_ly_paths(cfg_filepath):
-    cleaned_path = cfg_filepath.replace(".gabc", ".ly")
+def to_conv_ly_paths(source_doc):
+    cleaned_path = source_doc["path"].replace(".gabc", ".ly")
     return os.path.join(cfg_data["output_dir_ly_data"], cleaned_path)
 
 
@@ -142,7 +142,7 @@ if input_operation_mode == 1:
     # ARRANGE / COMPOSE
 
     for in_doc in input_documents:
-        conv_gabc_docs = map(to_conv_ly_paths, in_doc["gabcFiles"])
+        conv_gabc_docs = map(to_conv_ly_paths, in_doc["sourceDocs"])
 
         title_template_filepath = os.path.join(
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
@@ -151,7 +151,7 @@ if input_operation_mode == 1:
             cfg_data["data_templates_dir"], "ed_melicorum_bookpart_2.ly"
         )
 
-        gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["gabcFiles"])
+        gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["sourceDocs"])
 
         vars_vocals_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_vocals.ly"
@@ -231,7 +231,7 @@ if input_operation_mode == 1:
             write_song_ly(song_ly_path, song_template_filepath, song_data)
 
         # Create arrangement / composition sheets
-        incoha(in_doc["mainDocument"], in_doc["version"])
+        incoha(in_doc["path"], in_doc["version"])
 
 elif input_operation_mode == 2:
 
