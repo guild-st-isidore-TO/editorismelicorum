@@ -15,7 +15,7 @@ Editoris Melicorum is a digital music typesetting toolkit for music ministries i
 parishes. The toolkit helps build musical arrangements around traditional hymns in Gregorian notation.
 As well as laying them out into documents, both for the congregation and the choir/musicians.
 
-Check out an [example document here](./static//marian-antiphons-simple-v0.5.pdf)
+Check out an [example document here](./static/marian-antiphons-solemn-v0.7.pdf)
 
 ## LOCAL USAGE
 
