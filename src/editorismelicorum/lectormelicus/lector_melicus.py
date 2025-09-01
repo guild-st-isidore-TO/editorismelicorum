@@ -67,6 +67,7 @@ def lege_tabulae_gabc(doc_id, source_docs):
 
     for source_doc in source_docs:
         inFilePath = os.path.join(cfg_data["data_dir"], source_doc["path"])
+        keyTranspose = source_doc["keyTranspose"]
 
         doc_metadata[f"{doc_id}_{ctr_files}"] = get_gabc_metadata(inFilePath)
         ctr_files = ctr_files + 1
@@ -77,7 +78,7 @@ def lege_tabulae_gabc(doc_id, source_docs):
         outFileDir = Path(outFilePath).parent
         Path(outFileDir).mkdir(parents=True, exist_ok=True)
 
-        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath}  -l {outFilePath} -v"
+        cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {inFilePath}  -l {outFilePath} -d {keyTranspose} -v"
         # cmdString = f"{cfg_data["gabctk_dir"]}/{cfg_data['gabctk_script_fname']} -i {gabc_data_file}  -l {outFilePath} -d 2 -v"
         print_frame(
             "USING GABCTK",

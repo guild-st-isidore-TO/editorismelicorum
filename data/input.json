@@ -6,11 +6,12 @@
             "tags": [],
             "name": "Marian Antiphons (Simple Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Simplici)",
-            "version": "0.6",
+            "version": "0.7",
             "author": "rjsalvadorr",
             "sourceDocs": [
                 {
                     "id": "alma_red_sim",
+                    "keyTranspose": 0,
                     "path": "marian-antiphons-simple/01-alma-redemptoris-mater-sim.gabc",
                     "tags": [
                         "gabc"
@@ -19,6 +20,7 @@
                 },
                 {
                     "id": "ave_reg_sim",
+                    "keyTranspose": 0,
                     "path": "marian-antiphons-simple/02-ave-regina-caelorum-sim.gabc",
                     "tags": [
                         "gabc"
@@ -27,6 +29,7 @@
                 },
                 {
                     "id": "regina_cae_sim",
+                    "keyTranspose": 0,
                     "path": "marian-antiphons-simple/03-regina-caeli-sim.gabc",
                     "tags": [
                         "gabc"
@@ -35,6 +38,7 @@
                 },
                 {
                     "id": "salve_reg_sim",
+                    "keyTranspose": 2,
                     "path": "marian-antiphons-simple/04-salve-regina-sim.gabc",
                     "tags": [
                         "gabc"
@@ -49,11 +53,12 @@
             "tags": [],
             "name": "Marian Antiphons (Solemn Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Solemnis)",
-            "version": "0.6",
+            "version": "0.7",
             "author": "rjsalvadorr",
             "sourceDocs": [
                 {
                     "id": "alma_red_sol",
+                    "keyTranspose": -3,
                     "path": "marian-antiphons-solemn/01-alma-redemptoris-mater-sol.gabc",
                     "tags": [
                         "gabc"
@@ -62,6 +67,7 @@
                 },
                 {
                     "id": "ave_reg_sol",
+                    "keyTranspose": -5,
                     "path": "marian-antiphons-solemn/02-ave-regina-caelorum-sol.gabc",
                     "tags": [
                         "gabc"
@@ -70,6 +76,7 @@
                 },
                 {
                     "id": "regina_cae_sol",
+                    "keyTranspose": 0,
                     "path": "marian-antiphons-solemn/03-regina-caeli-sol.gabc",
                     "tags": [
                         "gabc"
@@ -78,6 +85,7 @@
                 },
                 {
                     "id": "salve_reg_sol",
+                    "keyTranspose": 0,
                     "path": "marian-antiphons-solemn/04-salve-regina-sol.gabc",
                     "tags": [
                         "gabc"
@@ -92,11 +100,12 @@
             "tags": [],
             "name": "Marian Hymns",
             "nameLat": "Hymni Mariæ",
-            "version": "0.6",
+            "version": "0.7",
             "author": "rjsalvadorr",
             "sourceDocs": [
                 {
                     "id": "ave_maria",
+                    "keyTranspose": 2,
                     "path": "marian-hymns/01-ave-maria.gabc",
                     "tags": [
                         "gabc"
@@ -105,6 +114,7 @@
                 },
                 {
                     "id": "ave_mar_ste",
+                    "keyTranspose": 0,
                     "path": "marian-hymns/02-ave-maris-stella.gabc",
                     "tags": [
                         "gabc"
@@ -113,6 +123,7 @@
                 },
                 {
                     "id": "stabat_mat",
+                    "keyTranspose": 0,
                     "path": "marian-hymns/03-stabat-mater.gabc",
                     "tags": [
                         "gabc"
@@ -121,6 +132,7 @@
                 },
                 {
                     "id": "sub_tuum",
+                    "keyTranspose": -4,
                     "path": "marian-hymns/04-sub-tuum-praesidium.gabc",
                     "tags": [
                         "gabc"
