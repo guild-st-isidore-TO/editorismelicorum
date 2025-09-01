@@ -1,5 +1,9 @@
 \bookpart {
   \pointAndClickOff
+
+  \paper {
+    left-margin = 0.8125\in
+  }
   
   \header {
     title = "TemplateTitle"
@@ -25,15 +29,15 @@
         \TemplateLyrics
       }
       \new Staff \with {
-        instrumentName = "Guitar (accomp.)"
-        shortInstrumentName = "Gtr-A"
+        instrumentName = "Gtr (accomp.)"
+        shortInstrumentName = "Gt-A"
       } {
         \clef "G_8"
         \cadenzaOn \transpose c TemplateTransposeKey{ \TemplateGuitarAccomp }
       }
       \new Staff \with {
-        instrumentName = "Guitar (solo)"
-        shortInstrumentName = "Gtr-S"
+        instrumentName = "Gtr (solo)"
+        shortInstrumentName = "Gt-S"
       } {
         \clef "G_8"
         \new Voice = "TemplateLyricsLink" {
