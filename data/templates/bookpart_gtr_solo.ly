@@ -4,7 +4,7 @@
   \paper {
     left-margin = 0.8125\in
   }
-  
+
   \header {
     title = "TemplateTitle"
     subtitle = \markup \italic { "TemplateSubtitle - TemplateInstrument" }
@@ -21,19 +21,14 @@
         \set Staff.shortInstrumentName = "Vox"
         \set Staff.midiInstrument = "flute"
         \set Staff.autoBeaming = ##f
+
+        \clef "G_8"
         \new Voice = "TemplateLyricsLink" {
-          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateVocals }
+          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateGuitarSolo }
         }
       >>
       \new Lyrics \lyricsto TemplateLyricsLink {
         \TemplateLyrics
-      }
-      \new Staff \with {
-        instrumentName = "Gtr (accomp.)"
-        shortInstrumentName = "Gt-A"
-      } {
-        \clef "G_8"
-        \cadenzaOn \transpose c TemplateTransposeKey{ \TemplateGuitarAccomp }
       }
       \new Staff \with {
         instrumentName = "Gtr (solo)"

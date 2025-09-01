@@ -35,15 +35,6 @@
         \clef "G_8"
         \cadenzaOn \transpose c TemplateTransposeKey{ \TemplateGuitarAccomp }
       }
-      \new Staff \with {
-        instrumentName = "Gtr (solo)"
-        shortInstrumentName = "Gt-S"
-      } {
-        \clef "G_8"
-        \new Voice = "TemplateLyricsLink" {
-          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateGuitarSolo }
-        }
-      }
     >>
     \layout{
       \context {

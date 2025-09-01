@@ -4,8 +4,8 @@
 
 \include "../build/ly/marian_ant_sol_vocals.ly"
 \include "../build/ly/marian_ant_sol_lyrics.ly"
-\include "../build/ly/marian_ant_sol_gtr_comp.ly"
-\include "../build/ly/marian_ant_sol_gtr_solo.ly"
+\include "../build/ly/marian_ant_sol_gt_comp.ly"
+\include "../build/ly/marian_ant_sol_gt_solo.ly"
 
 \book {
 

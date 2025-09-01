@@ -4,8 +4,8 @@
 
 \include "../build/ly/marian_hymns_vocals.ly"
 \include "../build/ly/marian_hymns_lyrics.ly"
-\include "../build/ly/marian_hymns_gtr_comp.ly"
-\include "../build/ly/marian_hymns_gtr_solo.ly"
+\include "../build/ly/marian_hymns_gt_comp.ly"
+\include "../build/ly/marian_hymns_gt_solo.ly"
 
 \book {
 

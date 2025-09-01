@@ -144,14 +144,26 @@ if input_operation_mode == 1:
     for in_doc in input_documents:
         conv_gabc_docs = map(to_conv_ly_paths, in_doc["sourceDocs"])
 
-        title_template_filepath = os.path.join(
+        # ---------
+        # Templates
+
+        template_title_path = os.path.join(
             cfg_data["data_templates_dir"], "ed_melicorum_title.ly"
         )
-        song_template_filepath = os.path.join(
-            cfg_data["data_templates_dir"], "ed_melicorum_bookpart_2.ly"
+        template_gt_all_path = os.path.join(
+            cfg_data["data_templates_dir"], "bookpart_gtr_all.ly"
+        )
+        template_gt_accomp_path = os.path.join(
+            cfg_data["data_templates_dir"], "bookpart_gtr_accomp.ly"
+        )
+        template_gt_solo_path = os.path.join(
+            cfg_data["data_templates_dir"], "bookpart_gtr_solo.ly"
         )
 
         gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["sourceDocs"])
+
+        # ------------------
+        # LilyPond variables
 
         vars_vocals_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_vocals.ly"
@@ -159,31 +171,49 @@ if input_operation_mode == 1:
         vars_lyrics_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_lyrics.ly"
         )
-        vars_gtr_comp_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_gtr_comp.ly"
+        vars_gt_comp_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_gt_comp.ly"
         )
-        vars_gtr_solo_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_gtr_solo.ly"
+        vars_gt_solo_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_gt_solo.ly"
         )
 
-        song_ly_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_bookparts.ly"
+        # ----------------------
+        # LilyPond bookpart sets
+
+        bookparts_gt_all = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_bkpts_gt_all.ly"
         )
+        bookparts_gt_accomp = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_bkpts_gt_accomp.ly"
+        )
+        bookparts_gt_solo = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_bkpts_gt_solo.ly"
+        )
+
+        # ------------------------
+        # Document sections, parts
 
         title_ly_path = os.path.join(
             cfg_data["output_dir_ly"], f"{in_doc['id']}_title.ly"
         )
 
+        # ------------------------
+        # Preparing to write to files
+
         clear_fpaths = [
             vars_vocals_path,
-            vars_gtr_comp_path,
-            vars_gtr_solo_path,
-            song_ly_path,
+            vars_gt_comp_path,
+            vars_gt_solo_path,
+            bookparts_gt_all,
             title_ly_path,
         ]
         for fpath in clear_fpaths:
             with open(fpath, "w") as ofile:
                 ofile.write("\n")  # clearing text
+
+        # ------------------------
+        # Writing output
 
         doc_data = {
             "DocTitle": in_doc["name"],
@@ -191,7 +221,7 @@ if input_operation_mode == 1:
             "DocVersion": in_doc["version"],
             "DocVersionLat": write_roman_version(in_doc["version"]),
         }
-        write_title_ly(title_ly_path, title_template_filepath, doc_data)
+        write_title_ly(title_ly_path, template_title_path, doc_data)
 
         # Copying LY vars, writing song part
         for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs, start=1):
@@ -209,9 +239,12 @@ if input_operation_mode == 1:
                 conv_gabc_doc,
                 vars_vocals_path,
                 vars_lyrics_path,
-                vars_gtr_comp_path,
-                vars_gtr_solo_path,
+                vars_gt_comp_path,
+                vars_gt_solo_path,
             )
+
+            # can't be moved here yet :(
+            # gabc_file_meta = lege_tabulae_gabc(in_doc["id"], in_doc["sourceDocs"])
 
             song_data = {
                 "Title": gabc_file_meta[meta_key]["name"],
@@ -228,7 +261,9 @@ if input_operation_mode == 1:
                 "Database": "GregoBase",
             }
 
-            write_song_ly(song_ly_path, song_template_filepath, song_data)
+            write_song_ly(bookparts_gt_all, template_gt_all_path, song_data)
+            write_song_ly(bookparts_gt_accomp, template_gt_accomp_path, song_data)
+            write_song_ly(bookparts_gt_solo, template_gt_solo_path, song_data)
 
         # Create arrangement / composition sheets
         incoha(in_doc["path"], in_doc["version"])
