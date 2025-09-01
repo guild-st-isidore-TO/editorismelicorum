@@ -203,9 +203,12 @@ if input_operation_mode == 1:
 
         clear_fpaths = [
             vars_vocals_path,
+            vars_lyrics_path,
             vars_gt_comp_path,
             vars_gt_solo_path,
             bookparts_gt_all,
+            bookparts_gt_accomp,
+            bookparts_gt_solo,
             title_ly_path,
         ]
         for fpath in clear_fpaths:
@@ -267,6 +270,8 @@ if input_operation_mode == 1:
 
         # Create arrangement / composition sheets
         incoha(in_doc["path"], in_doc["version"])
+        incoha(in_doc["partPaths"][0], in_doc["version"])
+        incoha(in_doc["partPaths"][1], in_doc["version"])
 
 elif input_operation_mode == 2:
 

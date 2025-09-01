@@ -28,6 +28,6 @@
   %%------------------------------------
   %% Main Content
 
-  \include "../build/ly/marian_ant_sim_bookparts.ly"
+  \include "../build/ly/marian_ant_sim_bkpts_gt_solo.ly"
 
 }

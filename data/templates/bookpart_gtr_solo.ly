@@ -17,9 +17,8 @@
   \score{
     <<
       \new Staff <<
-        \set Staff.instrumentName = "Voice"
-        \set Staff.shortInstrumentName = "Vox"
-        \set Staff.midiInstrument = "flute"
+        \set Staff.instrumentName = "Gtr (solo)"
+        \set Staff.shortInstrumentName = "Gt-S"
         \set Staff.autoBeaming = ##f
 
         \clef "G_8"
@@ -29,15 +28,6 @@
       >>
       \new Lyrics \lyricsto TemplateLyricsLink {
         \TemplateLyrics
-      }
-      \new Staff \with {
-        instrumentName = "Gtr (solo)"
-        shortInstrumentName = "Gt-S"
-      } {
-        \clef "G_8"
-        \new Voice = "TemplateLyricsLink" {
-          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateGuitarSolo }
-        }
       }
     >>
     \layout{
