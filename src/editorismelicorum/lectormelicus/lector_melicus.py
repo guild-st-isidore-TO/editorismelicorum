@@ -117,6 +117,8 @@ def analyze_conv_gabc_line(conv_ly_line):
         return "header"
     elif "\\paper" in subject_line:
         return "paper"
+    elif "\\key" in subject_line:
+        return "key"
 
     # ---------------
     #  VARIABLES
@@ -233,7 +235,8 @@ def copy_conv_gabc_vars(
                     and ly_script_stack[-1] in bracket_delim_blocks
                 ):
                     if "musiquetheme" in ly_script_stack:
-                        lines_gtr_solo.append("}}\n\n")
+                        lines_gtr_comp.append("}\n\n")
+                        lines_gtr_solo.append("}\n\n")
                     ly_script_stack.remove(ly_script_stack[-1])
                 elif (
                     script_evt_type == "end_dbl_ang_bracket"
@@ -248,18 +251,25 @@ def copy_conv_gabc_vars(
                     valid_line = ly_line
                     if "MusiqueTheme =" in valid_line:
                         valid_line = valid_line.replace("MusiqueTheme", vocals_name)
-                        gtr_solo_ln = ly_line.replace("MusiqueTheme", gtr_solo_name)
                         output_type = "vocals"
+                        gtr_comp_ln = ly_line.replace("MusiqueTheme", gtr_comp_name)
+                        gtr_solo_ln = ly_line.replace("MusiqueTheme", gtr_solo_name)
 
+                        lines_gtr_comp.append(gtr_comp_ln)
                         lines_gtr_solo.append(gtr_solo_ln)
-                        lines_gtr_solo.append("\\transpose c c' {\n")
+                        # lines_gtr_solo.append("\\transpose c c' {\n")
+
                     if "Paroles =" in valid_line:
                         valid_line = valid_line.replace("Paroles", lyrics_name)
                         output_type = "lyrics"
 
                     with open(get_write_path(output_type), "a") as evt_file:
                         evt_file.write(valid_line)
-                    if output_type == "vocals" and script_evt_type == "comment":
+                    if output_type == "vocals" and script_evt_type in [
+                        "comment",
+                        "key",
+                    ]:
+                        lines_gtr_comp.append(valid_line)
                         lines_gtr_solo.append(valid_line)
 
             else:
@@ -276,6 +286,7 @@ def copy_conv_gabc_vars(
                     with open(get_write_path(output_type), "a") as non_evt_file:
                         non_evt_file.write(ly_line)
                     if output_type == "vocals":
+                        lines_gtr_comp.append("R1\n")
                         lines_gtr_solo.append(ly_line)
 
     # -------------------------------------

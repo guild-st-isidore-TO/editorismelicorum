@@ -2,7 +2,10 @@
 
 #(set-default-paper-size "letter")
 
-\include "../build/ly/marian_ant_sim_vars.ly"
+\include "../build/ly/marian_ant_sim_vocals.ly"
+\include "../build/ly/marian_ant_sim_lyrics.ly"
+\include "../build/ly/marian_ant_sim_gtr_comp.ly"
+\include "../build/ly/marian_ant_sim_gtr_solo.ly"
 
 \book {
 

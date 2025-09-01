@@ -36,7 +36,9 @@
         shortInstrumentName = "Gtr-S"
       } {
         \clef "G_8"
-        \TemplateGuitarSolo
+        \new Voice = "TemplateLyricsLink" {
+          \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateGuitarSolo }
+        }
       }
     >>
     \layout{
