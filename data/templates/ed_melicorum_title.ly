@@ -7,45 +7,45 @@
       \vspace #3
       \abs-fontsize #26 "TemplateDocTitleLat"
       \vspace #1
-      \abs-fontsize #24 \with-color #(x11-color 'grey30) \italic "TemplateDocTitle"
+      \abs-fontsize #24 \with-color #(x11-color 'grey35) \italic "TemplateDocTitle"
 
       \vspace #3
       \abs-fontsize #17 "pro Vox et Cithara Hispanica"
       \vspace #0.2
-      \abs-fontsize #16 \with-color #(x11-color 'grey30) \italic "for Voice and Spanish (Classical) Guitar"
+      \abs-fontsize #16 \with-color #(x11-color 'grey35) \italic "for Voice and Spanish (Classical) Guitar"
     }
 
     subtitle = \markup \center-column { 
       \vspace #3
       \abs-fontsize #18 "ex Fabrica Salvadoris"
       \vspace #0.4
-      \abs-fontsize #17 \with-color #(x11-color 'grey30) \italic "from Salvador Workshop"
+      \abs-fontsize #17 \with-color #(x11-color 'grey35) \italic "from Salvador Workshop"
 
       \vspace #0.7
       \abs-fontsize #18 "et Collegium Sancti Isidori (TO)"
       \vspace #0.4
-      \abs-fontsize #17 \with-color #(x11-color 'grey30) \italic "and the Guild of St. Isidore (TO)"
+      \abs-fontsize #17 \with-color #(x11-color 'grey35) \italic "and the Guild of St. Isidore (TO)"
 
     }
     
     EngravingCredLat = \markup { excudit Editoris Melicorum, per LilyPond v. #(lilypond-version) }
-    EngravingCred = \markup { engraved by Editoris Melicorum, using LilyPond v. #(lilypond-version) }
+    EngravingCred = \markup { engraved by Editoris Melicorum, using LilyPond version #(lilypond-version) }
 
     subsubtitle = \markup \center-column { 
       \vspace #2
       \abs-fontsize #14 \EngravingCredLat
       \vspace #0.2
-      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic \EngravingCred
+      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic \EngravingCred
 
       \vspace #0.4
       \abs-fontsize #14 "faciebat Torontinum (Canada) MMXXV"
       \vspace #0.2
-      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic "made in Toronto (Canada), 2025"
+      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic "made in Toronto (Canada), 2025"
   
       \vspace #1
       \abs-fontsize #14 "versio TemplateDocVersionLat"
       \vspace #0.2
-      \abs-fontsize #13 \with-color #(x11-color 'grey30) \italic "version TemplateDocVersion"
+      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic "version TemplateDocVersion"
     }
   }
 

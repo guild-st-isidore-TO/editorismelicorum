@@ -29,7 +29,7 @@
         shortInstrumentName = "Gtr-A"
       } {
         \clef "G_8"
-        \TemplateGuitarAccomp
+        \cadenzaOn \transpose c TemplateTransposeKey{ \TemplateGuitarAccomp }
       }
       \new Staff \with {
         instrumentName = "Guitar (solo)"
