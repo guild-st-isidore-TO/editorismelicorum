@@ -46,6 +46,5 @@
         \override Slur #'stencil = ##f
       }
     }
-    \midi{}
   }
 }
