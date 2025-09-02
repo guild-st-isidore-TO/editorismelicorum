@@ -7,7 +7,11 @@
       \vspace #3
       \abs-fontsize #26 "TemplateDocTitleLat"
       \vspace #1
+      \abs-fontsize #26 "TemplateDocPartLat"
+      \vspace #1
       \abs-fontsize #24 \with-color #(x11-color 'grey35) \italic "TemplateDocTitle"
+      \vspace #1
+      \abs-fontsize #24 \with-color #(x11-color 'grey35) \italic "TemplateDocPart"
 
       \vspace #3
       \abs-fontsize #17 "pro Vox et Cithara Hispanica"

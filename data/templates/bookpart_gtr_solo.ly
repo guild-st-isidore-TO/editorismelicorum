@@ -3,6 +3,13 @@
 
   \paper {
     left-margin = 0.8125\in
+    system-system-spacing.padding = #6
+
+    % system-system-spacing =
+    %   #'((basic-distance . 12) 
+    %      (minimum-distance . 8)
+    %      (padding . 4)
+    %      (stretchability . 60)) 
   }
 
   \header {
@@ -16,6 +23,7 @@
   \tocItem \markup { \bold "TemplateTitle" — \italic "TemplateSubtitle, TemplateInstrument" }
   \score{
     <<
+      \new Lyrics = "mlyrics"
       \new Staff <<
         \set Staff.instrumentName = "Gtr (solo)"
         \set Staff.shortInstrumentName = "Gt-S"
@@ -26,8 +34,10 @@
           \cadenzaOn \transpose c TemplateTransposeKey{ \stemUp \TemplateGuitarSolo }
         }
       >>
-      \new Lyrics \lyricsto TemplateLyricsLink {
-        \TemplateLyrics
+      \context Lyrics = "mlyrics" {
+        \lyricsto TemplateLyricsLink {
+          \TemplateLyrics
+        }
       }
     >>
     \layout{

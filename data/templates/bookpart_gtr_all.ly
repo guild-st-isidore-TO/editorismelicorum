@@ -48,6 +48,7 @@
     \layout{
       \context {
         \Staff
+        \override VerticalAxisGroup.default-staff-staff-spacing.padding = #4
         \override TimeSignature #'stencil = #point-stencil
         \override Slur #'stencil = ##f
       }
