@@ -194,8 +194,14 @@ if input_operation_mode == 1:
         # ------------------------
         # Document sections, parts
 
-        title_ly_path = os.path.join(
-            cfg_data["output_dir_ly"], f"{in_doc['id']}_title.ly"
+        title_gt_all_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_title_gt_all.ly"
+        )
+        title_gt_accomp_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_title_gt_accomp.ly"
+        )
+        title_gt_solo_path = os.path.join(
+            cfg_data["output_dir_ly"], f"{in_doc['id']}_title_gt_solo.ly"
         )
 
         # ------------------------
@@ -209,7 +215,9 @@ if input_operation_mode == 1:
             bookparts_gt_all,
             bookparts_gt_accomp,
             bookparts_gt_solo,
-            title_ly_path,
+            title_gt_all_path,
+            title_gt_accomp_path,
+            title_gt_solo_path,
         ]
         for fpath in clear_fpaths:
             with open(fpath, "w") as ofile:
@@ -221,10 +229,20 @@ if input_operation_mode == 1:
         doc_data = {
             "DocTitle": in_doc["name"],
             "DocTitleLat": in_doc["nameLat"],
+            "DocPart": "Complete Guitar Version",
+            "DocPartLat": "Versio Cuncta Citharœdi",
             "DocVersion": in_doc["version"],
             "DocVersionLat": write_roman_version(in_doc["version"]),
         }
-        write_title_ly(title_ly_path, template_title_path, doc_data)
+        write_title_ly(title_gt_all_path, template_title_path, doc_data)
+
+        doc_data["DocPart"] = "Guitar Accompanist Version"
+        doc_data["DocPartLat"] = "Versio Citharœdi Auxiliaris"
+        write_title_ly(title_gt_accomp_path, template_title_path, doc_data)
+
+        doc_data["DocPart"] = "Guitar Soloist Version"
+        doc_data["DocPartLat"] = "Versio Citharœdi Primi"
+        write_title_ly(title_gt_solo_path, template_title_path, doc_data)
 
         # Copying LY vars, writing song part
         for cgd_idx, conv_gabc_doc in enumerate(conv_gabc_docs, start=1):

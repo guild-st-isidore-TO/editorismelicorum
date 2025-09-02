@@ -18,7 +18,7 @@
   %%------------------------------------
   %% Title Page
 
-  \include "../build/ly/marian_hymns_title.ly"
+  \include "../build/ly/marian_hymns_title_gt_accomp.ly"
   
   %%------------------------------------
   %% Table of Contents, Preface
