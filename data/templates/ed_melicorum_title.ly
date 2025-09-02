@@ -3,53 +3,51 @@
 
   \header {
 
-    title = \markup \center-column { 
+    title = \markup \center-column {
       \vspace #3
       \abs-fontsize #26 "TemplateDocTitleLat"
       \vspace #1
       \abs-fontsize #24 \with-color #(x11-color 'grey35) \italic "TemplateDocTitle"
 
-      \vspace #3
-      \abs-fontsize #17 "pro Vox et Cithara Hispanica"
-      \vspace #0.2
-      \abs-fontsize #16 \with-color #(x11-color 'grey35) \italic "for Voice and Spanish (Classical) Guitar"
+      \vspace #2.5
+      \abs-fontsize #22 "TemplateDocPartLat"
+      \vspace #0.5
+      \abs-fontsize #22 "pro Vox et Cithara Hispanica"
+
+      \vspace #1.5
+      \abs-fontsize #21 \with-color #(x11-color 'grey35) \italic "TemplateDocPart"
+      \vspace #0.5
+      \abs-fontsize #21 \with-color #(x11-color 'grey35) \italic "for Voice and Spanish (Classical) Guitar"
     }
 
-    subtitle = \markup \center-column { 
+    subtitle = \markup \center-column {
       \vspace #3
-      \abs-fontsize #18 "ex Fabrica Salvadoris"
-      \vspace #0.4
-      \abs-fontsize #17 \with-color #(x11-color 'grey35) \italic "from Salvador Workshop"
-
-      \vspace #0.7
-      \abs-fontsize #18 "et Collegium Sancti Isidori (TO)"
-      \vspace #0.4
-      \abs-fontsize #17 \with-color #(x11-color 'grey35) \italic "and the Guild of St. Isidore (TO)"
-
+      \abs-fontsize #16 "ex Fabrica Salvadoris et Collegium Sancti Isidori (TO)"
+      \vspace #0.3
+      \abs-fontsize #15 \with-color #(x11-color 'grey35) \italic "from Salvador Workshop and the Guild of St. Isidore (TO)"
     }
-    
+
     EngravingCredLat = \markup { excudit Editoris Melicorum, per LilyPond v. #(lilypond-version) }
     EngravingCred = \markup { engraved by Editoris Melicorum, using LilyPond version #(lilypond-version) }
 
-    subsubtitle = \markup \center-column { 
-      \vspace #2
-      \abs-fontsize #14 \EngravingCredLat
-      \vspace #0.2
-      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic \EngravingCred
-
-      \vspace #0.4
-      \abs-fontsize #14 "faciebat Torontinum (Canada) MMXXV"
-      \vspace #0.2
-      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic "made in Toronto (Canada), 2025"
-  
+    subsubtitle = \markup \center-column {
       \vspace #1
+      \abs-fontsize #14 \EngravingCredLat
+      \vspace #0.3
+      \abs-fontsize #14 "faciebat Torontinum (Canada) MMXXV"
+      \vspace #0.3
       \abs-fontsize #14 "versio TemplateDocVersionLat"
-      \vspace #0.2
+
+      \vspace #1
+      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic \EngravingCred
+      \vspace #0.3
+      \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic "made in Toronto (Canada), 2025"
+      \vspace #0.3
       \abs-fontsize #13 \with-color #(x11-color 'grey35) \italic "version TemplateDocVersion"
     }
   }
 
-  \markup \vspace #3
+  \markup \vspace #2
   \markup \wordwrap {
     This file was generated through \bold "Editoris Melicorum"
     \italic "(Publishers of Music/Melodies)," a software project by

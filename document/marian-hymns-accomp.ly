@@ -2,10 +2,10 @@
 
 #(set-default-paper-size "letter")
 
-\include "../build/ly/marian_ant_sol_vocals.ly"
-\include "../build/ly/marian_ant_sol_lyrics.ly"
-\include "../build/ly/marian_ant_sol_gtr_comp.ly"
-\include "../build/ly/marian_ant_sol_gtr_solo.ly"
+\include "../build/ly/marian_hymns_vocals.ly"
+\include "../build/ly/marian_hymns_lyrics.ly"
+\include "../build/ly/marian_hymns_gt_comp.ly"
+\include "../build/ly/marian_hymns_gt_solo.ly"
 
 \book {
 
@@ -18,7 +18,7 @@
   %%------------------------------------
   %% Title Page
 
-  \include "../build/ly/marian_ant_sol_title.ly"
+  \include "../build/ly/marian_hymns_title_gt_accomp.ly"
   
   %%------------------------------------
   %% Table of Contents, Preface
@@ -28,6 +28,6 @@
   %%------------------------------------
   %% Main Content
 
-  \include "../build/ly/marian_ant_sol_bookparts.ly"
+  \include "../build/ly/marian_hymns_bkpts_gt_accomp.ly"
 
 }
