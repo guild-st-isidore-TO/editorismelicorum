@@ -3,7 +3,10 @@
         {
             "id": "marian_ant_sim",
             "path": "marian-antiphons-simple-all.ly",
-            "partPaths": ["marian-antiphons-simple-accomp.ly", "marian-antiphons-simple-solo.ly"],
+            "partPaths": [
+                "marian-antiphons-simple-accomp.ly",
+                "marian-antiphons-simple-solo.ly"
+            ],
             "tags": [],
             "name": "Marian Antiphons (Simple Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Simplici)",
@@ -51,7 +54,10 @@
         {
             "id": "marian_ant_sol",
             "path": "marian-antiphons-solemn-all.ly",
-            "partPaths": ["marian-antiphons-solemn-accomp.ly", "marian-antiphons-solemn-solo.ly"],
+            "partPaths": [
+                "marian-antiphons-solemn-accomp.ly",
+                "marian-antiphons-solemn-solo.ly"
+            ],
             "tags": [],
             "name": "Marian Antiphons (Solemn Tone)",
             "nameLat": "Antiphonæ Mariæ (Tono Solemnis)",
@@ -99,7 +105,10 @@
         {
             "id": "marian_hymns",
             "path": "marian-hymns-all.ly",
-            "partPaths": ["marian-hymns-accomp.ly", "marian-hymns-solo.ly"],
+            "partPaths": [
+                "marian-hymns-accomp.ly",
+                "marian-hymns-solo.ly"
+            ],
             "tags": [],
             "name": "Marian Hymns",
             "nameLat": "Hymni Mariæ",

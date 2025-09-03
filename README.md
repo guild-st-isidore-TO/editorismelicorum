@@ -6,7 +6,7 @@ Part of the FAVI System: https://github.com/guild-st-isidore-TO/fabrica-virtuali
 
 ---
 
-> STATUS (VIII Augustii MMXXV)  
+> STATUS (III Septembris MMXXV)  
 Active Development -- Now extending working functionality while integrating it into the web API.
 
 ![Editoris Melicorum mascot image](./static/edi_melicorum_pic.png "Editoris Melicorum mascot image")
@@ -104,7 +104,7 @@ docker ps -a
 These configs can be found in `data/`:
 
 - `configs.json` -- Configurations for the editorismelicorum system
-- `input-configs.json` -- Configurations for documents being written and edited by the system
+- `input.json` -- Configurations for documents being written and edited by the system
 
 ### gabctk path
 
@@ -132,48 +132,87 @@ Output paths can be changed as well, if necessary
 
 ### documents
 
-`input-configs.json` looks like:
+`input.json` looks like:
 
 ```
 {
     "documents": [
         {
-            "name": "Editoris Melicorum Example",
-            "id": "ed_meli_example",
+            "id": "marian_ant_sim",
+            "path": "marian-antiphons-simple-all.ly",
+            "partPaths": [
+                "marian-antiphons-simple-accomp.ly",
+                "marian-antiphons-simple-solo.ly"
+            ],
+            "tags": [],
+            "name": "Marian Antiphons (Simple Tone)",
+            "nameLat": "Antiphonæ Mariæ (Tono Simplici)",
+            "version": "0.8",
             "author": "rjsalvadorr",
-            "mainDocument": "edi_melicorum_example.ly",
-            "gabcFiles": [
-                "examples/01-ave-maria.gabc",
-                "examples/02-crux_fidelis.gabc",
-                "examples/03-sanctus_xi.gabc",
-                "examples/04-dominus_dixit.gabc",
-                "examples/05-kyrie_xvi.gabc",
-                "examples/06-pange_lingua.gabc",
-                "examples/07-ascendit_deus.gabc",
-                "examples/08-nos_autem.gabc",
-                "examples/11-regina-caeli.gabc"
+            "sourceDocs": [
+                {
+                    "id": "alma_red_sim",
+                    "keyTranspose": 0,
+                    "path": "marian-antiphons-simple/01-alma-redemptoris-mater-sim.gabc",
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Alma Redemptoris Mater"
+                },
+                {
+                    "id": "ave_reg_sim",
+                    "keyTranspose": 0,
+                    "path": "marian-antiphons-simple/02-ave-regina-caelorum-sim.gabc",
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Ave Regina Cælorum"
+                },
+                {
+                    "id": "regina_cae_sim",
+                    "keyTranspose": 0,
+                    "path": "marian-antiphons-simple/03-regina-caeli-sim.gabc",
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Regina Cæli"
+                },
+                {
+                    "id": "salve_reg_sim",
+                    "keyTranspose": 2,
+                    "path": "marian-antiphons-simple/04-salve-regina-sim.gabc",
+                    "tags": [
+                        "gabc"
+                    ],
+                    "name": "Salve Regina"
+                }
             ]
         },
         {
-            "name": "Another doc example",
-            "id": "another_doc_example",
-            "author": "otherperson",
-            "mainDocument": "otherdoc/another_doc_example.ly",
-            "gabcFiles": [
-                "otherdoc/01-kyrie.gabc",
-                "otherdoc/02-gloria.gabc",
-                ...
+            "id": "marian_ant_sol",
+            "path": "marian-antiphons-solemn-all.ly",
+            "partPaths": [
+                "marian-antiphons-solemn-accomp.ly",
+                "marian-antiphons-solemn-solo.ly"
+            ],
+            "tags": [],
+            "name": "Marian Antiphons (Solemn Tone)",
+            "nameLat": "Antiphonæ Mariæ (Tono Solemnis)",
+            "version": "0.8",
+            "author": "rjsalvadorr",
+            "sourceDocs": [
+                //...
             ]
         },
-        ...
+        // ...
     ]
 }
 ```
 
-This is where users can specify details about the documents they're making. And the GABC scores that will be included in them. Please note that :
+This is where users can specify details about the documents they're making. And the GABC scores that will be included in them. Please note that:
 
-- The path value of `mainDocument` is relative to the `document/` directory. 
-- The file paths in `gabcFiles` are relative to the `data/` directory.
+- The `path` values of `document` entities are relative to the `document/` directory. 
+- The `path` values of `sourceDocs` entities are relative to the `data/` directory.
 
 Files in those directories can be organized into sub-dirs and accounted for in their paths.
 
